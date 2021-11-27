@@ -1,442 +1,194 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>jiangdu的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Blog">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>jiangdu的博客</title><meta name="author" content="jiangdu"><meta name="copyright" content="jiangdu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="jiangdu的博客">
 <meta property="og:url" content="https://satorimarch.github.io/index.html">
 <meta property="og:site_name" content="jiangdu的博客">
 <meta property="og:description" content="Blog">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="jiangdu">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="jiangdu的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://satorimarch.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'jiangdu的博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-11-28 00:26:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">jiangdu的博客</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://satorimarch.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-C#教程[1] 简介" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B1%5D%20%E7%AE%80%E4%BB%8B/" class="article-date">
-  <time datetime="2021-11-27T14:25:05.870Z" itemprop="datePublished">2021-11-27</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B1%5D%20%E7%AE%80%E4%BB%8B/">C#教程[1] 简介</a>
-    </h1>
-  
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="jiangdu的博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a></div></div></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">jiangdu的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">jiangdu的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B1%5D%20%E7%AE%80%E4%BB%8B/" title="C#教程[1] 简介">C#教程[1] 简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-27T14:25:05.870Z" title="Created 2021-11-27 22:25:05">2021-11-27</time></span></div><div class="content">简介
+C#是微软推出的一种基于.NET框架的、面向对象的高级编程语言。C#是一种由C和C++派生出来的面向对象的编程语言。它在继承C和C++强大功能的同时去掉了一些它们的复杂特性，使其成为C语言家族中的一种高效强大的编程语言。C#以.NET框架类库作为基础，拥有类似Visual Basic的快速开发能力。C#由安德斯·海尔斯伯格主持开发，微软在2000年发布了这种语言，希望借助这种语言来取代Java。^1
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
-<p>C#是微软推出的一种基于.NET框架的、面向对象的高级编程语言。C#是一种由C和C++派生出来的面向对象的编程语言。它在继承C和C++强大功能的同时去掉了一些它们的复杂特性，使其成为C语言家族中的一种高效强大的编程语言。C#以.NET框架类库作为基础，拥有类似Visual Basic的快速开发能力。C#由安德斯·海尔斯伯格主持开发，微软在2000年发布了这种语言，希望借助这种语言来取代Java。<a href="%E6%9D%A5%E8%87%AA%5B%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%5D(https://zh.wikipedia.org/wiki/C%E2%99%AF)">^1</a></p>
-</blockquote>
-<h1 id="第一个C-程序"><a href="#第一个C-程序" class="headerlink" title="第一个C#程序"></a>第一个C#程序</h1><p>大家先来看一个在VS2019里新建C#控制台应用生成的默认程序（代码中的 <code>//</code> 表示单行注释）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line"></span><br><span class="line">namespace ConsoleApp // ConsoleApp为命名空间(namespace)</span><br><span class="line">&#123;</span><br><span class="line">    class Program // Program是一个&quot;类&quot;(class)</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args) // Main方法</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;Hello World!&quot;); // 输出语句</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+第一个C#程序大家先来看一个在VS2019里新建C#控制台应用生成的默认程序（代码中的 // 表示单行注释）：
+123456789101112using System;namespace ConsoleApp // ConsoleApp为命名空间(namespace)&#123;    class Program // Program是一个&quot;类&quot;(class)    &#123;        static void Main(string[] args) // Main方法        &#123;            Console.WriteLine( ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2021/11/27/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE%E7%BA%B3%E6%96%B0/" title="电子电路社纳新">电子电路社纳新</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-27T14:25:05.855Z" title="Created 2021-11-27 22:25:05">2021-11-27</time></span></div><div class="content">周二下午没事做？不如来 电子电路社 敲 代 码 ！
+12using System;Console.WriteLine(&quot;快来电子电路社!\n&quot;);
 
-<blockquote>
-<p>让我们看一下上面程序的各个部分：<a href="%E6%9D%A5%E8%87%AA%5B%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B%5D(https://www.runoob.com/csharp/csharp-program-structure.html)">^2</a></p>
-<ul>
-<li><p>程序的第一行 <strong>using System;</strong> - <strong>using</strong> 关键字用于在程序中包含 <strong>System</strong> 命名空间。 一个程序一般有多个 <strong>using</strong> 语句。</p>
-</li>
-<li><p>下一行是 <strong>namespace</strong> 声明。一个 <strong>namespace</strong> 里包含了一系列的类。命名空间包含了类 <em>Program</em>。</p>
-</li>
-<li><p>下一行是 <strong>class</strong> 声明。类 <em>Program</em> 包含了程序使用的数据和方法声明。类一般包含多个方法。方法定义了类的行为。在这里，<em>Program</em> 类只有一个 <strong>Main</strong> 方法。</p>
-</li>
-<li><p>下一行定义了 <strong>Main</strong> 方法，是所有 C# 程序的 <strong>入口点</strong>。<strong>Main</strong> 方法说明当执行时 类将做什么动作。</p>
-</li>
-<li><p>Main 方法通过语句<code>Console.WriteLine(&quot;Hello World!&quot;);</code> 指定了它的行为。</p>
-<p><em>WriteLine</em> 是一个定义在 <em>System</em> 命名空间中的 <em>Console</em> 类的一个方法。该语句会在屏幕上显示消息 “Hello World!”。</p>
-</li>
-<li><p>最后一行 <strong><code>Console.ReadKey();</code></strong> 是针对 VS.NET 用户的。这使得程序会等待一个按键的动作，防止程序从 Visual Studio .NET 启动时屏幕会快速运行并关闭。</p>
-</li>
-</ul>
-</blockquote>
-<p>大家可能会觉得，这样比在 <code>python</code> 中输出 <code>&quot;hello world&quot;</code> 要繁琐很多，这样的设计看似没有必要，但实际上在大型的项目里能展现出它的优势<a href="%E8%BF%99%E6%A0%B7%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%98%AF%E5%9F%BA%E4%BA%8E%E4%B8%80%E7%A7%8D%E5%8F%AB%E5%81%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(OOP)%E7%9A%84%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%EF%BC%8CC#%E5%92%8CJava%E9%83%BD%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%EF%BC%8Cpyhton%E4%B9%9F%E6%94%AF%E6%8C%81%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">^3</a></p>
-<p>简单的来说，命名空间包含类，类包含方法。</p>
-<p>大家目前只需要注意一下 <code>Program</code> 类和 <code>Main</code> 方法。<br>在 <code>C#</code> 中方法的概念与其他语言中函数的意思区别不大，大家可以理解成函数。<br>而类的真正概念我们会在以后再讲。</p>
-<p> <code>Main</code> 方法被包含在 <code>Program</code> 类中，而我们的程序总会从 <code>Main</code> 方法开始执行。</p>
-<p> 在语句 <code>Console.WriteLine(&quot;Hello World!&quot;);</code> 中, <code>Console</code>也是一个类，而 <code>WriteLine()</code> 则为 <code>Console</code> 类中的一个方法，中间的 <code>.</code> 表示访问 <code>Console</code> 类中的成员<a href="%E5%85%B6%E5%AD%A6%E5%90%8D%E4%B8%BA%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E8%BF%90%E7%AE%97%E7%AC%A6">^4</a>，此处访问的即为该类中的<code>WriteLine()</code> 方法。</p>
-<p>大家可以注意到一个有意思的现象，我们的 <code>Main</code> 方法也是被包含在一个类中的。事实上，在 <code>C#</code> 中方法的声明一定在一个类的内部。</p>
-<p>因为我们目前只看主函数部分，所以以后会将上面那段代码写成如下的形式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">Console.WriteLine(&quot;Hello World!&quot;); // 输出语句</span><br></pre></td></tr></table></figure>
+我和我身边的朋友都在做，每天收入0元
+虽然受不可抗力因素影响（？），社团里可能既没有电子也没有电路还没有社，但我们温柔贤惠的社长将会带领大家一起学习 C# ,python 等热门编程语言，走入信息世界的大门。
+不管您是对编程充满好奇的萌新，还是随手AK IOI的大佬，电子电路社都欢迎您的到来。每周二下午4点，是兄弟就来找我（？） ^1
+翻译：社团要没人了，救救孩子！（报名方式：报名链接（选开发部电子电路社）
+社团微信群：（如果图片崩了请加QQ群或者社长微信）
 
-<p>事实上，这样类似 <code>python</code> 的代码是 <code>.net5.0</code> 中的新特性：顶级语句。这样的程序在 <code>.net5.0运行时</code> 是可以通过编译并正常运行的。</p>
-<hr>
-<p>本文作者: jiangdu</p>
+QQ群: 942591414
+社长微信号: jdu1234567
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://satorimarch.github.io/2021/11/27/C#%E6%95%99%E7%A8%8B[1]%20%E7%AE%80%E4%BB%8B/" data-id="ckwi0xcq30000s8i29ns4ehcz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B3%5D%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="C#教程[3] 数据类型转换">C#教程[3] 数据类型转换</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-27T14:25:05.851Z" title="Created 2021-11-27 22:25:05">2021-11-27</time></span></div><div class="content">C# 是一门强类型语言，对类型的要求很严格，类型转换的方式有两种：隐式类型转换和显式类型转换。
+隐式类型转换1234int a = 5;double b = 1.5;double c = a + b;System.Console.WriteLine(c);
 
+像这样，并没有对源代码进行任何特殊处理，而是由编译器自动进行了从int类型到double类型的隐式转换。
+但是很多类型之间不可以进行隐式类型转换，可以看下面的例子。
+123double a = 1.5;int b = a;System.Console.WriteLine(b);
 
-  
-    <article id="post-电子电路社纳新" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/27/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE%E7%BA%B3%E6%96%B0/" class="article-date">
-  <time datetime="2021-11-27T14:25:05.855Z" itemprop="datePublished">2021-11-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/27/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE%E7%BA%B3%E6%96%B0/">电子电路社纳新</a>
-    </h1>
-  
+在作者的电脑上编译时会有这样的报错：
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>周二下午没事做？<br>不如来 电子电路社 <code>敲 代 码</code> ！</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">Console.WriteLine(&quot;快来电子电路社!\n&quot;);</span><br></pre></td></tr></table></figure>
+错误    CS0266    无法将类型“double”隐式转换为“int”
 
-<p>我和我身边的朋友都在做，<br><del>每天收入0元</del></p>
-<p>虽然受不可抗力因素影响（？），<br>社团里可能<del>既没有电子也没有电路还没有社</del>，<br>但我们<del>温柔贤惠</del>的社长将会带领大家一起学习 <code>C#</code> ,<code>python</code> 等热门编程语言，<br>走入信息世界的大门。</p>
-<p>不管您是对编程充满好奇的萌新，<br><del>还是随手AK IOI的大佬</del>，<br>电子电路社都欢迎您的到来。<br>每周二下午4点，<br><del>是兄弟就来找我（？）</del> <a href="%E6%96%87%E6%A1%88%E4%BD%9C%E8%80%85%E4%B8%BA%E5%89%AF%E7%A4%BE%E9%95%BFzzm">^1</a></p>
-<h2 id="翻译：社团要没人了，救救孩子！（"><a href="#翻译：社团要没人了，救救孩子！（" class="headerlink" title="翻译：社团要没人了，救救孩子！（"></a>翻译：社团要没人了，救救孩子！（</h2><h4 id="报名方式："><a href="#报名方式：" class="headerlink" title="报名方式："></a>报名方式：</h4><p><a target="_blank" rel="noopener" href="https://www.wjx.top/vm/OYzPatv.aspx">报名链接</a>（选开发部电子电路社）</p>
-<p>社团微信群：（如果图片崩了请加QQ群或者社长微信）</p>
-<p><img src="https://s6.jpg.cm/2021/11/20/IM01LC.jpg" alt="微信群"></p>
-<p>QQ群: 942591414</p>
-<p>社长微信号: jdu1234567</p>
-<hr>
+因此，我们需要用显式类型转换改正它。
+显式类型转换上面的例子的第二行应改为这样：
+1int b = (int)a;
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://satorimarch.github.io/2021/11/27/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE%E7%BA%B3%E6%96%B0/" data-id="ckwi0xcqd0003s8i22n4u4uwa" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+语法就是在要转换的变量前加一组小括号，里面写要转换成的类型名。所有的隐式类型转换都可以写成显式。
+但是这样写输出的结果却是1而非想象中的四舍五入2。
+用显式类型转换会丢失数据的精度，这也是为什么编译器不会自动进行显式类 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2021/11/27/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-27T13:36:29.795Z" title="Created 2021-11-27 21:36:29">2021-11-27</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
 
+More info: Writing
+Run server1$ hexo server
 
-  
-    <article id="post-C#教程[3] 数据类型转换" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B3%5D%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="article-date">
-  <time datetime="2021-11-27T14:25:05.851Z" itemprop="datePublished">2021-11-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B3%5D%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">C#教程[3] 数据类型转换</a>
-    </h1>
-  
+More info: Server
+Generate static files1$ hexo generate
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>C# 是一门强类型语言，对类型的要求很严格，类型转换的方式有两种：<strong>隐式类型转换</strong>和<strong>显式类型转换</strong>。</p>
-<h1 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a = 5;</span><br><span class="line">double b = 1.5;</span><br><span class="line">double c = a + b;</span><br><span class="line">System.Console.WriteLine(c);</span><br></pre></td></tr></table></figure>
+More info: Generating
+Deploy to remote sites1$ hexo deploy
 
-<p>像这样，并没有对源代码进行任何特殊处理，而是由编译器自动进行了从<code>int</code>类型到<code>double</code>类型的隐式转换。</p>
-<p>但是很多类型之间不可以进行隐式类型转换，可以看下面的例子。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">double a = 1.5;</span><br><span class="line">int b = a;</span><br><span class="line">System.Console.WriteLine(b);</span><br></pre></td></tr></table></figure>
-
-<p>在作者的电脑上编译时会有这样的报错：</p>
-<blockquote>
-<p>错误    CS0266    无法将类型“double”隐式转换为“int”</p>
-</blockquote>
-<p>因此，我们需要用显式类型转换改正它。</p>
-<h1 id="显式类型转换"><a href="#显式类型转换" class="headerlink" title="显式类型转换"></a>显式类型转换</h1><p>上面的例子的第二行应改为这样：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int b = (int)a;</span><br></pre></td></tr></table></figure>
-
-<p>语法就是在要转换的变量前加一组小括号，里面写要转换成的类型名。所有的隐式类型转换都可以写成显式。</p>
-<p>但是这样写输出的结果却是<code>1</code>而非想象中的四舍五入<code>2</code>。</p>
-<p>用显式类型转换<strong>会丢失数据的精度</strong>，这也是为什么编译器不会自动进行显式类型转换。显式类型转换又叫强制类型转换。</p>
-<p>而且显式类型转换也并非所有类型之间都能转的，例如下面这么写也是<strong>错误</strong>的：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">double a = (double)&quot;5.5&quot;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong>在许多其他编程语言里，<code>int</code>可以隐式转换为<code>bool</code>，但是C# 中无论是隐式还是显式都会报错，要使用后面提到的<code>Convert.ToBoolean()</code></p>
-<p>为了解决上述的问题，我们将介绍使用方法进行类型转换。</p>
-<h1 id="使用方法进行类型转换"><a href="#使用方法进行类型转换" class="headerlink" title="使用方法进行类型转换"></a>使用方法进行类型转换</h1><h2 id="使用ToString-方法"><a href="#使用ToString-方法" class="headerlink" title="使用ToString()方法"></a>使用<code>ToString()</code>方法</h2><p>所有的类型都可以使用<code>ToString()</code>方法，如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a = 5;</span><br><span class="line">string b = a.ToString();</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用Convert-ToInt32-方法"><a href="#使用Convert-ToInt32-方法" class="headerlink" title="使用Convert.ToInt32()方法"></a>使用<code>Convert.ToInt32()</code>方法</h2><p><code>Convert</code>为类名，<code>ToInt32()</code>为其中的方法名。<code>Convert</code>类提供了许多转换的方法，例如：<code>ToChar()</code>，<code>ToDouble()</code>，<code>ToBoolean()</code></p>
-<p>例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int a = Convert.ToInt32(&quot;5.0&quot;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用int-Parse-方法"><a href="#使用int-Parse-方法" class="headerlink" title="使用int.Parse()方法"></a>使用<code>int.Parse()</code>方法</h2><p><code>Parse()</code>方法用来将<strong>字符串</strong>转换为其他的类型</p>
-<h3 id="注意：Parse-方法的参数只能是字符串"><a href="#注意：Parse-方法的参数只能是字符串" class="headerlink" title="注意：Parse()方法的参数只能是字符串"></a>注意：<code>Parse()</code>方法的参数只能是字符串</h3><p>使用时 <code>类型名.Parse(需要转换的变量);</code>  即可</p>
-<p>例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string a = &quot;5&quot;;</span><br><span class="line">int b = int.Parse(a);</span><br></pre></td></tr></table></figure>
-
-<p>虽然例子中用的是<code>int</code>类型，但实际上所有数字类型都有类似的方法。</p>
-<p>但是将字符串<code>&quot;apple&quot;</code>转换为int时还是会报错导致程序无法继续运行，且我们也并不真的希望他把<code>apple</code>转为<code>int</code>类型，这时我们可以使用<code>TryParse()</code>方法。</p>
-<h2 id="使用-int-TryParse-等方法"><a href="#使用-int-TryParse-等方法" class="headerlink" title="使用 int.TryParse()等方法"></a>使用 <code>int.TryParse()</code>等方法</h2><p>微软官方教程中的说明如下：</p>
-<blockquote>
-<p><code>TryParse()</code> 方法可同时执行多项操作：</p>
-<ol>
-<li><p>它会<strong>尝试</strong>将字符串分析成给定的数字数据类型。</p>
-</li>
-<li><p>如果成功，它会将转换后的值存储在 <strong>out 参数</strong>中。</p>
-</li>
-<li><p>它会<strong>返回布尔值</strong>来指示操作是否成功。</p>
-</li>
-</ol>
-<p>对于<strong>所有数字数据类型</strong>，均可使用类似的 <code>TryParse()</code> 方法。</p>
-</blockquote>
-<p>例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">double result;</span><br><span class="line">string str = &quot;5.5&quot;;</span><br><span class="line">bool a = double.TryParse(str, out result); // result 即为说明中第2条的 &quot;out参数&quot; </span><br><span class="line">System.Console.WriteLine($&quot;a = &#123;a&#125;\nresult = &#123;result&#125;\n&quot;);</span><br></pre></td></tr></table></figure>
-
-<p>此时，输出结果应为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = True</span><br><span class="line">result = 5.5</span><br></pre></td></tr></table></figure>
-
-<h2 id="例题：（来自微软官方文档-链接）"><a href="#例题：（来自微软官方文档-链接）" class="headerlink" title="例题：（来自微软官方文档 链接）"></a>例题：（来自微软官方文档 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/learn/modules/csharp-convert-cast/4-challenge">链接</a>）</h2><h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>已知一个字符串数组<code>values</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string[] values = &#123; &quot;12.3&quot;, &quot;45&quot;, &quot;ABC&quot;, &quot;11&quot;, &quot;DEF&quot; &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>循环访问字符串数组中的每个值， 对于每个值满足以下规则：</p>
-<p>规则 1：如果值是字母，则连接它以形成消息</p>
-<p>规则 2：如果值是数字，则将其加到总计值</p>
-<h3 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Message: ABCDEF</span><br><span class="line">Total: 68.3</span><br></pre></td></tr></table></figure>
-
-<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码:"></a>示例代码:</h3><p>官方:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line"></span><br><span class="line">string[] values = &#123; &quot;12.3&quot;, &quot;45&quot;, &quot;ABC&quot;, &quot;11&quot;, &quot;DEF&quot; &#125;;</span><br><span class="line"></span><br><span class="line">decimal total = 0m;</span><br><span class="line">string message = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">foreach (var value in values)</span><br><span class="line">&#123;</span><br><span class="line">    decimal number;</span><br><span class="line">    if (decimal.TryParse(value, out number))</span><br><span class="line">    &#123;</span><br><span class="line">        total += number;</span><br><span class="line">    &#125; else</span><br><span class="line">    &#123;</span><br><span class="line">        message += value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Console.WriteLine($&quot;Message: &#123;message&#125;&quot;);</span><br><span class="line">Console.WriteLine($&quot;Total: &#123;total&#125;&quot;);</span><br></pre></td></tr></table></figure>
-<p>作者的版本:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line"></span><br><span class="line">string[] values = &#123; &quot;12.3&quot;, &quot;45&quot;, &quot;ABC&quot;, &quot;11&quot;, &quot;DEF&quot; &#125;;</span><br><span class="line"></span><br><span class="line">decimal total = 0.0m;</span><br><span class="line">string message = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">foreach (string v in values)</span><br><span class="line">&#123;</span><br><span class="line">    if (decimal.TryParse(v, out decimal curr)) total += curr; // 这样写curr变量只会在if语句的范围内生效</span><br><span class="line">    else message += v; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Console.WriteLine($&quot;Messagae: &#123;message&#125;\nTotal: &#123;total&#125;\n&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="其他注意事项："><a href="#其他注意事项：" class="headerlink" title="其他注意事项："></a>其他注意事项：</h2><p>试图将字符串<code>&quot;5.5&quot;</code>转换成<code>int</code>类型时，下面两种方法都是<strong>错误</strong>的：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a = Convert.ToInt32(&quot;5.5&quot;);</span><br><span class="line">int a = int.Parse(&quot;5.5&quot;);</span><br></pre></td></tr></table></figure>
-
-<p>正确的做法应该是先<strong>把字符串<code>&quot;5.5&quot;</code>先转换成<code>double</code>类型，再转换成<code>int</code>类型</strong>，比如下面两种方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a = (int)Convert.ToDouble(&quot;5.5&quot;);</span><br><span class="line">int a = (int)Double.Parse(&quot;5.5&quot;);</span><br></pre></td></tr></table></figure>
-
-<p>作者: jiangdu（另一常用网名: satori_march）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://satorimarch.github.io/2021/11/27/C#%E6%95%99%E7%A8%8B[3]%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" data-id="ckwi0xcqa0001s8i2bfga3pke" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/27/hello-world/" class="article-date">
-  <time datetime="2021-11-27T13:36:29.795Z" itemprop="datePublished">2021-11-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/27/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://satorimarch.github.io/2021/11/27/hello-world/" data-id="ckwi0xcqb0002s8i236tyeq1g" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B1%5D%20%E7%AE%80%E4%BB%8B/">C#教程[1] 简介</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/27/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE%E7%BA%B3%E6%96%B0/">电子电路社纳新</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B3%5D%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">C#教程[3] 数据类型转换</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/27/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2021 jiangdu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiangdu</div><div class="author-info__description">Blog</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B1%5D%20%E7%AE%80%E4%BB%8B/" title="C#教程[1] 简介">C#教程[1] 简介</a><time datetime="2021-11-27T14:25:05.870Z" title="Created 2021-11-27 22:25:05">2021-11-27</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2021/11/27/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE%E7%BA%B3%E6%96%B0/" title="电子电路社纳新">电子电路社纳新</a><time datetime="2021-11-27T14:25:05.855Z" title="Created 2021-11-27 22:25:05">2021-11-27</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2021/11/27/C#%E6%95%99%E7%A8%8B%5B3%5D%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="C#教程[3] 数据类型转换">C#教程[3] 数据类型转换</a><time datetime="2021-11-27T14:25:05.851Z" title="Created 2021-11-27 22:25:05">2021-11-27</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2021/11/27/hello-world/" title="Hello World">Hello World</a><time datetime="2021-11-27T13:36:29.795Z" title="Created 2021-11-27 21:36:29">2021-11-27</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">November 2021</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">4</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-11-27T16:26:11.955Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By jiangdu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
