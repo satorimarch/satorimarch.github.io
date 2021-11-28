@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>jiangdu的博客</title>
   
-  
+  <subtitle>jiangdu&#39;s blog</subtitle>
   <link href="https://satorimarch.github.io/atom.xml" rel="self"/>
   
   <link href="https://satorimarch.github.io/"/>
-  <updated>2021-11-27T17:30:32.635Z</updated>
+  <updated>2021-11-28T05:08:17.007Z</updated>
   <id>https://satorimarch.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://satorimarch.github.io/2021/11/28/test/"/>
     <id>https://satorimarch.github.io/2021/11/28/test/</id>
     <published>2021-11-27T16:00:00.000Z</published>
-    <updated>2021-11-27T17:30:32.635Z</updated>
+    <updated>2021-11-28T05:08:17.007Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; hello world;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.Println(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;hello world&quot;</span>;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.Println(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
@@ -62,15 +62,15 @@
     <link href="https://satorimarch.github.io/2021/11/20/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE%E7%BA%B3%E6%96%B0/"/>
     <id>https://satorimarch.github.io/2021/11/20/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE%E7%BA%B3%E6%96%B0/</id>
     <published>2021-11-19T16:00:00.000Z</published>
-    <updated>2021-11-27T16:35:04.574Z</updated>
+    <updated>2021-11-28T05:19:43.421Z</updated>
     
-    <content type="html"><![CDATA[<p>周二下午没事做？<br>不如来 电子电路社 <code>敲 代 码</code> ！</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">Console.WriteLine(&quot;快来电子电路社!\n&quot;);</span><br></pre></td></tr></table></figure><p>我和我身边的朋友都在做，<br><del>每天收入0元</del></p><p>虽然受不可抗力因素影响（？），<br>社团里可能<del>既没有电子也没有电路还没有社</del>，<br>但我们<del>温柔贤惠</del>的社长将会带领大家一起学习 <code>C#</code> ,<code>python</code> 等热门编程语言，<br>走入信息世界的大门。</p><p>不管您是对编程充满好奇的萌新，<br><del>还是随手AK IOI的大佬</del>，<br>电子电路社都欢迎您的到来。<br>每周二下午4点，<br><del>是兄弟就来找我（？）</del> <a href="%E6%96%87%E6%A1%88%E4%BD%9C%E8%80%85%E4%B8%BA%E5%89%AF%E7%A4%BE%E9%95%BFzzm">^1</a></p><h2 id="翻译：社团要没人了，救救孩子！（"><a href="#翻译：社团要没人了，救救孩子！（" class="headerlink" title="翻译：社团要没人了，救救孩子！（"></a>翻译：社团要没人了，救救孩子！（</h2><h4 id="报名方式："><a href="#报名方式：" class="headerlink" title="报名方式："></a>报名方式：</h4><p><a href="https://www.wjx.top/vm/OYzPatv.aspx">报名链接</a>（选开发部电子电路社）</p><p>社团微信群：（如果图片崩了请加QQ群或者社长微信）</p><p><img src="https://s6.jpg.cm/2021/11/20/IM01LC.jpg" alt="微信群"></p><p>QQ群: 942591414</p><p>社长微信号: jdu1234567</p><hr>]]></content>
+    <content type="html"><![CDATA[<p>周二下午没事做？<br>不如来 电子电路社 <strong><code>敲 代 码</code></strong> ！</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;快来电子电路社!\n&quot;</span>);</span><br></pre></td></tr></table></figure><p>我和我身边的朋友都在做，<br><del>每天收入0元</del></p><p>虽然受不可抗力因素影响（？），<br>社团里可能<del>既没有电子也没有电路还没有社</del>，<br>但我们<del>温柔贤惠</del>的社长将会带领大家一起学习 <code>C#</code> ,<code>python</code> 等热门编程语言，<br>走入信息世界的大门。</p><p>不管您是对编程充满好奇的萌新，<br><del>还是随手AK IOI的大佬</del>，<br>电子电路社都欢迎您的到来。<br>每周二下午4点，<br><del>是兄弟就来找我（？）</del> <a href="%E6%96%87%E6%A1%88%E4%BD%9C%E8%80%85%E4%B8%BA%E5%89%AF%E7%A4%BE%E9%95%BFzzm">^1</a></p><h2 id=""><a href="#" class="headerlink" title=""></a><mark class="hl-label red">翻译：社团要没人了，救救孩子！（</mark> </h2><h4 id="报名方式："><a href="#报名方式：" class="headerlink" title="报名方式："></a>报名方式：</h4><p><a href="https://www.wjx.top/vm/OYzPatv.aspx">报名链接</a>（选开发部电子电路社）</p><p>社团微信群：（如果图片崩了请加QQ群或者社长微信）</p><p><img src="https://s6.jpg.cm/2021/11/20/IM01LC.jpg" alt="微信群"></p><p>QQ群: 942591414</p><p>社长微信号: jdu1234567</p><hr>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;周二下午没事做？&lt;br&gt;不如来 电子电路社 &lt;code&gt;敲 代 码&lt;/code&gt; ！&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;</summary>
+    <summary type="html">&lt;p&gt;周二下午没事做？&lt;br&gt;不如来 电子电路社 &lt;strong&gt;&lt;code&gt;敲 代 码&lt;/code&gt;&lt;/strong&gt; ！&lt;/p&gt;
+&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
       
     
     
