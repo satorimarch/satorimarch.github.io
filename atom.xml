@@ -6,7 +6,7 @@
   <link href="https://satorimarch.github.io/atom.xml" rel="self"/>
   
   <link href="https://satorimarch.github.io/"/>
-  <updated>2021-11-28T05:08:17.007Z</updated>
+  <updated>2021-11-28T05:33:10.371Z</updated>
   <id>https://satorimarch.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://satorimarch.github.io/2021/11/28/test/"/>
     <id>https://satorimarch.github.io/2021/11/28/test/</id>
     <published>2021-11-27T16:00:00.000Z</published>
-    <updated>2021-11-28T05:08:17.007Z</updated>
+    <updated>2021-11-28T05:33:10.371Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;hello world&quot;</span>;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.Println(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;hello world&quot;</span>;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.Println(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure><script type="math/tex; mode=display">F=ma</script><script type="math/tex; mode=display">\sum_{i=0}^{n}a_i</script><p>试试行间公式: $ f ^ { \prime } ( x ) = 2 x ^ { 2 } $</p>]]></content>
     
     
       
