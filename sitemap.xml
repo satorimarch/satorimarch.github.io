@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://satorimarch.github.io/2021/11/20/noip2021/</loc>
+    
+    <lastmod>2021-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/2021/10/23/csp-s2021/</loc>
+    
+    <lastmod>2021-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/about/index.html</loc>
+    
+    <lastmod>2021-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/link/index.html</loc>
+    
+    <lastmod>2021-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://satorimarch.github.io/2021/11/23/c-sharp%E6%95%99%E7%A8%8B[1]%E7%AE%80%E4%BB%8B/</loc>
     
     <lastmod>2021-11-28</lastmod>
@@ -12,6 +48,24 @@
   
   <url>
     <loc>https://satorimarch.github.io/2021/08/19/c-sharp%E6%95%99%E7%A8%8B[3]%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</loc>
+    
+    <lastmod>2021-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/categories/index.html</loc>
+    
+    <lastmod>2021-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/tags/index.html</loc>
     
     <lastmod>2021-11-28</lastmod>
     
@@ -37,33 +91,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://satorimarch.github.io/categories/index.html</loc>
-    
-    <lastmod>2021-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://satorimarch.github.io/link/index.html</loc>
-    
-    <lastmod>2021-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://satorimarch.github.io/tags/index.html</loc>
-    
-    <lastmod>2021-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://satorimarch.github.io/</loc>
@@ -73,6 +100,62 @@
   </url>
 
   
+  <url>
+    <loc>https://satorimarch.github.io/tags/c/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/tags/%E6%B8%B8%E8%AE%B0/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/tags/OI/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/tags/csp/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/tags/noip/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://satorimarch.github.io/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE/c-%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://satorimarch.github.io/categories/%E6%B8%B8%E8%AE%B0/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>
