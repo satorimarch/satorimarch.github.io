@@ -12,7 +12,7 @@ cover: https://s6.jpg.cm/2021/11/28/LLO4yG.jpg
 # 前言
 
 本系列教程是为了我在学校社团课使用而随手写的，因此可能有很多随意或不严谨的地方，而且随时有可能停更，请见谅。
-因为高一学校的信息课学习 `pyhton`，因此默认读者有微弱的 `pyhton` 基础，故基础语法可能会讲的稍微快一些而且会与 `pyhton` 的语法进行比较。
+因为高一学校的信息课学习 `python`，因此默认读者有微弱的 `python` 基础，故基础语法可能会讲的稍微快一些而且会与 `python` 的语法进行比较。
 
 # 简介
 
@@ -100,7 +100,7 @@ Console.WriteLine("Hello World!"); // 输出语句
 
 ## 变量的声明和定义
 
-在 `pyhton` 中, 声明变量前不需说明类型, 例如:
+在 `python` 中, 声明变量前不需说明类型, 例如:
 
 ```python
 a = 5
@@ -160,7 +160,7 @@ Console.WriteLine(a);
 
 ## 运算符
 
-`C#` 中的算术/比较/赋值运算符与 `pyhton` 基本相同, 因此不在此列出, 可前往[菜鸟教程](https://www.runoob.com/csharp/csharp-operators.html)自行阅读, 但有几点需要注意:
+`C#` 中的算术/比较/赋值运算符与 `python` 基本相同, 因此不在此列出, 可前往[菜鸟教程](https://www.runoob.com/csharp/csharp-operators.html)自行阅读, 但有几点需要注意:
 
 {% note danger flat %}
 1. 不能把表达式写成形如 `a <= x <= b` 的形式, 应该写为 `a <= x && x <= b` 
@@ -213,7 +213,7 @@ if(score == 0) Console.WriteLine("我爆零了");
 ---
 
 [^1]: 来自[维基百科](https://zh.wikipedia.org/wiki/C%E2%99%AF)
-[^2]: 这样的设计是基于一种叫做面向对象(OOP)的编程思想，C#和Java都是面向对象的编程语言，pyhton也支持面向对象
+[^2]: 这样的设计是基于一种叫做面向对象(OOP)的编程思想，C#和Java都是面向对象的编程语言，python也支持面向对象
 [^3]: 其学名为成员访问运算符
 [^4]: 使用 `var` 定义的必须是局部变量
 [^5]: 其实 `a++` 与 `++a` 放在表达式里有些区别, 因此在没弄清楚前不要写诸如 `b = a++;` 这种式子 

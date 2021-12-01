@@ -9,6 +9,7 @@ description: Blog
 author: jiangdu
 language: zh-CN
 timezone: ''
+keywords: jiangdu,blog
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
