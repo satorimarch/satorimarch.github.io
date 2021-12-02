@@ -1,12 +1,13 @@
 ---
-title: C#教程[3] 数据类型转换
-date: 2021-08-19
-tags: 
+title: 'C#教程[3] 数据类型转换'
+tags:
   - c#
 categories:
   - 电子电路社
   - c#教程
-cover: https://s6.jpg.cm/2021/11/28/LLOoFu.png
+cover: 'https://s6.jpg.cm/2021/11/28/LLOoFu.png'
+abbrlink: 19004
+date: 2021-08-19 00:00:00
 ---
 
 C# 是一门强类型语言，对类型的要求很严格，类型转换的方式有两种：**隐式类型转换**和**显式类型转换**。

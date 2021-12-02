@@ -1,12 +1,13 @@
 ---
-title: "C#教程[2] 循环程序设计"
-date: 2021-11-29
+title: 'C#教程[2] 循环程序设计'
 tag:
   - c#
 categories:
   - 电子电路社
   - c#教程
 mathjax: false
+abbrlink: 3965
+date: 2021-11-29 00:00:00
 ---
 
 {% note warning flat %}

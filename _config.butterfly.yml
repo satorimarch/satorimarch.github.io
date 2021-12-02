@@ -338,7 +338,7 @@ valine:
 waline:
   serverURL: https://blog-api-ffsaxnxts-satorimarch.vercel.app/ # Waline server address url
   avatar: identicon # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
-  avatarCDN: https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili # Gravatar CDN baseURL
+  avatarCDN: 'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili' # Gravatar CDN baseURL
   bg: # waline background
   visitor: false
   option:

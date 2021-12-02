@@ -1,12 +1,13 @@
 ---
-title: C#教程[1] 简介
-date: 2021-11-23 
-tags: 
+title: 'C#教程[1] 简介'
+tags:
   - c#
 categories:
   - 电子电路社
   - c#教程
-cover: https://s6.jpg.cm/2021/11/28/LLO4yG.jpg
+cover: 'https://s6.jpg.cm/2021/11/28/LLO4yG.jpg'
+abbrlink: 38394
+date: 2021-11-23 00:00:00
 ---
 
 # 前言
