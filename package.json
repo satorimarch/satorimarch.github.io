@@ -12,8 +12,10 @@
     "version": "5.4.0"
   },
   "dependencies": {
+    "@waline/client": "^1.5.1",
     "add": "^2.0.6",
     "hexo": "^5.0.0",
+    "hexo-abbrlink": "^2.2.1",
     "hexo-browsersync": "^0.3.0",
     "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^1.0.0",
