@@ -16,6 +16,8 @@ date: 2021-11-23 00:00:00
 
 因为高一学校的信息课会学习 `python`，因此默认读者有简单的 `python` 基础，故常常会与 `python` 的语法进行比较而且基础语法可能会讲的稍微快一些。
 
+感谢 [zbx1425](https://github.com/zbx1425) 大佬对于本系列教程的帮助
+
 ## 可能有用的网址
 
 ### 教程/文档：
@@ -110,14 +112,16 @@ namespace ConsoleApp // ConsoleApp命名空间(namespace)
 
 所以我们来集中精力看这一行实际干活的代码。
 
- 在语句 `Console.WriteLine("Hello World!");` 中, `Console`也是一个类，而 `WriteLine()` 则为 `Console` 类中的一个函数，中间的 `.` 表示访问 `Console` 类中的成员[^2]，此处访问的即为该类中的 `WriteLine()` 函数。
+ 在语句 `Console.WriteLine("Hello World!");` 中，`Console`也是一个类，而 `WriteLine()` 则为 `Console` 类中的一个函数，中间的 `.` 表示访问 `Console` 类中的成员[^2]，此处访问的即为该类中的 `WriteLine()` 函数。
+
+`Console`是控制台的意思，也就是运行程序时看到的那个黑窗口；而 "Console" "." "WriteLine" 就是用 "控制台" "里面的" "写一行字" 函数。
+大家目前只需要对类的事情稍微留一些印象即可，不用过多关注。
 
  函数的后面必须有括号，即使它没有参数。
 
-因为我们目前只看主函数部分，所以以后会将上面那段代码写成如下的形式[^3]：
+因为我们目前只看主函数部分，所以以后会将上面那段代码写成如下的形式：
 
 ```csharp
-using System;
 Console.WriteLine("Hello World!"); // 输出语句
 ```
 
@@ -157,6 +161,8 @@ error CS0103: The name 'console' does not exist in the current context
 `double` 类型可以不严谨的认为是小数
 字符串(`string` 类型)其实我们已经用过了, `"Hello World!"` 便是字符串(注意双引号)
 
+请大家注意 `string` 类型的 `"25"` 和 `int` 类型的 `25` 的区别: 前者是一个字符串, 与 `"abc"` 本质上没有区别, 因此无法参与实数运算, 如果需要则先转换成 `int` 类型
+
 将其他三种类型转换为`double`: `Convert.ToDouble(x)`
 同理:
 
@@ -181,6 +187,10 @@ Console.WriteLine(b*10);
 
 
 ## 变量的声明和定义
+
+如果需要处理代码里没有的数据，就需要声明一个变量。
+
+"变量"是在其生存期内可以更改其值的数据项。可以使用变量来临时存储稍后要在代码中使用的值。
 
 在 `python` 中, 声明变量前不需说明类型, 例如:
 
@@ -223,7 +233,7 @@ Console.WriteLine(a);
 错误	CS0029	无法将类型“string”隐式转换为“int”
 {% endnote %}
 
-可以考虑使用上面提过的 `Convert.ToInt32()` 函数, 例如:
+为了将上面的 `string` 类型的 `"55"` 转换为 `int` 类型的 `55`, 可以考虑使用上面提过的 `Convert.ToInt32()` 函数, 例如:
 ```csharp
 int a = 5;
 a = Convert.ToInt32("55");
@@ -255,23 +265,88 @@ Console.WriteLine(a);
 函数的嵌套：
 
 ```csharp
-int a = Convert.ToString(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine());
 ```
 
-类比数学中的复合函数 $f(g(x))$, 嵌套函数的应从内往外开始运行, 也就是先执行 `Console.ReadLine()`, 再把该函数的返回值代入到 `Convert.ToString()` 中
+类比数学中的复合函数 $f(g(x))$, 嵌套函数的应从内往外开始运行, 也就是先执行 `Console.ReadLine()`, 再把该函数的返回值代入到 `Convert.ToInt32()` 中
+
+### WriteLine()的格式化 (format)
+如果想要依次输出a的值, 然后输出" hello ", 然后输出b的值, 以我们之前学的内容应该这么写:
+```csharp
+int a = 5;
+string b = "world";
+Console.WriteLine(Convert.ToString(a) + " hello " + b); // 先将 a 转换为字符串后进行字符串的串联(加法)
+```
+
+但这样很是麻烦, 有没有更简单的方法呢?
+
+~~既然我这么说了~~当然是有的:
+
+```csharp
+int a = 5;
+string b = "world";
+Console.WriteLine("{0} hello {1}", a, b);
+```
+
+其中 {n} 表示字符串后面的第 `n` 个对象
+
 
 ## 运算符
+`C#` 中的算术/比较/赋值运算符与 `python` 基本相同, 但却仍有很多差别:
 
-`C#` 中的算术/比较/赋值运算符与 `python` 基本相同, 因此不在此详细列出, 可前往[菜鸟教程](https://www.runoob.com/csharp/csharp-operators.html)自行阅读, 但有几点需要注意:
+### 算术运算符
+
+```csharp
+int a = 5, b = 10;
+Console.WriteLine(a + b); // 输出 15
+Console.WriteLine(a - b); // 输出 -5
+Console.WriteLine(a * b); // 输出 50
+Console.WriteLine(a / b); // 输出 0
+```
+
+大家请注意最后 `a/b` 的结果: `5/10` 返回的结果竟然是 `0`
+
+那让我们再试一下这段代码：
+```csharp
+int a = 5;
+double b = 10.0;
+Console.WriteLine(a / b); // 输出 0.5
+```
+
+这样写输出的结果就变成了 `0.5`
 
 {% note danger flat %}
-1. 不能把表达式写成形如 `a <= x <= b` 的形式, 应该写为 `a <= x && x <= b` 
+`C#` 中的 `/` 在两个操作数中有一个是浮点数时才会为实数除法, 否则会向 `0` 取整, 例如: `-5/2` 的结果是 `-2`, `-5/2.0` 的结果是 `-2.5`
+{% endnote %}
 
-2. `C#` 中的 `/` 在两个操作数中有一个是浮点数时才会为实数除法, 否则会向 `0` 取整, 例如: `-5/2` 的结果是 `-2`, `-5/2.0` 的结果是 `-2.5`
+### 比较运算符
+```csharp
+    int a=5, b=10;
+    Console.WriteLine(a == b); //输出 False
+    Console.WriteLine(a != b); //输出 True
+    Console.WriteLine(a >= b); //输出 False
+    Console.WriteLine(a <= b); //输出 True
+    Console.WriteLine(a > b);  //输出 False
+    Console.WriteLine(a < b);  //输出 True
+```
 
-3. `C#` 中没有 `**` `//` 等运算符
+那让我们试试下面的代码:
+```csharp
+    Console.WriteLine(7 < 5 < 10);
+```
 
-  {% endnote %}
+与我们的预期相反, 这段代码报错了:
+{% note danger flat %}
+CS0019	运算符“<”无法应用于“bool”和“int”类型的操作数
+{% endnote %}
+
+这是因为编译器会把表达式 `7 < 5 < 10` 理解为 `(7 < 5) < 5`, 而`7 < 5` 会返回 `False`, 而在 `C#` 中 `bool` 类型不能直接与 `int` 类型进行比较, 也不能隐式转换成 `int` 类型, 因此这个表达式会报错
+
+{% note danger flat %}
+不能把表达式写成形如 `a <= x <= b` 的形式, 应该写为 `a <= x && x <= b` (`&&` 表示 "并且", 将在后面的逻辑运算符进行讲解)
+{% endnote %}
+
+另外, `C#` 中没有 `**` 等运算符, 如果想求出 $a^b$, 请使用 `Math.Pow(a, b);`
 
 ### 例 1-1 (a+b)×c (洛谷B2008)
 
@@ -295,7 +370,7 @@ Console.WriteLine((a+b)*c);
 
 string类型也可以进行 "+" 操作, 例如 "abc" + "def" 会得到 "abcdef"
 
-另外, `C#` 中还有 `++` 运算符, `a++` 基本相当于 `a += 1` 也就是 `a = a+1`[^4], `--`运算符同理
+另外, `C#` 中还有 `++` 运算符, `a++` 基本相当于 `a += 1` 也就是 `a = a+1`[^3], `--`运算符同理
 
 `C#` 中的逻辑运算符如下(已知A = true, B = false):
 
@@ -322,7 +397,8 @@ if(score == 0) {
 int score = 0;
 if(score == 0) {
     Console.WriteLine("我爆零了");
-} else {
+} 
+else {
     Console.WriteLine("我没爆零");
 }
 ```
@@ -332,11 +408,13 @@ if(score == 0) {
 代码1, 这段代码相当于三选一:
 
 ```csharp
-if(a){
+if(a) {
     // a 为 true 时运行
-} else if(b) {
+} 
+else if(b) {
     // a 为 false 且 b 为 true 时运行
-} else {
+} 
+else {
     // a,b 都为 false 时运行
 }
 ```
@@ -344,29 +422,16 @@ if(a){
 代码2, 注意这时后两个分支与 `a` 无关
 
 ```csharp
-if(a){
+if(a) {
     // a 为 true 时运行
-} if(b) {
-    // b 为 true 时运行, 与 a 无关
-} else {
-    // b 为 false 时运行, 与 a 无关
-}
-```
-
-为了避免误会代码2的意思, 应该被写成这样:
-
-```csharp
-if(a){
-    // a 为 true 时运行
-} 
-
+}  
 if(b) {
     // b 为 true 时运行, 与 a 无关
-} else {
+} 
+else {
     // b 为 false 时运行, 与 a 无关
 }
 ```
-
 
 
 ### 例题 1-2 判断数正负(洛谷B2035)
@@ -392,9 +457,11 @@ if(n < 0) {
 int n = Convert.ToInt32(Console.ReadLine());
 if(n > 0) {
     Console.WriteLine("positive");
-} else if(n == 0) { // 注意这行变成 else if
+} 
+else if(n == 0) { // 注意这行变成 else if
     Console.WriteLine("zero");
-} else {
+} 
+else {
     Console.WriteLine("negative");
 }
 ```
@@ -412,13 +479,77 @@ if(n > 0) {
 
 输入三个整数, 按从小到大排序后输出
 
+### 挑战：
+本题只使用3个if语句便可完成任务
+
 ## 1-3 一元二次方程
 利用求根公式求一元二次方程实数根。有两实根时按大小顺序输出，一实根时输出那一个根，无实根时输出 "No Answer"
+
+提示: 使用 `Math.Pow(a, b);` 求出 $a^b$ 的值
+
+---
+# 练习参考答案
+## 1-1 直角三角形
+```csharp
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
+
+if(a*a == b*b + c*c || b*b == a*a + c*c || c*c == a*a + b*b) {
+    Console.WriteLine("yes");
+} 
+else {
+    Console.WriteLine("no");
+}
+```
+
+{% note info flat %}
+如果你不知道哪个运算符的优先级比较高, 那就多加括号
+{% endnote %}
+
+### 1-1-2
+```csharp
+if(a + b <= c && a + c <= b) {
+    Console.WriteLine("not a triangle");
+} 
+else {
+    if(a*a == b*b + c*c || b*b == a*a + c*c || c*c == a*a + b*b) {
+        Console.WriteLine("yes");
+    } 
+    else {
+        Console.WriteLine("no");
+    }				
+}	
+```
+
+## 1-2 三排序
+```csharp
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
+
+if(a > b){
+    int temp = a;
+    a = b;
+    b = temp;
+}
+if(a > c){
+    int temp = a;
+    a = c;
+    c = temp;
+}
+if(b > c){
+    int temp = b;
+    b = c;
+    c = temp;
+}
+
+Console.WriteLine("{0}\n{1}\n{2}", a, b, c);
+```
 
 ---
 
 [^1]: `C#` 中的函数称作方法, 但出于简单起见以后全部称为函数
 [^2]: 其学名为成员访问运算符
-[^3]: 这种类似 `python` 的代码其实是 `.net5.0` 中的新特性：顶级语句。这样的程序在 `.net5.0运行时` 是可以通过编译并正常运行的。
-[^4]: `a++` 与 `++a` 放在表达式里有些区别, 因此在没弄清楚前不要写诸如 `b = a++;` 这种式子 
+[^3]: `a++` 与 `++a` 放在表达式里有些区别, 因此在没弄清楚前不要写诸如 `b = a++;` 这种式子 
 
