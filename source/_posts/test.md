@@ -54,7 +54,7 @@ $$
 \sum_{i=0}^{n}a_i
 $$
 
-试试行内公式: $f ^ { \prime } ( x ) = 2 x ^ { 2 }$
+试试行内公式: $f^{\prime}(x) = 2x^{2}$
 
 [^这是脚注]
 
@@ -141,6 +141,38 @@ danger 提示块标签
 {% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right,purple larger %}
 {% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right,orange larger %}
 {% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right,green larger %}
+
+
+
+{% tabs test1 %}
+<!-- tab -->
+**This is Tab 1.**
+<!-- endtab -->
+
+<!-- tab -->
+**This is Tab 2.**
+<!-- endtab -->
+
+<!-- tab -->
+**This is Tab 3.**
+<!-- endtab -->
+{% endtabs %}
+
+
+
+{% tabs test4 %}
+<!-- tab 第一個Tab -->
+**tab名字為第一個Tab**
+<!-- endtab -->
+
+<!-- tab @fab fa-apple-pay -->
+**只有圖標 沒有Tab名字**
+<!-- endtab -->
+
+<!-- tab 炸彈@fas fa-bomb -->
+**名字+icon**
+<!-- endtab -->
+{% endtabs %}
 
 ---
 

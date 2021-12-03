@@ -16,6 +16,24 @@ date: 2021-11-23 00:00:00
 
 因为高一学校的信息课会学习 `python`，因此默认读者有简单的 `python` 基础，故常常会与 `python` 的语法进行比较而且基础语法可能会讲的稍微快一些。
 
+## 可能有用的网址
+
+### 教程/文档：
+
+[菜鸟教程](https://www.runoob.com/csharp/csharp-tutorial.html) 
+
+[微软官网教程](https://docs.microsoft.com/zh-cn/learn/paths/csharp-first-steps/)
+
+## IDE：
+
+IDE即集成开发环境, 可以不严谨的理解为写代码并运行所用的软件
+
+[Visual Studio](https://visualstudio.microsoft.com/zh-hans/downloads/)：如果可以的话 `VS` 对于写 `C#` 必然是首选
+
+[Sharp Develop](https://sourceforge.net/projects/sharpdevelop/)：`VS` 中很多功能对于初学者没有必要，所以也建议用 `Sharp Devlop` ，安装包仅十几MB
+
+如果因为各种原因没安装IDE可以使用菜鸟教程的[C#在线工具](https://c.runoob.com/compile/14/)
+
 # 简介
 
 {% note flat %}
@@ -85,14 +103,6 @@ namespace ConsoleApp // ConsoleApp命名空间(namespace)
 
 之所以这么麻烦，是因为微软规定，代码必须得被包含在函数里，函数必须得被包含在类里，类又必须得被包含在命名空间里…所以咱的代码就给包成了个三明治，不像 `python` 直接开始写就行。
 
-{% note warning flat %}
-
-不要把单词拼错（英语不好的同学可能有些困难，但是请尽量），拼错单词英语考试里会没分，`C#` 里会编译失败
-
-`C#` 代码是区分大小写的！请注意各个单词的大小写，大小写搞错也会导致编译错误。一般来说`namespace`, `class`等“关键字”是全小写，其余是各单词首字母大写。
-
-{% endnote %}
-
 大家可能会觉得，这样比功能相同的 `python` 代码要繁琐很多，这样的设计看似没有必要，但实际上在大型的项目里能展现出它的优势
 
 不过还是那句话，外面的包装是我们初学者不需太关心的
@@ -111,22 +121,63 @@ using System;
 Console.WriteLine("Hello World!"); // 输出语句
 ```
 
+如果你把上面的 `Console` 改为 `console`, 你会在“输出”区域看到一条错误消息：
+
+{% note danger flat %}
+
+error CS0103: The name 'console' does not exist in the current context
+
+{% endnote %}
+
+翻译一下就是 `console` 在当前上下文中不存在, 也就是说, 编译器不认识 `console`, 只认识 `Console`
+
+{% note warning flat %}
+
+不要把单词拼错（英语不好的同学可能有些困难，但是请尽量），拼错单词英语考试里会没分，`C#` 里会编译失败
+
+`C#` 代码是区分大小写的！请注意各个单词的大小写，大小写搞错也会导致编译错误。一般来说`namespace`, `class`等“关键字”是全小写，其余是各单词首字母大写。
+
+{% endnote %}
 
 # 基本语法
 
 ## 数据类型
 
-此处仅讲解值类型
-
 在学习初期我们会见到的值类型如下:
 
-| 类型   | 描述                | 范围                            | 默认值  |
-| ------ | ------------------- | ------------------------------- | ------- |
-| bool   | 布尔值              | `true` 或 `false`               | `false` |
-| char   | 16 位 Unicode 字符  | U+0000 到 U+FFFF                | '\0'    |
-| double | 64 位双精度浮点型   | ±5.0 × 10^−324 到 ±1.7 × 10^308 | 0.0D    |
-| int    | 32 位有符号整数类型 | 约±20亿                         | 0       |
-| long   | 64 位有符号整数类型 | (约±9e18)                       | 0L      |
+| 类型   | 描述                | 范围              | 默认值  |
+| ------ | ------------------- | ----------------- | ------- |
+| bool   | 布尔值             | `true` 或 `false` | `false` |
+| double | 浮点型   | 非常大            | 0.0D    |
+| int    | 整型 | 约±20亿           | 0       |
+| string | 字符串 (文本)      | -                | 空(null)  |
+
+`bool` 即布尔值, 参与逻辑运算, 值只能是 `true` 或 `false` 其中一个
+`int` 即整数, 一般表示整数用 `int` 即可
+`double` 类型可以不严谨的认为是小数
+字符串(`string` 类型)其实我们已经用过了, `"Hello World!"` 便是字符串(注意双引号)
+
+将其他三种类型转换为`double`: `Convert.ToDouble(x)`
+同理:
+
+- 转换为 `string` 的代码为: `Convert.ToString(x)`
+
+- 转换为 `int` 的代码为: `Convert.ToInt32(x)` 
+
+  (这个需要写为 `Int32` 比较特殊, 不过并不需要特殊记忆, 因为 `IDE` 的代码补全会有提示)
+
+类型转换的用法例如: (代码中的 `string a` `int b` 等的用法会在下面介绍)
+
+```csharp
+string a = "55"; 
+int b = Convert.ToInt32(b);
+Console.WriteLine(b*10);
+```
+
+输出结果为:
+{% note default flat %}
+550
+{% endnote %}
 
 
 ## 变量的声明和定义
@@ -141,11 +192,16 @@ print(a)
 但在 `C#` 中需要显示指明类型应写为这样:
 
 ```csharp
-int a = 5; // 此后省略 using System;
+int a = 5;
 Console.WriteLine(a);
 ```
 
-另一点是 `C#` 中一个变量的类型在声明时已经固定, 不能赋其他的值
+```csharp
+string a = "abc";
+Console.WriteLine(a);
+```
+
+另一点是 `C#` 中一个变量的类型在声明时已经固定, 不能赋其他类型的值
 
 在 `python` 中, 这样的代码是合法的:
 ```python
@@ -157,9 +213,22 @@ print(a)
 
 但在 `C#` 中会报错:
 
+```csharp
+int a = 5;
+a = "55";
+Console.WriteLine(a);
+```
+
 {% note danger flat %}
 错误	CS0029	无法将类型“string”隐式转换为“int”
 {% endnote %}
+
+可以考虑使用上面提过的 `Convert.ToInt32()` 函数, 例如:
+```csharp
+int a = 5;
+a = Convert.ToInt32("55");
+Console.WriteLine(a);
+```
 
 ## 标准输入输出
 
@@ -183,9 +252,17 @@ a = Console.ReadLine();
 Console.WriteLine(a);
 ```
 
+函数的嵌套：
+
+```csharp
+int a = Convert.ToString(Console.ReadLine());
+```
+
+类比数学中的复合函数 $f(g(x))$, 嵌套函数的应从内往外开始运行, 也就是先执行 `Console.ReadLine()`, 再把该函数的返回值代入到 `Convert.ToString()` 中
+
 ## 运算符
 
-`C#` 中的算术/比较/赋值运算符与 `python` 基本相同, 因此不在此列出, 可前往[菜鸟教程](https://www.runoob.com/csharp/csharp-operators.html)自行阅读, 但有几点需要注意:
+`C#` 中的算术/比较/赋值运算符与 `python` 基本相同, 因此不在此详细列出, 可前往[菜鸟教程](https://www.runoob.com/csharp/csharp-operators.html)自行阅读, 但有几点需要注意:
 
 {% note danger flat %}
 1. 不能把表达式写成形如 `a <= x <= b` 的形式, 应该写为 `a <= x && x <= b` 
@@ -196,9 +273,31 @@ Console.WriteLine(a);
 
   {% endnote %}
 
-另外, `C#` 中还有 `++` 运算符, `a++` 基本相当于 `a += 1` [^4], `--`运算符同理
+### 例 1-1 (a+b)×c (洛谷B2008)
 
-`C#` 中的逻辑运算符如下(A = true, B = false):
+读入 3 个整数 a,b,c, 输出表达式 $(a+b) \times c$  的值。
+
+示例代码:
+
+```csharp
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
+int answer = (a+b)*c;
+Console.WriteLine(answer);
+```
+
+你可以将最后两行合并写成:
+
+```csharp
+Console.WriteLine((a+b)*c);
+```
+
+string类型也可以进行 "+" 操作, 例如 "abc" + "def" 会得到 "abcdef"
+
+另外, `C#` 中还有 `++` 运算符, `a++` 基本相当于 `a += 1` 也就是 `a = a+1`[^4], `--`运算符同理
+
+`C#` 中的逻辑运算符如下(已知A = true, B = false):
 
 | 运算符 | 描述                                                         | 实例              | python |
 | :----- | :----------------------------------------------------------- | :---------------- | ------ |
@@ -212,9 +311,91 @@ Console.WriteLine(a);
 
 ```csharp
 int score = 0;
-if(score == 0)
-{
+if(score == 0) {
     Console.WriteLine("我爆零了");
+}
+```
+
+`else` 中的语句只有在对应的 `if` 的条件不满足的时候才会执行, 例如:
+
+```csharp
+int score = 0;
+if(score == 0) {
+    Console.WriteLine("我爆零了");
+} else {
+    Console.WriteLine("我没爆零");
+}
+```
+
+注意下面两段代码的区别:
+
+代码1, 这段代码相当于三选一:
+
+```csharp
+if(a){
+    // a 为 true 时运行
+} else if(b) {
+    // a 为 false 且 b 为 true 时运行
+} else {
+    // a,b 都为 false 时运行
+}
+```
+
+代码2, 注意这时后两个分支与 `a` 无关
+
+```csharp
+if(a){
+    // a 为 true 时运行
+} if(b) {
+    // b 为 true 时运行, 与 a 无关
+} else {
+    // b 为 false 时运行, 与 a 无关
+}
+```
+
+为了避免误会代码2的意思, 应该被写成这样:
+
+```csharp
+if(a){
+    // a 为 true 时运行
+} 
+
+if(b) {
+    // b 为 true 时运行, 与 a 无关
+} else {
+    // b 为 false 时运行, 与 a 无关
+}
+```
+
+
+
+### 例题 1-2 判断数正负(洛谷B2035)
+
+给定一个整数 `N`，判断其正负。如果 N>0, 输出 `positive` ; 如果 N=0, 输出 `zero` ; 如果 N<0, 输出 `negative`。
+
+```csharp
+int n = Convert.ToInt32(Console.ReadLine());
+if(n > 0) {
+    Console.WriteLine("positive");
+}
+if(n == 0) {
+    Console.WriteLine("zero");
+}
+if(n < 0) {
+    Console.WriteLine("negative");
+}
+```
+
+也可以写成:
+
+```csharp
+int n = Convert.ToInt32(Console.ReadLine());
+if(n > 0) {
+    Console.WriteLine("positive");
+} else if(n == 0) { // 注意这行变成 else if
+    Console.WriteLine("zero");
+} else {
+    Console.WriteLine("negative");
 }
 ```
 
@@ -225,11 +406,14 @@ if(score == 0)
 
 ### 1-1-2
 
-若为直角三角形输出 `yes`, 否则若能够构成三角形输出 `no`, 不能构成三角形输出 `not a triangle`
+判断条件改为: 若为直角三角形输出 `yes`, 否则若能够构成三角形输出 `no`, 不能构成三角形输出 `not a triangle`
 
 ## 1-2 三排序
 
 输入三个整数, 按从小到大排序后输出
+
+## 1-3 一元二次方程
+利用求根公式求一元二次方程实数根。有两实根时按大小顺序输出，一实根时输出那一个根，无实根时输出 "No Answer"
 
 ---
 
