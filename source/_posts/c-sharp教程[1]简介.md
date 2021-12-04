@@ -6,6 +6,7 @@ categories:
   - 电子电路社
   - c#教程
 cover: 'https://s6.jpg.cm/2021/11/28/LLO4yG.jpg'
+mathjax: true
 abbrlink: 38394
 date: 2021-11-23 00:00:00
 ---
@@ -71,6 +72,15 @@ namespace ConsoleApp // ConsoleApp命名空间(namespace)
 }
 ```
 
+{% note info %}
+
+对于多数`IDE`:
+
+在显示候选列表时：按Tab可以采纳选中的建议，按↑↓可以浏览不同的建议，如果不想要这些建议可以按Esc退出候选列表
+在没有显示候选列表时：按Tab可以插入四个空格，按Shift+Tab可以去掉四个空格，在一行开头加空格是让代码整齐的好习惯；按上下键就是上一行下一行
+
+{% endnote %}
+
 ## 程序结构
 
 显然：
@@ -91,17 +101,18 @@ namespace ConsoleApp // ConsoleApp命名空间(namespace)
 举个例子来说，就像这样：
 
 ```中文
-学校 南开中学 {
- 学生 小明 {
-  自己的 铅笔盒 (很大) {
-   铅笔
-   橡皮
-  }
- }
+学校 南开中学
+{
+    学生 小明
+    {
+        参加考试(考试地点) {
+            考试过程
+        }
+    }
 }
 ```
 
-你可能想直接描述小明的铅笔盒里有什么，但是C#里就得一笔带过地稍微描述下小明这人和它的学校。
+你可能想直接描述小明考试的过程，但是 `C#` 里就得一笔带过地稍微描述下小明这人和它的学校。
 
 之所以这么麻烦，是因为微软规定，代码必须得被包含在函数里，函数必须得被包含在类里，类又必须得被包含在命名空间里…所以咱的代码就给包成了个三明治，不像 `python` 直接开始写就行。
 
@@ -492,84 +503,7 @@ else {
 
 ---
 # 练习参考答案
-## 1-1 直角三角形
-```csharp
-int a = Convert.ToInt32(Console.ReadLine());
-int b = Convert.ToInt32(Console.ReadLine());
-int c = Convert.ToInt32(Console.ReadLine());
-
-if(a*a == b*b + c*c || b*b == a*a + c*c || c*c == a*a + b*b) {
-    Console.WriteLine("yes");
-} 
-else {
-    Console.WriteLine("no");
-}
-```
-
-{% note info flat %}
-如果你不知道哪个运算符的优先级比较高, 那就多加括号
-{% endnote %}
-
-### 1-1-2
-```csharp
-if(a + b <= c && a + c <= b) {
-    Console.WriteLine("not a triangle");
-} 
-else {
-    if(a*a == b*b + c*c || b*b == a*a + c*c || c*c == a*a + b*b) {
-        Console.WriteLine("yes");
-    } 
-    else {
-        Console.WriteLine("no");
-    }				
-}	
-```
-
-## 1-2 三排序
-```csharp
-int a = Convert.ToInt32(Console.ReadLine());
-int b = Convert.ToInt32(Console.ReadLine());
-int c = Convert.ToInt32(Console.ReadLine());
-
-if(a > b){
-    int temp = a;
-    a = b;
-    b = temp;
-}
-if(a > c){
-    int temp = a;
-    a = c;
-    c = temp;
-}
-if(b > c){
-    int temp = b;
-    b = c;
-    c = temp;
-}
-
-Console.WriteLine("{0}\n{1}\n{2}", a, b, c);
-```
-
-## 1-3 一元二次方程
-
-```csharp
-int a = Convert.ToInt32(Console.ReadLine());
-int b = Convert.ToInt32(Console.ReadLine());
-int c = Convert.ToInt32(Console.ReadLine());
-
-double delta = b * b - 4 * a * c;
-
-if(delta < 0) {
-Console.WriteLine("No Answer");
-}
-else {
-Console.WriteLine("{0:F2}", (- b - Math.Sqrt(delta))/2/a);
-}
-
-if(delta > 0){
-Console.WriteLine("{0:F2}", (- b + Math.Sqrt(delta))/2/a);
-}
-```
+稍后公布
 
 ---
 

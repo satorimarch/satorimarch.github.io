@@ -1,5 +1,6 @@
 ---
 title: test
+mathjax: true
 abbrlink: 63534
 date: 2021-11-28 00:00:00
 ---
@@ -54,7 +55,7 @@ $$
 \sum_{i=0}^{n}a_i
 $$
 
-试试行内公式: $f^{\prime}(x) = 2x^{2}$
+试试行内公式 $f^{\prime}(x) = 2x^{2}$
 
 [^这是脚注]
 
