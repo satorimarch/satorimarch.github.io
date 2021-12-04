@@ -63,7 +63,7 @@ $$
 
 ---
 
-> 以下部分的[详细使用方法](https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89)
+> 以下部分的[来源和详细使用方法](https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89)
 
 {% label 这是红色 red %}
 

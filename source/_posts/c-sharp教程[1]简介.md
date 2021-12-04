@@ -27,7 +27,7 @@ date: 2021-11-23 00:00:00
 
 [微软官网教程](https://docs.microsoft.com/zh-cn/learn/paths/csharp-first-steps/)
 
-## IDE：
+### IDE：
 
 IDE即集成开发环境, 可以不严谨的理解为写代码并运行所用的软件
 
@@ -49,13 +49,17 @@ IDE即集成开发环境, 可以不严谨的理解为写代码并运行所用的
 
 # 第一个 `C#` 程序
 
-各位同学在课内学习过一点 `python` 程序设计语言。这是一个能打印出 `“hello world”` 的 `python` 程序：
+各位同学在课内学习过一点 `python` 程序设计语言。这是一个能打印出 `"hello world"` 的 `python` 程序：
 
 ```python
 print("hello world")
 ```
 
 在真正上手写 `C#` 之前，我们先来看一个能实现同样功能的C#程序，来大致了解一下 `C#` 语言是怎样的：
+
+{% note info flat %}
+`//` 代表开始单行注释，`//` 之后的内容是解释代码意思的文字而与程序的运行无关
+{% endnote %}
 
 ```csharp
 using System;
@@ -72,15 +76,6 @@ namespace ConsoleApp // ConsoleApp命名空间(namespace)
 }
 ```
 
-{% note info %}
-
-对于多数`IDE`:
-
-在显示候选列表时：按Tab可以采纳选中的建议，按↑↓可以浏览不同的建议，如果不想要这些建议可以按Esc退出候选列表
-在没有显示候选列表时：按Tab可以插入四个空格，按Shift+Tab可以去掉四个空格，在一行开头加空格是让代码整齐的好习惯；按上下键就是上一行下一行
-
-{% endnote %}
-
 ## 程序结构
 
 显然：
@@ -90,9 +85,6 @@ namespace ConsoleApp // ConsoleApp命名空间(namespace)
 
 - 代码似乎被大括号分成了很多块
 
-{% note info flat %}
-`//` 代表开始单行注释，`//` 之后的内容是解释代码意思的文字而与程序的运行无关
-{% endnote %}
 
 大括号的包含关系是 `C#` 的一个特点。这里有一个命名空间（`namespace`），里面包着一个类（`class`），类里面包着一个“主函数[^1]”（`Main`），主函数里装着我们真正的打印文字的代码。
 
@@ -194,6 +186,19 @@ Console.WriteLine(b*10);
 输出结果为:
 {% note default flat %}
 550
+{% endnote %}
+
+在初学阶段, 建议手动输入一遍本文中的例子来加深记忆
+
+{% note info %}
+
+对于多数 `IDE` :
+
+当你在输入内容的时候, 你很可能会看到代码补全的候选列表
+
+在显示候选列表时：按Tab可以采纳选中的建议，按↑↓可以浏览不同的建议，如果不想要这些建议可以按Esc退出候选列表
+在没有显示候选列表时：按Tab可以插入四个空格，按Shift+Tab可以去掉四个空格，在一行开头加空格是让代码整齐的好习惯；按上下键就是上一行下一行
+
 {% endnote %}
 
 
@@ -303,7 +308,7 @@ Console.WriteLine("{0} hello {1}", a, b);
 
 
 ## 运算符
-`C#` 中的算术/比较/赋值运算符与 `python` 基本相同, 但却仍有很多差别:
+`C#` 中的算术/比较/赋值运算符与 `python` 基本相同, 但也仍有很多差别。
 
 ### 算术运算符
 
@@ -330,35 +335,6 @@ Console.WriteLine(a / b); // 输出 0.5
 `C#` 中的 `/` 在两个操作数中有一个是浮点数时才会为实数除法, 否则会向 `0` 取整, 例如: `-5/2` 的结果是 `-2`, `-5/2.0` 的结果是 `-2.5`
 {% endnote %}
 
-### 比较运算符
-```csharp
-    int a=5, b=10;
-    Console.WriteLine(a == b); //输出 False
-    Console.WriteLine(a != b); //输出 True
-    Console.WriteLine(a >= b); //输出 False
-    Console.WriteLine(a <= b); //输出 True
-    Console.WriteLine(a > b);  //输出 False
-    Console.WriteLine(a < b);  //输出 True
-```
-
-那让我们试试下面的代码:
-```csharp
-    Console.WriteLine(7 < 5 < 10);
-```
-
-与我们的预期相反, 这段代码报错了:
-{% note danger flat %}
-CS0019	运算符“<”无法应用于“bool”和“int”类型的操作数
-{% endnote %}
-
-这是因为编译器会把表达式 `7 < 5 < 10` 理解为 `(7 < 5) < 5`, 而`7 < 5` 会返回 `False`, 而在 `C#` 中 `bool` 类型不能直接与 `int` 类型进行比较, 也不能隐式转换成 `int` 类型, 因此这个表达式会报错
-
-{% note danger flat %}
-不能把表达式写成形如 `a <= x <= b` 的形式, 应该写为 `a <= x && x <= b` (`&&` 表示 "并且", 将在后面的逻辑运算符进行讲解)
-{% endnote %}
-
-另外, `C#` 中没有 `**` 等运算符, 如果想求出 $a^b$, 请使用 `Math.Pow(a, b);`
-
 ### 例 1-1 (a+b)×c (洛谷B2008)
 
 读入 3 个整数 a,b,c, 输出表达式 $(a+b) \times c$  的值。
@@ -383,6 +359,39 @@ string类型也可以进行 "+" 操作, 例如 "abc" + "def" 会得到 "abcdef"
 
 另外, `C#` 中还有 `++` 运算符, `a++` 基本相当于 `a += 1` 也就是 `a = a+1`[^3], `--`运算符同理
 
+### 比较运算符
+
+```csharp
+int a=5, b=10;
+Console.WriteLine(a == b); //输出 False
+Console.WriteLine(a != b); //输出 True
+Console.WriteLine(a >= b); //输出 False
+Console.WriteLine(a <= b); //输出 True
+Console.WriteLine(a > b);  //输出 False
+Console.WriteLine(a < b);  //输出 True
+```
+
+那让我们试试下面的代码:
+
+```csharp
+Console.WriteLine(7 < 5 < 10);
+```
+
+与我们的预期相反, 这段代码报错了:
+{% note danger flat %}
+CS0019	运算符“<”无法应用于“bool”和“int”类型的操作数
+{% endnote %}
+
+这是因为编译器会把表达式 `7 < 5 < 10` 理解为 `(7 < 5) < 5`, 而`7 < 5` 会返回 `False`, 而在 `C#` 中 `bool` 类型不能直接与 `int` 类型进行比较, 也不能隐式转换成 `int` 类型, 因此这个表达式会报错
+
+{% note danger flat %}
+不能把表达式写成形如 `a <= x <= b` 的形式, 应该写为 `a <= x && x <= b` (`&&` 表示 "并且", 将在后面的逻辑运算符进行讲解)
+{% endnote %}
+
+另外, `C#` 中没有 `**` 等运算符, 如果想求出 $a^b$, 请使用 `Math.Pow(a, b);`
+
+### 逻辑运算符
+
 `C#` 中的逻辑运算符如下(已知A = true, B = false):
 
 | 运算符 | 描述                                                         | 实例              | python |
@@ -390,6 +399,16 @@ string类型也可以进行 "+" 操作, 例如 "abc" + "def" 会得到 "abcdef"
 | &&     | 称为逻辑与运算符。如果两个操作数都非零，则条件为真。         | (A && B) 为假。   | and    |
 | &#124;&#124; | 称为逻辑或运算符。如果两个操作数中有任意一个非零，则条件为真。 | (A &#124;&#124; B) 为真。 | or     |
 | !      | 称为逻辑非运算符。用来逆转操作数的逻辑状态。如果条件为真则变为假。 | !(A && B) 为真。  | not    |
+
+```csharp
+bool a = true, b = true, c = false;
+Console.WriteLine(a && b); //输出 True
+Console.WriteLine(a && c); //输出 False
+Console.WriteLine(a || b); //输出 True
+Console.WriteLine(a || c); //输出 True
+Console.WriteLine(!a);  //输出 False
+Console.WriteLine(!c);  //输出 True
+```
 
 ## `if()`语句
 
