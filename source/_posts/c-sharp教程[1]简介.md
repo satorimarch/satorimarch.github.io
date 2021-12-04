@@ -480,12 +480,15 @@ else {
 输入三个整数, 按从小到大排序后输出
 
 ### 挑战：
-本题只使用3个if语句便可完成任务
+本题只使用3个 `if` 语句便可完成任务
 
 ## 1-3 一元二次方程
-利用求根公式求一元二次方程实数根。有两实根时按大小顺序输出，一实根时输出那一个根，无实根时输出 "No Answer"
+依次给出一元二次方程的a,b,c(均为整数, $a\neq 0$), 利用求根公式求一元二次方程实数根, 保留两位小数。有两实根时先输出更小的，一实根时输出那一个根，无实根时输出 `"No Answer"`
 
-提示: 使用 `Math.Pow(a, b);` 求出 $a^b$ 的值
+提示: 
+
+- 使用 `Console.WriteLine({0:F2}, 0.125);` 来对 `0.125` 保留 `2` 位小数, 其中 `F2` 的 `2` 表示两位
+- 使用 `Math.Sqrt(a)` 来 求出 $\sqrt a$
 
 ---
 # 练习参考答案
@@ -545,6 +548,27 @@ if(b > c){
 }
 
 Console.WriteLine("{0}\n{1}\n{2}", a, b, c);
+```
+
+## 1-3 一元二次方程
+
+```csharp
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
+
+double delta = b * b - 4 * a * c;
+
+if(delta < 0) {
+Console.WriteLine("No Answer");
+}
+else {
+Console.WriteLine("{0:F2}", (- b - Math.Sqrt(delta))/2/a);
+}
+
+if(delta > 0){
+Console.WriteLine("{0:F2}", (- b + Math.Sqrt(delta))/2/a);
+}
 ```
 
 ---
