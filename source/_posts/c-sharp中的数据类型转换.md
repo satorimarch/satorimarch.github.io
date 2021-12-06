@@ -1,5 +1,5 @@
 ---
-title: 'C#教程[3] 数据类型转换'
+title: 'C#中的数据类型转换'
 tags:
   - c#
 categories:

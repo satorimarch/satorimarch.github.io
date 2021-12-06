@@ -10,7 +10,7 @@ abbrlink: 3965
 date: 2021-11-29 00:00:00
 ---
 
-{% note warning flat %}
+{% note danger flat %}
 本文未完工
 {% endnote %}
 
@@ -30,10 +30,10 @@ while(true)
 其中小括号里的为条件, 大括号里的(即这个代码块)为参与循环的部分
 
 {% note warning flat %}
-不能写成 `while(1)`, 当你学习完下一章数据类型转换的时候你会对此有更深的感悟
+不能写成 `while(1)`, 当你了解了 `C#` 中的数据类型转换机制的时候你会对此有更深的感悟
 {% endnote %}
 
-# `for`循环
+# `for` 循环
 
 ```csharp
 for (int i=0; i < 10; i++)
@@ -63,4 +63,4 @@ for(int i=1; ; i++)
     int bb = n % 100; // 取后2位数字
     if (aa / 10 == aa % 10 && bb / 10 == bb % 10) Console.WriteLine(n);
 }
-``` 
+```
