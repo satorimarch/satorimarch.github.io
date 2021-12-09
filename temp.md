@@ -1,4 +1,4 @@
-## 1-1 直角三角形
+## 1-2 直角三角形
 ```csharp
 int a = Convert.ToInt32(Console.ReadLine());
 int b = Convert.ToInt32(Console.ReadLine());
@@ -16,7 +16,7 @@ else {
 如果你不知道哪个运算符的优先级比较高, 那就多加括号
 {% endnote %}
 
-### 1-1-2
+### 1-2-2
 ```csharp
 if(a + b <= c && a + c <= b || b + c <= a) {
     Console.WriteLine("not a triangle");
@@ -31,7 +31,7 @@ else {
 }	
 ```
 
-## 1-2 三排序
+## 1-3 三排序
 ```csharp
 int a = Convert.ToInt32(Console.ReadLine());
 int b = Convert.ToInt32(Console.ReadLine());
@@ -56,7 +56,7 @@ if(b > c){
 Console.WriteLine("{0}\n{1}\n{2}", a, b, c);
 ```
 
-## 1-3 一元二次方程
+## 1-4 一元二次方程
 
 ```csharp
 int a = Convert.ToInt32(Console.ReadLine());
