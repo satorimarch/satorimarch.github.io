@@ -424,7 +424,7 @@ footer:
 
 # Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
-baidu_analytics:
+baidu_analytics: 463e5f9332f0e3ca87c77181fe9514c6
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
@@ -467,10 +467,10 @@ google_adsense:
 # --------------------------------------
 
 site_verification:
-  # - name: google-site-verification
-  #   content: xxxxxx
-  # - name: baidu-site-verification
-  #   content: xxxxxxx
+  - name: google-site-verification
+    content: IWyWefGb0HPoNf-nZlR55zAl9X55Yss4iVCfmzMGILs
+  - name: baidu-site-verification
+    content: code-QPN4HZQeX8
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------

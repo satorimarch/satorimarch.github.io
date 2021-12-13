@@ -177,6 +177,19 @@ danger 提示块标签
 
 ---
 
+{% hideToggle Butterfly安裝方法 %}
+在你的博客根目錄裏
+
+git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly
+
+如果想要安裝比較新的dev分支，可以
+
+git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly
+
+{% endhideToggle %}
+
+---
+
 > 以下部分修改自这个人的 `typora` 主题的[demo](https://typora-dyzj-theme.vercel.app/#ref-footnote-1)
 
 <kbd>ctrl</kbd>键

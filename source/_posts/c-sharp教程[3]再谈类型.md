@@ -1,5 +1,5 @@
 ---
-title: 'C#教程[2] 再谈类型'
+title: 'C#教程[3] 再谈类型'
 tag:
   - c#
 categories:
