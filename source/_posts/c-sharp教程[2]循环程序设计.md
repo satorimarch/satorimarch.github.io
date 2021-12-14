@@ -82,7 +82,6 @@ rd.Next(5, 11); // 左闭右开，所以此处为 [5,11) 范围内的随机数�
 Random rd = new Random();
 int a = rd.Next(1, 101);
 
-Console.WriteLine("");
 Console.WriteLine("输入你猜测的数字:");
 
 int num = Convert.ToInt32(Console.ReadLine());
@@ -96,7 +95,7 @@ while(num != a) {
     }
     Console.WriteLine("再猜一次吧:");
     num = Convert.ToInt32(Console.ReadLine());
-}
+
 Console.WriteLine("恭喜你猜对了!");
 ```
 
@@ -335,7 +334,7 @@ for(int i=1; i <= n; i++) {
     for(int j=i; j <= n; j++) { // 注意这里 j 的初始值设为 i, 这样才能每次输出星号个数递减
         Console.Write("* ");
     }
-    Console.WriteLine(); // 输出空行
+    Console.WriteLine(); // 输出换行
 }
 ```
 

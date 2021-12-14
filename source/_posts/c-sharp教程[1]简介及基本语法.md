@@ -385,14 +385,14 @@ CS0019	运算符“<”无法应用于“bool”和“int”类型的操作数
 这是因为编译器会把表达式 `7 < 5 < 10` 理解为 `(7 < 5) < 5`, 而`7 < 5` 会返回 `False`, 而在 `C#` 中 `bool` 类型不能直接与 `int` 类型进行比较, 也不能隐式转换成 `int` 类型, 因此这个表达式会报错
 
 {% note danger flat %}
-不能把表达式写成形如 `a <= x <= b` 的形式, 应该写为 `a <= x && x <= b` (`&&` 表示 "并且", 将在后面的逻辑运算符进行讲解)
+不能把表达式写成形如 `a <= x <= b` 的形式, 应该写为 `a <= x && x <= b` （ `&&` 表示 "并且", 将在后面的逻辑运算符进行讲解）
 {% endnote %}
 
 另外, `C#` 中没有 `**` 等运算符, 如果想求出 $a^b$, 请使用 `Math.Pow(a, b);`
 
 ### 逻辑运算符
 
-`C#` 中的逻辑运算符如下(已知A = true, B = false):
+`C#` 中的逻辑运算符如下(已知 A = true, B = false):
 
 | 运算符 | 描述                                                         | 实例              | python |
 | :----- | :----------------------------------------------------------- | :---------------- | ------ |
@@ -406,8 +406,8 @@ Console.WriteLine(a && b); //输出 True
 Console.WriteLine(a && c); //输出 False
 Console.WriteLine(a || b); //输出 True
 Console.WriteLine(a || c); //输出 True
-Console.WriteLine(!a);  //输出 False
-Console.WriteLine(!c);  //输出 True
+Console.WriteLine(!a);     //输出 False
+Console.WriteLine(!c);     //输出 True
 ```
 
 ## `if()`语句
