@@ -645,7 +645,7 @@ aside:
   position: right # left or right
   card_author:
     enable: true
-    description: "普通的高中生, 东方众, 半个OIer"
+    description: "普通的高中生, 东方众, 也许算半个OIer"
     button:
       enable: true
       icon: fab fa-github
@@ -653,7 +653,7 @@ aside:
       link: https://github.com/satorimarch
   card_announcement:
     enable: true
-    content: "Welcome to my blog"
+    content: 'Welcome to my blog<br/><a href="/about/">about me</a>'
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
