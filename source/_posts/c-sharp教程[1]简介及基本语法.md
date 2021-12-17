@@ -35,7 +35,7 @@ IDE即集成开发环境, 可以不严谨的理解为写代码并运行所用的
 
 [Sharp Develop](https://sourceforge.net/projects/sharpdevelop/)：`VS` 中很多功能对于初学者没有必要，所以也建议用 `Sharp Devlop` ，安装包仅十几MB
 
-如果因为各种原因没安装IDE可以使用菜鸟教程的[C#在线工具](https://c.runoob.com/compile/14/)
+如果使用手机或者因为各种原因没安装IDE可以使用在线工具例如[这个]( http://www.dooccn.com/csharp/)
 
 # 简介
 
@@ -179,7 +179,7 @@ error CS0103: The name 'console' does not exist in the current context
 
 ```csharp
 string a = "55"; 
-int b = Convert.ToInt32(b);
+int b = Convert.ToInt32(a);
 Console.WriteLine(b*10);
 ```
 
@@ -522,7 +522,7 @@ else {
 
 提示: 
 
-- 使用 `Console.WriteLine({0:F2}, 0.125);` 来对 `0.125` 保留 `2` 位小数, 其中 `F2` 的 `2` 表示两位
+- 使用 `Console.WriteLine("{0:F2}", 0.125);` 来对 `0.125` 保留 `2` 位小数, 其中 `F2` 的 `2` 表示两位
 - 使用 `Math.Sqrt(a)` 来 求出 $\sqrt a$
 
 ---
