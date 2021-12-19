@@ -16,3 +16,17 @@
    ```
 
 2. `post`文件名中不要有 `#` ，例如 `C#`，`#` 后面的在HTTP请求中会被忽略
+
+3. git 设置代理:
+
+   ```bash
+   git config --global http.proxy http://127.0.0.1:7890
+   ```
+
+   git 取消代理:
+
+   ```bash
+   git config --global --unset http.proxy
+   ```
+
+   
