@@ -18,16 +18,16 @@ date: 2021-11-28 16:13:43
 
 使用 [hexo](https://hexo.io/) 框架，[butterfly](https://github.com/jerryc127/hexo-theme-butterfly) 主题搭建。[源代码](https://github.com/satorimarch/satorimarch.github.io)
 
-# 一些可能有用的网址
+# 一些可能有用/有意思的网址
 
 ## OI 相关
 
-[算法可视化](https://visualgo.net/en)
+[visualgo (算法可视化)](https://visualgo.net/en)
 
-[建图](https://csacademy.com/app/graph_editor/)
+[graph_editor](https://csacademy.com/app/graph_editor/)
 
 [OIerDb](https://bytew.net/OIer/)
 
-[udebug](https://www.udebug.com/)（用外国OJ（如UVA）时没有样例调错用）
+[udebug](https://www.udebug.com/)
 
-[a-star](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
+[a*算法](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
