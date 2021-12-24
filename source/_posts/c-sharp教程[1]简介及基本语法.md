@@ -273,7 +273,7 @@ hello world
 与 `WriteLine()` 相对应, 从标准输入流读入下一行字符并存储为字符串的函数叫 `ReadLine()`
 
 ```csharp
-String a;
+string a;
 a = Console.ReadLine();
 Console.WriteLine(a);
 ```

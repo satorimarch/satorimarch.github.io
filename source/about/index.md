@@ -26,6 +26,8 @@ date: 2021-11-28 16:13:43
 
 [graph_editor](https://csacademy.com/app/graph_editor/)
 
+[OI Wiki](https://oi-wiki.org/)
+
 [OIerDb](https://bytew.net/OIer/)
 
 [udebug](https://www.udebug.com/)
