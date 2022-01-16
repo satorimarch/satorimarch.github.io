@@ -25,7 +25,7 @@ type[] arrayName; // array 就是数组的英文
 例如：
 
 ```csharp
-int[] score;
+int[] scores;
 ```
 
 但如果这样使用数组的话会报错：
@@ -37,7 +37,7 @@ error CS0165: 使用了未赋值的局部变量“score”
 这是因为数组声明之后并不会初始化，所以还需要在声明的时候使用 `new` 关键字来创建数组的实例（关于什么是 `new` 操作符请见上一篇教程 不过暂时不懂问题也不大），例如：
 
 ```csharp
-int[] score = new int[5];
+int[] scores = new int[5];
 ```
 
 其中方括号里的数组表示的是数组的大小，数组的长度是固定的，所以必须说明它的大小。
@@ -59,7 +59,7 @@ int[] scores = new int[5]{98, 97, 94, 92, 95};
 
 此时 `scores` 数组中第一个元素是 98, 索引是 0, 最后一个元素是95, 索引是 4 
 
-使用 `score[index]` 访问数组中的元素:
+使用 `scores[index]` 访问数组中的元素:
 ```csharp
 int[] scores = new int[5]{98, 97, 94, 92, 95};
 Console.WriteLine(scores[1]);
@@ -96,9 +96,10 @@ Index was outside the bounds of the array.
 为了一次性访问数组中的诸多元素, 可以使用第二节学过的循环：
 
 ```csharp
-int[] scores = new int[5];
+int[] scores = new int[5]{98, 97, 94, 92, 95};
 for(int i=0; i < 5; i++){ // 注意这里的条件
-Console.WriteLine(scores[i]);
+    Console.WriteLine(scores[i]);
+}
 ```
 
 输出估计大家都能猜到：
@@ -115,6 +116,7 @@ Console.WriteLine(scores[i]);
 int[] scores = new int[5];
 for(int i=0; i < 5; i++){ // 注意这里的条件
     scores[i] = i;
+}
 ```
 
 当你不知道数组有多大的时候，可以使用 `arrayName.Length` 访问数组的长度，上面的代码可以写为：
@@ -122,6 +124,7 @@ for(int i=0; i < 5; i++){ // 注意这里的条件
 int[] scores = new int[5]{98, 97, 94, 92, 95};
 for(int i=0; i < scores.Length; i++){ // 注意这里的条件
 scores[i] = i;
+}
 ```
 
 注意 `Length` 后面不要写括号，因为这不是个函数
@@ -131,6 +134,7 @@ scores[i] = i;
 int[] scores = new int[6];
 for(int i=1; i <= 5; i++){
     scores[i] = i;
+}
 ```
 
 {% note danger flat %}
@@ -140,13 +144,13 @@ for(int i=1; i <= 5; i++){
 
 
 ## `foreach` 语句
-不过其实我们有更简单的循环方法，之前在讲循环的时候因为没讲过数组所以没讲，就是使用 `foreach` 语句
+不过其实我们有更简单的循环的办法，之前在讲循环的时候因为没讲过数组所以没讲，就是使用 `foreach` 语句
 
 类似 `python` 中的 `for item in array:`，你可以直接用 `foreach` 来访问数组中的每一个值，例如：
 ```csharp
 int[] scores = new int[5]{98, 97, 94, 92, 95};
 foreach (int i in scores){
-Console.WriteLine(i);              
+    Console.WriteLine(i);              
 }
 ```
 
@@ -246,11 +250,10 @@ for(int i=1; i <= n; i++){
 再加点细节:
 
 ```csharp
-int n;
 Console.Write("请输入学生总数: ");
-n = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
 
-int[] scores = new int[n]; 
+int[] scores = new int[n+1]; 
 for(int i=1; i <= n; i++){
     Console.Write("请输入第{0}个学生的分数: ", i);
     scores[i] = Convert.ToInt32(Console.ReadLine());
@@ -271,20 +274,19 @@ for(int i=1; i <= n; i++){
 
 你会发现，这样我们只对分数进行了排序，而没法将分数与人名对应, 做法有很多种, 这里只介绍其中一种
 
-可以想到, 我们需要的是一个能够同时保存 `int` 类型的分数和 `string` 类型的字符串的数组(之前说过数组可以声明更复杂类型的数组), 再用 `Sort` 对它进行排序, 而我们还没学过自定义类型, 怎么办呢
+可以想到, 我们需要的是一个 能够同时保存 `int` 类型的数和 `string` 类型的字符串的类型, 再定义这个类型的数组(之前说过可以声明更复杂类型的数组), 再用 `Sort` 对它进行排序, 而我们还没学过自定义类型, 怎么办呢
 
 好在 `c#` 提供了 `Tuple` 类型(中文为元组), 可以由多个元素组成(最多8个), 用 `tupleName.Item1` 访问第一个元素(以此类推)
 
 用 `Tuple<int, string>` 来表示第一个元素为 `int` 类型, 第二个元素为 `string` 类型的 `Tuple`
 
 所以我们创建一个 `Tuple<int, string>` 类型的数组
-`Tuple` 类型已经写好了 `<` 操作符, 先比较第一个元素的大小, 如果相等再比较第二个(以此类推), 所以可以直接使用 `sort`
+`Tuple` 类型已经写好了 `<` 操作符, 先比较第一个元素的大小, 如果相等再比较第二个(以此类推), 所以可以直接使用 `Sort`
 
 据此可以将上面的代码改为:
 ```csharp
-int n;
 Console.Write("请输入学生总数: ");
-n = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
 
 Tuple<int, string>[] scores = new Tuple<int, string>[n+1];
 for(int i=1; i <= n; i++){
@@ -304,7 +306,7 @@ for(int i=1; i <= n; i++){
 }
 ```
 
-最后输出时的占位符 `{0, -2}` 中, 第一个村阿叔 `0` 的意思与之前的 `{0}` 一样, 表示后面下标为 `0` 的对象, `-2` (的绝对值)表示输出的长度, 不足的补成空格, 负号表示左对齐, 这样是为了输出的时候同一列数据可以左对齐, 好看一点, 你也可以不用
+最后输出时的占位符 `{0, -2}` 中, 第一个参数 `0` 的意思与之前的 `{0}` 一样, 表示后面下标为 `0` 的对象, `-2` (的绝对值)表示输出的长度, 不足的补成空格, 负号表示左对齐(没有负号表示右对齐), 这样是为了输出的时候同一列数据可以左对齐, 好看一点, 你也可以不用
 
 # 数组相关函数
 这里介绍一些相对常用的函数
@@ -348,7 +350,7 @@ for(int i=a.Length-1; i >= 0; i--){
 ```
 
 # 二维数组
-之前说过数组可以声明更复杂类型的数组, 那么大家想没想过, 数组中的元素也可以是另一个数组呢!
+之前说过可以声明更复杂类型的数组, 那么大家想没想过, 数组中的元素也可以是另一个数组呢!
 
 数组中的子数组长度是可以不相同的, 那种叫做交错数组, 不太常用, 不在本文讨论范围之内
 `c#` 中的二维数组仅指每个子数组的长度都相同的那种
@@ -362,7 +364,7 @@ type[,] array = new type[x, y];
 
 例如声明一个 3 行 4 列的数组并初始化:
 ```csharp
-int [,] a = new int [3,4] {
+int[,] a = new int [3,4] {
     {0, 1, 2,  3},
     {4, 5, 6,  7},
     {8, 9, 10, 11}
@@ -371,24 +373,24 @@ int [,] a = new int [3,4] {
 
 换行当然是可以删掉的, 写成:
 ```csharp
-int [,] a = new int [3,4] { {0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11} };
+int[,] a = new int [3, 4] { {0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11} };
 ```
 
-我们可以用 `a[i][j]` 来访问这个二维数组中第 `i` 行 第 `j` 列的元素, 例如:
+我们可以用 `a[i, j]` 来访问这个二维数组中第 `i` 行 第 `j` 列的元素, 例如:
 
 ```csharp
-int [,] a = new int [3,4] { {0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11} };
-Console.WriteLine(a[1][2]);
+int[,] a = new int [3,4] { {0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11} };
+Console.WriteLine(a[1, 2]);
 ```
 
 从本质上讲, `a[1]` 访问的是 `a` 中的第 1 个元素(从 0 开始), 也就是一个数组 `{4, 5, 6, 7}`
-而例如 `a[1, 2]` 也就是访问 `a[2]` 中的第 2 个元素, 也就是 数组 `{4, 5, 6, 7}` 中的第 2 个元素, 所以 `a[i][j]` 为 6
+而例如 `a[1, 2]` 也就是访问 `a[2]` 中的第 2 个元素, 也就是 数组 `{4, 5, 6, 7}` 中的第 2 个元素, 所以 `a[i, j]` 为 6
 
 不过在平时使用时不需过多关注它本质的意思, 当成表格就好
 
 循环访问二维数组的元素如下:
 ```csharp
-int [,] a = new int [3,4] { {0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11} };
+int[,] a = new int [3,4] { {0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11} };
 for(int i=0; i < 3; i++){
     for(int j=0; j < 4; j++){
         Console.WriteLine("({0}, {1}): {2}", i, j, a[i, j]);
@@ -399,7 +401,7 @@ for(int i=0; i < 3; i++){
 其实 `foreach` 也可以遍历二维数组中的所有元素, 但是一般情况下我们可能会需要数据的坐标(指位于的行和列), 那种情况下就不能用了
 
 ```csharp
-int [,] a = new int [3,4] { {0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11} };
+int[,] a = new int [3,4] { {0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11} };
 foreach(int item in a){
     Console.WriteLine(item);
 }
@@ -449,7 +451,7 @@ for(int row = 1; row <= mapRow; row++){ // 循环每行
 }
 ```
 
-但在那之前, 我们要怎么遍历每个格子周围的 8 个格子?
+但我们要怎么遍历每个格子周围的 8 个格子?
 
 其中一个方法是: 
 
@@ -558,7 +560,6 @@ for(int i=1; i <= mapRow; i++){
 {% endhideToggle %}
 
 刚刚在我的电脑上产生的随机输出结果如下:
-{% note default flat %}
 ```
 0  0  0  0  0  2  *  2  0  0  
 0  0  0  1  1  3  *  2  1  1
@@ -571,7 +572,6 @@ for(int i=1; i <= mapRow; i++){
 0  0  0  0  0  0  0  0  1  1
 0  0  0  0  0  0  0  0  1  *
 ```
-{% endnote %}
 
 # 再谈字符串
 字符串也可以用下标进行访问, 例如:
@@ -597,7 +597,7 @@ foreach(char c in str){
 }
 ```
 
-但大家可能有些疑问，为什么是 `char c in str` 而不是 `string c`
+但大家可能有些疑问，为什么是 `char ` 而不是 `string c`
 
 因为字符串的本意就是一堆 "字符" 串起来, 也就是说, 字符串中的每一个元素应该是一个字符
 `char` 就是表示字符的数据类型(英文character的缩写), 字符`a` 写为 `'a'`
