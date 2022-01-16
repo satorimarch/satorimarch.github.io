@@ -5,11 +5,11 @@
 # Site
 title: jiangdu的博客
 subtitle: "jiangdu's blog"
-description: Blog
+# description: Blog
 author: jiangdu
 language: zh-CN
-timezone: ''
-keywords: jiangdu,blog
+# timezone: ''
+keywords: jiangdu,OI,编程,c#
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -109,3 +109,9 @@ deploy:
   type: git
   repo: https://github.com/satorimarch/satorimarch.github.io.git
   branch: master
+
+sitemap:
+  path: sitemap.xml
+  rel: false
+  tags: true
+  categories: true

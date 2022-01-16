@@ -101,7 +101,7 @@ while(num != a) {
 Console.WriteLine("恭喜你猜对了!");
 ```
 
-### 例题 3-1 [竞选社长](https://www.nowcoder.com/practice/45a30e3ef51040ed8a7674984d6d1553?tpId=107&&tqId=33321&rp=1&ru=/ta/beginner-programmers&qru=/ta/beginner-programmers/question-ranking)
+### 例题 2-1 [竞选社长](https://www.nowcoder.com/practice/45a30e3ef51040ed8a7674984d6d1553?tpId=107&&tqId=33321&rp=1&ru=/ta/beginner-programmers&qru=/ta/beginner-programmers/question-ranking)
 
 假设电子电路社要竞选下一届社长，有两名候选人分别是A和B，社团每名同学必须并且只能投一票，最终得票多的人为社长.
 
@@ -190,7 +190,7 @@ Console.WriteLine(a); // 正常执行，输出10
 
 也请注意最后 `a` 的值为 10 而不是 9。考虑反证法，如果 a 为 9 则还满足循环的条件，则会继续执行循环的内容，所以 a 一定不是 9
 
-### 例题 3-2 FizzBuzz 问题
+### 例题 2-2 FizzBuzz 问题
 
 每行输出一个数字 从 1 到 100，满足以下规则：
 
@@ -314,7 +314,7 @@ i 的值： 9
 
 {% endhideToggle %}
 
-### 例题 3-3 [等腰直角三角形](https://www.nowcoder.com/practice/2cdea429fa414fbba26e6c821724ca06?tpId=107&&tqId=33340&rp=1&ru=/ta/beginner-programmers&qru=/ta/beginner-programmers/question-ranking)
+### 例题 2-3 [等腰直角三角形](https://www.nowcoder.com/practice/2cdea429fa414fbba26e6c821724ca06?tpId=107&&tqId=33340&rp=1&ru=/ta/beginner-programmers&qru=/ta/beginner-programmers/question-ranking)
 
 KiKi学习了循环，BoBo老师给他出了一系列打印图案的练习，该任务是打印用“*”组成的翻转直角三角形图案。(原题为多组数据，这里简化为一组)
 
@@ -348,7 +348,7 @@ for(int i=1; i <= n; i++) {
 
 {% endnote %}
 
-### break 语句
+### `break` 语句
 
 `break` 表示终止循环，当在循环里遇到 `break` 语句时，循环会立即终止，且程序流将继续执行紧接着循环语句之后的语句。例如：
 
@@ -435,17 +435,17 @@ end loop
 
 # 练习
 
-## 3-1 阶乘  (P5739)
+## 2-1 阶乘  (P5739)
 输入 `n`, 输出 `n` 的阶乘(n <= 12)
 
-## 3-2 aabb
+## 2-2 aabb
 输出所有形如 aabb 的完全平方数
 
-## 3-3 最高分与最低分之差
+## 2-3 最高分与最低分之差
 
 第一行输入一个数 n, 然后n行每行一个整数代表一个人的成绩, 求出最高分和最低分的差值
 
-{% tabs 3-3 %}
+{% tabs 2-3 %}
 <!-- tab 输入 -->
 
 5
@@ -464,7 +464,7 @@ end loop
 <!-- endtab -->
 {% endtabs %}
 
-## 3-4 [RPG游戏](https://docs.microsoft.com/zh-cn/learn/modules/csharp-do-while/3-challenge)
+## 2-4 [RPG游戏](https://docs.microsoft.com/zh-cn/learn/modules/csharp-do-while/3-challenge)
 
 在大部分角色扮演游戏中，玩家角色会与NPC战斗。在此练习中，我们归纳出战斗过程的本质。 英雄和怪物在开始时的生命值相同。 在英雄攻击时，它们将生成一个随机值，该值将从怪物的生命值中减去。 如果怪物的生命值大于零，则会轮到它们攻击英雄。 只要英雄和怪物的生命值都大于零，战斗就会继续进行。
 
