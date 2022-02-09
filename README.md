@@ -6,7 +6,7 @@
 源文件在 `source` 分支（默认分支）
 `post` 在 `/source/_posts` 文件夹里，欢迎PR（
 
-## 做博客时遇到的坑：
+## 做博客时遇到的问题：
 
 1. 如果初次 `deploy` 失败，记得填写 `_config.yml` 中的  `url` 和 `root` , 例如：
 
