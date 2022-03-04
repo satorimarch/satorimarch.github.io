@@ -4,7 +4,7 @@
 使用了 `hexo` 博客框架，[butterfly](https://github.com/jerryc127/hexo-theme-butterfly)主题。
 
 源文件在 `source` 分支（默认分支）
-`post` 在 `/source/_posts` 文件夹里，欢迎PR（
+`post` 在 `/source/_posts` 文件夹里
 
 ## 做博客时遇到的问题：
 

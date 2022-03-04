@@ -1,13 +1,12 @@
 ---
-title: 'C#教程[5] 面向对象与c#中的方法'
+title: 'C#教程[6] 面向对象'
 tag:
   - c#
 categories:
   - 电子电路社
   - c#教程
 mathjax: true
-sticky: 1
-abbrlink: 1926cc4
+abbrlink: d4ed487
 date: 2022-02-04 00:00:00
 ---
 
