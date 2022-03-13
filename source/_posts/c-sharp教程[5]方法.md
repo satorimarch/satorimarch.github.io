@@ -453,7 +453,12 @@ public static int Fib(int n)
 
 由此可见, 数学上的递推公式可以直观的用递归写出来, 很多算法也都是用递归来实现的, 例如dfs
 
-其实本题也可以用循环很简单的做出:
+由于递归时调用的过程是这样的:
+
+![](https://s6.jpg.cm/2022/02/07/LoqS32.png)
+
+注意到这张图里 `fib(3)` 以及它下面会调用的方法这个整体会被计算两遍, 因此刚刚的递归会产生大量重复运算, 而使用下文展示的循环则只会计算一次, 所以这里用循环会比递归要快:
+
 ```csharp
 int n = 10;
 int[] fib = new int[n+1];
@@ -478,15 +483,29 @@ for(int i = 3; i <= n; i++){
 }
 Console.WriteLine(third);
 ```
+
 不过很多更复杂的情况下递归容易写出, 而循环可能非常难写
 
-由于递归时调用的过程是这样的:
+在 `n` 的取值大到能体会到速度差别之前就会因为 `fib[n]` 太大超过 `int` 的表示范围而输出错误的结果, 如果想测试两段代码的速度的话, 请在过程中对答案取模, 例如:
+```csharp
+DateTime startTime = DateTime.Now; // 保存当前时间
 
-![](https://s6.jpg.cm/2022/02/07/LoqS32.png)
+int n = 10;
+int mod = 1000000000;
 
-注意到这张图里 `fib(3)` 以及它下面会调用的方法这个整体会被计算两遍, 因此刚刚的递归会产生大量重复运算, 而循环只会计算一次, 所以这里用循环会比递归要快
+int first = 1, second = 1, third = 2;
+for(int i = 3; i <= n; i++){
+    third = (first + second) % mod;
+    first = second;
+    second = third;
+}
+Console.WriteLine(third);
 
-不过在 `n` 的取值大到能体会到速度差别之前就会因为 fib[n] 太大超过 `int` 的表示范围而输出错误的结果
+DateTime finishTime = DateTime.Now; // 保存当前时间
+double deltaTime = (finishTime - startTime).TotalMilliseconds; // 计算时间差
+
+Console.WriteLine("use {0} ms", deltaTime);
+```
 
 递归也可以改写为只计算一次的：
 
@@ -510,4 +529,4 @@ static void Main(string[] args)
 }
 ```
 
-这样借助 `fib` 数组将递归已经计算过的结果存储下来, 避免重复运算
+这样借助 `fib` 数组将递归已经计算过的结果存储下来, 避免重复运算, 称为记忆化搜索

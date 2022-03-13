@@ -127,10 +127,11 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://s6.jpg.cm/2021/11/28/LLTPWC.jpg # 东方相关
-    - https://s6.jpg.cm/2021/11/28/LLTIh5.jpg
+    - https://s6.jpg.cm/2021/11/28/LLTIh5.jpg # 东方相关
     - https://s6.jpg.cm/2021/11/28/LLTXzE.jpg
-    - https://s6.jpg.cm/2021/11/28/LLOJ68.jpg
+    - https://s6.jpg.cm/2021/11/28/LLTPWC.jpg 
+    - https://s6.jpg.cm/2022/03/13/L2uWJh.md.png
+    # - https://s6.jpg.cm/2021/11/28/LLOJ68.jpg
     - https://s6.jpg.cm/2021/11/28/LLT5cu.png # 非东方相关
 
 # Replace Broken Images (替換無法顯示的圖片)

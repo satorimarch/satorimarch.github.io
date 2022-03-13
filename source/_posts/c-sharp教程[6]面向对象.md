@@ -10,7 +10,7 @@ abbrlink: d4ed487
 date: 2022-02-04 00:00:00
 ---
 
-{% note warning flat %}
+{% note danger flat %}
 本文未完工
 {% endnote %}
 
