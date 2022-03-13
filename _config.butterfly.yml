@@ -180,9 +180,11 @@ index_post_content:
 
 # toc (目錄)
 toc:
-  enable: true
+  post: true
+  page: false
   number: true
   style_simple: false
+  expand: true
 
 post_copyright:
   enable: true
@@ -337,8 +339,8 @@ valine:
 # https://waline.js.org/
 waline:
   serverURL: https://blog-api-ffsaxnxts-satorimarch.vercel.app/ # Waline server address url
-  avatar: mp # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
-  avatarCDN: # Gravatar CDN baseURL
+  # avatar: mp # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
+  # avatarCDN: # Gravatar CDN baseURL
   bg: 'https://s6.jpg.cm/2021/12/19/LX9rxh.jpg' # waline background
   visitor: false
   option:
@@ -497,6 +499,7 @@ site_verification:
 #   toc_color: "#00c4b6"
 #   blockquote_padding_color: "#49b1f5"
 #   blockquote_background_color: "#49b1f5"
+#   scrollbar_color: "#49b1f5"
 
 # The top_img settings of home page
 # default: top img - full screen, site info - middle (默認top_img全屏，site_info在中間)
@@ -905,8 +908,10 @@ CDN:
   pangu: https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js
 
   # photo
-  fancybox_css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
-  fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js
+  # fancybox_css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
+  # fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js
+  fancybox_css_v4:
+  fancybox_v4:
   medium_zoom: https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js
 
   # snackbar
@@ -920,7 +925,8 @@ CDN:
   ClickShowText: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js
 
   # fontawesome
-  fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
+  # fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
+  fontawesomeV6:
 
   # Conversion between Traditional and Simplified Chinese
   translate: /js/tw_cn.js
