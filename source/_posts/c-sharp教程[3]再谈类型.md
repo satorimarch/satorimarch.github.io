@@ -129,7 +129,7 @@ Console.WriteLine(Convert.ToString(delta)); // 而且ToString也支持TimeSpan�
 
 您甚至可以套好几层的成员访问。用上面那个学生的例子就是："小明.班.学生人数" 获得小明这个学生所在的班的学生人数。
 
-成员不仅可以是值，还可以是函数。例如我们一直在用的 `Console.WriteLine` 就是 `Console` 类型的一个静态成员函数（您是直接用"Console"这个类型名，而不是在 new 一个 Console 对象来用的）。
+成员不仅可以是值，还可以是函数。例如我们一直在用的 `Console.WriteLine` 就是 `Console` 类型的一个静态成员函数（您是直接用"Console"这个类型名，而不是在 new 一个 `Console` 对象来用的）。
 
 您可能会说：不对呀，输出内容不是和特定的窗口相关的吗，为什么它是静态的呢？这是因为Windows系统规定每个程序只能有一个控制台窗口，所以既然只有一个为了方便起见就干脆搞成静态的了。
 

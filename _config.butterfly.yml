@@ -15,7 +15,7 @@ menu:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
     # 友链: /link/ || fas fa-link
-    About: /about/ || fas fa-heart
+    关于: /about/ || fas fa-heart
 
 # Hide the child menu items in mobile sidebar
 hide_sidebar_menu_child: false
@@ -91,7 +91,7 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img:
+index_img: https://s6.jpg.cm/2021/11/28/LL9prp.jpg
 
 # If the banner of page not setting, it will show the top_img
 default_top_img: https://s6.jpg.cm/2021/11/28/LL9prp.jpg
@@ -127,10 +127,11 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://s6.jpg.cm/2021/11/28/LLTPWC.jpg # 东方相关
-    - https://s6.jpg.cm/2021/11/28/LLTIh5.jpg
+    - https://s6.jpg.cm/2021/11/28/LLTIh5.jpg # 东方相关
     - https://s6.jpg.cm/2021/11/28/LLTXzE.jpg
-    - https://s6.jpg.cm/2021/11/28/LLOJ68.jpg
+    - https://s6.jpg.cm/2021/11/28/LLTPWC.jpg 
+    - https://s6.jpg.cm/2022/03/13/L2uWJh.md.png
+    # - https://s6.jpg.cm/2021/11/28/LLOJ68.jpg
     - https://s6.jpg.cm/2021/11/28/LLT5cu.png # 非东方相关
 
 # Replace Broken Images (替換無法顯示的圖片)
@@ -146,7 +147,7 @@ error_404:
 
 post_meta:
   page: # Home Page
-    date_type: created # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
+    date_type: both # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
     date_format: date # date/relative 顯示日期還是相對日期
     categories: true # true or false 主頁是否顯示分類
     tags: true # true or false 主頁是否顯示標籤
@@ -179,15 +180,17 @@ index_post_content:
 
 # toc (目錄)
 toc:
-  enable: true
-  number: true
+  post: true
+  page: false
+  number: false
+  expand: true
   style_simple: false
 
 post_copyright:
   enable: true
   decode: false
-  license: CC BY-NC-SA 4.0
-  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  # license: CC BY-NC-SA 4.0
+  # license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 # Sponsor/reward
 reward:
@@ -210,7 +213,7 @@ post_edit:
 
 # Related Articles
 related_post:
-  enable: true
+  enable: false
   limit: 6 # Number of posts displayed
   date_type: created # or created or updated 文章日期顯示創建日或者更新日
 
@@ -250,7 +253,7 @@ addThis:
 # https://github.com/overtrue/share.js
 sharejs:
   enable: true
-  sites: facebook,twitter,wechat,weibo,qq
+  sites: facebook,twitter,wechat,qq
 
 # AddToAny
 # https://www.addtoany.com/
@@ -265,10 +268,9 @@ comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo
   use:
-    # - Valine
     - Waline
-    - Livere
-  # - Disqus
+    # - Valine
+    # - Livere
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
@@ -336,12 +338,17 @@ valine:
 # waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
 waline:
-  serverURL: https://blog-api-ffsaxnxts-satorimarch.vercel.app/ # Waline server address url
-  avatar: identicon # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
-  avatarCDN: 'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili' # Gravatar CDN baseURL
-  bg: # waline background
+  serverURL: https://blog-api-ffsaxnxts-satorimarch.vercel.app # Waline server address url
+  # avatar: mp # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
+  # avatarCDN: # Gravatar CDN baseURL
+  bg: 'https://s6.jpg.cm/2022/03/13/L2u1Ue.png' # waline background
   visitor: false
   option:
+    placeholder: '发条友善的评论吧(不填信息默认匿名)'
+    langMode:
+      sofa: 这个评论区冷冷清清的...不如发条评论？
+    emoji: 
+      - 'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili'
 
 # utterances
 # https://utteranc.es/
@@ -484,7 +491,7 @@ site_verification:
 #   paginator: "#00c4b6"
 #   button_hover: "#FF7242"
 #   text_selection: "#00c4b6"
-#   link_color: "#99a9bf"
+#   link_color: "#99a9bf" 
 #   meta_color: "#858585"
 #   hr_color: "#A4D8FA"
 #   code_foreground: "#F47466"
@@ -492,6 +499,7 @@ site_verification:
 #   toc_color: "#00c4b6"
 #   blockquote_padding_color: "#49b1f5"
 #   blockquote_background_color: "#49b1f5"
+#   scrollbar_color: "#49b1f5"
 
 # The top_img settings of home page
 # default: top img - full screen, site info - middle (默認top_img全屏，site_info在中間)
@@ -512,7 +520,7 @@ tag_ui: # 留空或 index
 background:
 
 # Footer Background
-footer_bg: false
+footer_bg: "#95C7E0"
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
 rightside-bottom:
@@ -585,7 +593,7 @@ display_mode: light
 # Beautify (美化頁面顯示)
 beautify:
   enable: true
-  field: post # site/post
+  field: site # site/post
   title-prefix-icon: '\f0c1'
   title-prefix-icon-color: '#F47466'
 
@@ -645,7 +653,7 @@ aside:
   position: right # left or right
   card_author:
     enable: true
-    description: "普通的高中生, 东方众, 半个OIer"
+    description: "高中生一位, 东方众, 啥也不会"
     button:
       enable: true
       icon: fab fa-github
@@ -653,10 +661,10 @@ aside:
       link: https://github.com/satorimarch
   card_announcement:
     enable: true
-    content: "Welcome to my blog"
+    content: '欢迎来到 jiangdu 的博客'
   card_recent_post:
     enable: true
-    limit: 5 # if set 0 will show all
+    limit: 3 # if set 0 will show all
     sort: date # date or updated
     sort_order: # Don't modify the setting unless you know how it works
   card_categories:
@@ -699,7 +707,7 @@ runtimeshow:
 newest_comments:
   enable: true
   sort_order: # Don't modify the setting unless you know how it works
-  limit: 6
+  limit: 4
   storage: 10 # unit: mins, save data to localStorage
   avatar: true
 
@@ -707,7 +715,7 @@ newest_comments:
 # --------------------------------------
 
 # Change font size
-change_font_size: false
+change_font_size: true
 
 # Conversion between Traditional and Simplified Chinese (簡繁轉換)
 translate:
@@ -724,7 +732,7 @@ translate:
   msgToSimplifiedChinese: '簡'
 
 # Read Mode (閲讀模式)
-readmode: true
+readmode: false
 
 # dark mode
 darkmode:
@@ -735,7 +743,7 @@ darkmode:
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
-  autoChangeMode: false
+  autoChangeMode: 1
 
 # Lightbox (圖片大圖查看模式)
 # --------------------------------------
@@ -900,8 +908,10 @@ CDN:
   pangu: https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js
 
   # photo
-  fancybox_css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
-  fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js
+  # fancybox_css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
+  # fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js
+  fancybox_css_v4:
+  fancybox_v4:
   medium_zoom: https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js
 
   # snackbar
@@ -915,7 +925,8 @@ CDN:
   ClickShowText: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js
 
   # fontawesome
-  fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
+  # fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
+  fontawesomeV6:
 
   # Conversion between Traditional and Simplified Chinese
   translate: /js/tw_cn.js
