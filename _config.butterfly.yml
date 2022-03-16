@@ -84,17 +84,17 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://s6.jpg.cm/2021/11/28/LLMzXO.jpg
+  img: https://s2.loli.net/2022/03/16/uCesbohMy7XaDH2.jpg
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://s6.jpg.cm/2021/11/28/LL9prp.jpg
+index_img: https://s2.loli.net/2022/03/16/4kMP9m2rtRVjIdU.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://s6.jpg.cm/2021/11/28/LL9prp.jpg
+default_top_img: https://s2.loli.net/2022/03/16/4kMP9m2rtRVjIdU.jpg
 
 # The banner image of archive page
 archive_img:
@@ -127,12 +127,12 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://s6.jpg.cm/2021/11/28/LLTIh5.jpg # 东方相关
-    - https://s6.jpg.cm/2021/11/28/LLTXzE.jpg
-    - https://s6.jpg.cm/2021/11/28/LLTPWC.jpg 
-    - https://s6.jpg.cm/2022/03/13/L2uWJh.md.png
-    # - https://s6.jpg.cm/2021/11/28/LLOJ68.jpg
-    - https://s6.jpg.cm/2021/11/28/LLT5cu.png # 非东方相关
+    - https://s2.loli.net/2022/03/16/uSXZeF2REBJlvjY.jpg # Remilia2
+    - https://s2.loli.net/2022/03/16/f5uMD9K4nVZWb2E.jpg # Marisa1
+    - https://s2.loli.net/2022/03/16/Ydo7kJbE2luBGIP.jpg # Marisa2
+    - https://s2.loli.net/2022/03/16/BPizhZj7VM4lgXf.jpg # Merry1
+    - https://s2.loli.net/2022/03/16/OGEAp3WnilmsJCT.jpg # Koishi and satori 1
+    - https://s2.loli.net/2022/03/16/XA83u9r2EKLU4ZT.png # luogu-daily
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -341,7 +341,7 @@ waline:
   serverURL: https://blog-api-ffsaxnxts-satorimarch.vercel.app # Waline server address url
   # avatar: mp # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
   # avatarCDN: # Gravatar CDN baseURL
-  bg: 'https://s6.jpg.cm/2022/03/13/L2u1Ue.png' # waline background
+  bg: 'https://s2.loli.net/2022/03/16/Ge7E6jXuHaC49bv.png' # waline background
   visitor: false
   option:
     placeholder: '发条友善的评论吧(不填信息默认匿名)'

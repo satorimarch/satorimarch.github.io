@@ -393,7 +393,7 @@ static void Main()
 ```
 
 输出是:
-{% note primary %}
+{% note default %}
 0
 1
 2
