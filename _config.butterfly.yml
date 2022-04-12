@@ -341,7 +341,7 @@ waline:
   serverURL: https://blog-api-ffsaxnxts-satorimarch.vercel.app # Waline server address url
   # avatar: mp # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
   # avatarCDN: # Gravatar CDN baseURL
-  bg: 'https://s2.loli.net/2022/03/16/Ge7E6jXuHaC49bv.png' # waline background
+  bg: 'https://s2.loli.net/2022/04/12/ZJAFrE1Ih537let.png' # waline background
   visitor: false
   option:
     placeholder: '发条友善的评论吧(不填信息默认匿名)'
