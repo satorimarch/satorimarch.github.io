@@ -253,6 +253,12 @@ git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Bu
 
 ---
 
+<video src="\video\club.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+your browser does not support the video tag
+</video>
+
+---
+
 [^1]: 这是脚注1
 
 [^这是脚注]: 我是一个脚注
