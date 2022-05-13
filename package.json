@@ -14,7 +14,7 @@
   "dependencies": {
     "@waline/client": "^1.6.0",
     "add": "^2.0.6",
-    "hexo": "^6.1.0",
+    "hexo": "^6.2.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-browsersync": "^0.3.0",
     "hexo-deployer-git": "^3.0.0",
