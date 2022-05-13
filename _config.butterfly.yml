@@ -342,7 +342,7 @@ waline:
   # avatar: mp # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
   # avatarCDN: # Gravatar CDN baseURL
   bg: 'https://s2.loli.net/2022/04/12/ZJAFrE1Ih537let.png' # waline background
-  visitor: false
+  pageview: true
   option:
     placeholder: '发条友善的评论吧(不填信息默认匿名)'
     langMode:
@@ -874,7 +874,19 @@ CDN:
   disqusjs_css: https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
   utterances: https://utteranc.es/client.js
   twikoo: https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js
-  waline: https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js
+  # waline: https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js
+  waline_js: https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js
+  waline_css: https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css
+
+  # The CDN provider of internal scripts (主題內部 js 的 cdn 配置)
+  # option: local/jsdelivr
+  # Dev version cannot choose jsdelivr (dev版的主題不能設置為 jsdelivr)
+  internal_provider: local
+  # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
+  # option: local/jsdelivr
+  # when set it to local, you need to install hexo-butterfly-extjs
+  third_party_provider: jsdelivr
+  option:
 
   # share
   addtoany: https://static.addtoany.com/menu/page.js
