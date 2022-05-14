@@ -15,6 +15,7 @@ keywords: jiangdu,OI,编程,c#
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://satorimarch.github.io
 root: /
+
 permalink: posts/:abbrlink/
 abbrlink:
   alg: crc32      #support crc16(default) and crc32

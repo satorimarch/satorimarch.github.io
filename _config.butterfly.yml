@@ -8,12 +8,12 @@
 
 menu:
     主页: / || fas fa-home
-  # Archives: /archives/ || fas fa-archive
+    # Archives: /archives/ || fas fa-archive
     标签: /tags/ || fas fa-tags
-    分类: /categories/ || fas fa-folder-open
-  #  List||fas fa-list:
-  #   Music: /music/ || fas fa-music
-  #   Movie: /movies/ || fas fa-video
+    归档: /categories/ || fas fa-folder-open
+    # List||fas fa-list:
+    # Music: /music/ || fas fa-music
+    # Movie: /movies/ || fas fa-video
     # 友链: /link/ || fas fa-link
     关于: /about/ || fas fa-heart
 
@@ -39,8 +39,8 @@ copy:
     limit_count: 50
 
 # social settings (社交圖標設置)
-# formal:
-#   icon: link || the description
+formal:
+  icon: link || the description
 social:
   # fab fa-github: https://github.com/xxxxx || Github
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
@@ -80,21 +80,21 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: /img/code-solid.png
 
 # Avatar (頭像)
 avatar:
-  img: https://s2.loli.net/2022/03/16/uCesbohMy7XaDH2.jpg
+  img: /img/avatar1.jpg
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://s2.loli.net/2022/03/16/4kMP9m2rtRVjIdU.jpg
+index_img: /img/Koishi1.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://s2.loli.net/2022/03/16/4kMP9m2rtRVjIdU.jpg
+default_top_img: /img/Koishi1.jpg
 
 # The banner image of archive page
 archive_img:
@@ -594,7 +594,7 @@ display_mode: light
 beautify:
   enable: true
   field: site # site/post
-  title-prefix-icon: '\f0c1'
+  title-prefix-icon: '\23'
   title-prefix-icon-color: '#F47466'
 
 # Global font settings
@@ -938,7 +938,7 @@ CDN:
 
   # fontawesome
   # fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
-  fontawesomeV6:
+  fontawesomeV6: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js
 
   # Conversion between Traditional and Simplified Chinese
   translate: /js/tw_cn.js
