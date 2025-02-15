@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C#基础教程[1] 简介及基本语法 | jiangdu's blog</title><meta name="author" content="jiangdu"><meta name="copyright" content="jiangdu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="为了学校社团课而写的c#基础教程第一章, 从hello world开始的C#之旅">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#基础教程[1] 简介及基本语法">
+<meta property="og:url" content="https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[1]%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="jiangdu&#39;s blog">
+<meta property="og:description" content="为了学校社团课而写的c#基础教程第一章, 从hello world开始的C#之旅">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.satori-march.top/img/default_cover/koishi-satori1.jpg">
+<meta property="article:published_time" content="2021-11-23T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-12T18:15:49.000Z">
+<meta property="article:author" content="jiangdu">
+<meta property="article:tag" content="c#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.satori-march.top/img/default_cover/koishi-satori1.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "C#基础教程[1] 简介及基本语法",
+  "url": "https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[1]%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/",
+  "image": "https://blog.satori-march.top/img/default_cover/koishi-satori1.jpg",
+  "datePublished": "2021-11-23T00:00:00.000Z",
+  "dateModified": "2025-02-12T18:15:49.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "jiangdu",
+      "url": "https://blog.satori-march.top/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/code-solid.png"><link rel="canonical" href="https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[1]%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><meta name="google-site-verification" content="IWyWefGb0HPoNf-nZlR55zAl9X55Yss4iVCfmzMGILs"/><meta name="baidu-site-verification" content="code-QPN4HZQeX8"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?463e5f9332f0e3ca87c77181fe9514c6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-92KXEXH29N"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-92KXEXH29N')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-92KXEXH29N', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C#基础教程[1] 简介及基本语法',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="jiangdu's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/default_cover/koishi-satori1.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">jiangdu's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">C#基础教程[1] 简介及基本语法</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">C#基础教程[1] 简介及基本语法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-23T00:00:00.000Z" title="发表于 2021-11-23 00:00:00">2021-11-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-12T18:15:49.000Z" title="更新于 2025-02-12 18:15:49">2025-02-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/csharp/">c#</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE/">电子电路社</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/csharp/charp-tutorial/">c#教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">5.6k</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B%5B1%5D%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="前言">前言</h2>
+<p>本系列教程是为了我在学校社团课使用而写的，我尽量在简单起见的情况下保证严谨一些，但可能仍有些随意或不严谨的地方，更严谨的说法请去看微软官方文档。因为学校高一的信息课会学习 python，因此会与 python 的语法作一些对比，不过不懂也没关系。</p>
+<p>感谢 <a target="_blank" rel="noopener" href="https://github.com/zbx1425">zbx1425</a> 大佬对于本系列教程的帮助</p>
+<h3 id="可能有用的网址">可能有用的网址</h3>
+<h4 id="教程-文档">教程/文档</h4>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/csharp/csharp-tutorial.html">菜鸟教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/learn/paths/csharp-first-steps/">微软官网教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-CN/dotnet/csharp/">微软官方文档</a>(如果有问题或者说的不清楚建议看英文原版)</p>
+<h4 id="IDE">IDE</h4>
+<p>IDE 即集成开发环境, 可以不严谨的理解为编写并运行代码所用的软件</p>
+<p><a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/downloads/">Visual Studio</a>：简称 VS, 如果可以的话对于写 C# 必然是首选，不过体积较大，可能要占好几个GB</p>
+<p><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/sharpdevelop/">Sharp Develop</a>：VS 中很多功能对于初学者没有必要，所以也可以用 Sharp Devlop，安装包仅十几MB，但已停止维护</p>
+<p>如果临时使用手机可以考虑在线工具例如<a target="_blank" rel="noopener" href="http://www.dooccn.com/csharp/">这个</a></p>
+<h2 id="简介">简介</h2>
+<div class="note flat"><p>以下内容来自<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/C%E2%99%AF">维基百科</a></p>
+</div>
+<blockquote>
+<p>C#是微软推出的一种基于.NET框架的、面向对象的高级编程语言。C#是一种由C和C++派生出来的面向对象的编程语言。它在继承C和C++强大功能的同时去掉了一些它们的复杂特性，使其成为C语言家族中的一种高效强大的编程语言。C#以.NET框架类库作为基础，拥有类似Visual Basic的快速开发能力。C#由安德斯·海尔斯伯格主持开发，微软在2000年发布了这种语言，希望借助这种语言来取代Java。</p>
+</blockquote>
+<hr>
+<h2 id="hello-world">hello, world</h2>
+<p>各位同学可能在课内学习过一点 python。以输出 <code>&quot;hello world&quot;</code> 作为初学者的第一个程序是计算机界的传统，这是一个能打印出 <code>&quot;hello world&quot;</code> 的 python 程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>在真正上手写 C# 之前，我们先来看一个能实现同样功能的 C# 程序，来大致了解一下 C# 语言是怎样的：</p>
+<div class="note info flat"><p><code>//</code> 代表开始单行注释, <code>//</code> 后面的内容都是解释代码意思的文字, 与程序的运行无关</p>
+</div>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp</span>  <span class="comment">// ConsoleApp命名空间(namespace)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span>  <span class="comment">// Program类(class)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)  <span class="comment">// Main函数</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Hello World!&quot;</span>);  <span class="comment">// 输出语句</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="程序结构">程序结构</h3>
+<p>先不要被这么多代码吓到, 我们来分析一下:</p>
+<ul>
+<li>比起功能相同的 python 程序，内容多多了</li>
+<li>不过真正进行&quot;打印文字&quot;这一操作的代码也只有一行(含有 <code>WriteLine</code> 的那行)</li>
+<li>代码似乎被大括号分成了很多块</li>
+</ul>
+<p>大括号的包含关系是 C# 的一个特点。上面的代码有一个命名空间(<code>namespace</code>)，里面包含着一个类（<code>class</code>），类里面又包含着一个&quot;主函数&quot;（<code>Main</code>），主函数里装着真正的用来打印文字的代码（严格来讲，C#中的函数应该被称为方法，但为了便于理解，请允许我在详细讲解方法之前称为函数）。作为初学者，各位暂时不需要理解什么是函数、类、命名空间，先把它当作模板照着写就好了，下面简单介绍一下他们的关系。</p>
+<p>举个例子来说，就像这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">学校 南开中学</span><br><span class="line">&#123;</span><br><span class="line">    学生 小明</span><br><span class="line">    &#123;</span><br><span class="line">        参加考试(考试地点) &#123;</span><br><span class="line">            考试过程</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你可能只想描述小明考试的过程，但是 C# 里就得一笔带过地稍微描述下小明这人和它的学校。之所以这么麻烦，是因为 C# 规定，执行的内容必须得被包含在函数里，函数必须得被包含在类里，类又必须得被包含在命名空间里…所以咱的代码就给包成了个三明治，不像 python 直接开始写就行。大家可能会觉得，这样比功能相同的 python 代码要繁琐很多，这样的设计看似没有必要，但实际上在大点的项目里便能展现出它的优势</p>
+<p>不过还是那句话，外面的包装是我们初学者不需太关心的，大家目前只需要注意一下 <code>Main</code> 函数里的内容。我们的程序总会从 <code>Main</code> 函数开始执行。所以我们来集中精力看这一行实际干活的代码。</p>
+<p>在语句 <code>Console.WriteLine(&quot;Hello World!&quot;);</code> 中，<code>Console</code> 其实也是一个类，而 <code>WriteLine()</code> 则为 <code>Console</code> 类中的一个函数，中间的 <code>.</code> 表示访问 <code>Console</code> 类中的成员（“其学名为成员访问运算符”），此处访问的即为该类中的 <code>WriteLine()</code> 函数。</p>
+<p><code>Console</code>是控制台的意思，也就是运行程序时看到的那个黑窗口；而 <code>Console</code> <code>.</code> <code>WriteLine</code> 就是调用 <code>控制台</code> <code>里面的</code> 叫做 <code>写一行字</code> 的函数。大家目前只需要对类的事情稍微留一些印象即可，不用过多关注。</p>
+<div class="note warning flat"><p>函数的后面必须有括号，即使它没有参数。例如调用 <code>Console.WriteLine();</code> 会输出空行</p>
+</div>
+<p>因为我们目前只看主函数部分，所以后面会省略主函数之外的内容, 将上面那段代码写成如下的形式[^1]：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;Hello World!&quot;</span>);  <span class="comment">// 输出语句</span></span><br></pre></td></tr></table></figure>
+<p>如果你把上面的 <code>Console</code> 改为 <code>console</code>, 你会在“输出”区域看到一条错误消息：</p>
+<div class="note danger flat"><p>error CS0103: The name ‘console’ does not exist in the current context</p>
+</div>
+<p>翻译一下就是 <code>console</code> 在当前上下文中不存在, 也就是说, 编译器不认识 <code>console</code>, 只认识 <code>Console</code></p>
+<div class="note warning flat"><p>不要把单词拼错（英语不好的同学可能有些困难，但是请尽量），拼错单词英语考试里会没分，C# 里会编译失败</p>
+<p>C# 是区分大小写的！请注意各个单词的大小写，大小写搞错也会导致编译错误。一般来说<code>namespace</code>, <code>class</code>等“关键字”是全小写，函数是各单词首字母大写。</p>
+</div>
+<ul>
+<li>一些 IDE 会替你查找潜在错误, 然后在出错的地方加上红色波浪线, 你可以将鼠标光标移上去来查看详细信息(有时候出现的红色波浪线只是因为你代码没打完)</li>
+<li>没有红色波浪线的时候, 将光标移到函数或类上可以查看它的定义和注释来快速理解它的用法(函数和类的定义以后会讲)<s>可惜SharpDevelop只有定义没有注释</s></li>
+</ul>
+<h2 id="基本语法">基本语法</h2>
+<h3 id="数据类型">数据类型</h3>
+<p>在学习初期我们会见到的值类型如下:</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>范围</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool</td>
+<td>布尔值</td>
+<td><code>True</code> 或 <code>False</code></td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td>double</td>
+<td>浮点型</td>
+<td>非常大</td>
+<td>0.0D</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整型</td>
+<td>约±20亿</td>
+<td>0</td>
+</tr>
+<tr>
+<td>string</td>
+<td>字符串 (文本)</td>
+<td>-</td>
+<td>空(null)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>bool</code> 即布尔值, 参与逻辑运算, 值只能是 <code>True</code> 或 <code>False</code> 的其中一个</li>
+<li><code>int</code> 即整数, 一般表示整数用 <code>int</code> 即可</li>
+<li><code>double</code> 类型可以不严谨的认为是小数</li>
+<li>字符串(<code>string</code> 类型)其实我们已经用过了, 用双引号括起来的便是字符串, 例如 <code>&quot;Hello World!&quot;</code> (注意不能是单引号)</li>
+</ul>
+<p>请大家注意 <code>string</code> 类型的 <code>&quot;25&quot;</code> 和 <code>int</code> 类型的 <code>25</code> 的区别: 前者是一个字符串, 与 <code>&quot;abc&quot;</code> 本质上没有区别, 因此 <code>&quot;25&quot;</code> 无法参与实数运算, 也就是不能写 <code>&quot;25&quot; * 10</code>, 请先转换成 <code>int</code> 类型再计算</p>
+<p>将其他三种类型转换为<code>double</code>的代码: <code>Convert.ToDouble(x)</code>, 其返回值的类型为 <code>Double</code>, 其中的 <code>x</code> 为调用 <code>ToDouble</code> 函数的参数; 而返回值顾名思义, 就是调用的函数运行后返回的结果, <code>WriteLine</code> 没有返回值. 与 <code>ToDouble()</code> 同理:</p>
+<ul>
+<li>转换为 <code>string</code> 的代码为: <code>Convert.ToString(x)</code></li>
+<li>转换为 <code>int</code> 的代码为: <code>Convert.ToInt32(x)</code> (只有这个需要写为 <code>Int32</code> 比较特殊, 不过并不需要特殊记忆, 因为 IDE 的代码补全会有提示)</li>
+</ul>
+<p>类型转换的用法例如: (代码中的 <code>string a</code> <code>int b</code> 等的用法会在下面介绍)</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> a = <span class="string">&quot;55&quot;</span>;</span><br><span class="line"><span class="built_in">int</span> b = Convert.ToInt32(a);</span><br><span class="line">Console.WriteLine(b * <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<div class="note default flat"><p>550</p>
+</div>
+<div class="note info flat"><p>在初学阶段, 即使你已经看明白了代码的意思, 也建议不看文章手动输入一遍本文中的例子. 一是为了加深记忆, 二是有时看懂了可能只是有些问题没有发现</p>
+</div>
+<p>大家可能会疑惑 <code>a = &quot;55&quot;</code> 等地方为什么要加空格. 只是为了规范, 这些空格并不会影响程序的运行, 只是为了读起来方便. 实际上所有那种不影响语义的空格和换行都可以去掉, 把上面的代码写成这样:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> a=<span class="string">&quot;55&quot;</span>;<span class="built_in">int</span> b=Convert.ToInt32(a);Console.WriteLine(b*<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>但这样看起来就很难懂了, 建议别这么写. 注意 <code>int</code> 和 <code>b</code> 之间的空格不能省略成<code>intb</code>(显然把两个词连成一个词会影响语义)</p>
+<p>对于多数IDE(快捷键可能有些许不同), 当你在输入内容的时候, 你很可能会看到代码补全的候选列表:</p>
+<ul>
+<li>在显示候选列表时：按Tab可以采纳选中的建议，按↑↓可以浏览不同的建议，如果不想要这些建议可以按Esc退出候选列表</li>
+<li>在没有显示候选列表时：按 <code>Tab</code> 可以插入四个空格，按 <code>Shift+Tab</code> 可以去掉四个空格</li>
+</ul>
+<h3 id="变量的声明和定义">变量的声明和定义</h3>
+<p>如果需要处理代码里没有的数据，就需要声明一个变量。刚刚其实已经用过变量了。一个&quot;变量&quot;是在其生存期内可以更改其值的数据项。可以使用变量来临时存储稍后要在代码中使用的值。</p>
+<p>在 python 中, 声明变量前不需说明类型, 例如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">5</span></span><br><span class="line">abc = <span class="string">&quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
+<p>但在 C# 中需要显示指明类型应写为这样:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">string</span> abc = <span class="string">&quot;apple&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>你可以用逗号来声明多个相同类型的变量:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>, b = <span class="number">10</span>, c = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<p>C# 中一个变量的类型在声明时已经固定, 不能赋其他类型的值, 在 python 中, 这样的代码是合法的:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">5</span></span><br><span class="line">a = <span class="string">&quot;abc&quot;</span>  // 注意是给同一个变量 a 赋值</span><br></pre></td></tr></table></figure>
+<p>但在 C# 中会报错:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>;</span><br><span class="line">a = <span class="string">&quot;55&quot;</span>;</span><br></pre></td></tr></table></figure>
+<div class="note danger flat"><p>错误 CS0029 无法将类型“string”隐式转换为“int”</p>
+</div>
+<p>&quot;隐式类型转换&quot;指的是你没有显式说明, 而是自动进行的类型转换. 一般来说, 只有转换之后 <emp>肯定不会</emp> 造成数据损失或者错误的类型之间才能进行隐式类型转换(注意, 是所有这类型的数据都不会出现问题才能隐式转换, 举特例是不行的). 例如:</p>
+<ul>
+<li><code>string</code> <emp>不能</emp> 隐式转换为 <code>int</code>, 因为有像 <code>&quot;abc&quot;</code> 这类字符串</li>
+<li><code>int</code> 可以隐式转换为 <code>string</code></li>
+<li><code>double</code> <emp>不能</emp> 隐式转换为 <code>int</code>, 因为会丢失小数部分</li>
+<li><code>int</code> 可以隐式转换为 <code>double</code></li>
+</ul>
+<p>为了将上面的 <code>string</code> 类型的 <code>&quot;55&quot;</code> 转换为 <code>int</code> 类型的 <code>55</code>, 可以考虑使用上面提过的 <code>Convert.ToInt32()</code> 函数, 例如:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = Convert.ToInt32(<span class="string">&quot;55&quot;</span>);</span><br><span class="line">Console.WriteLine(a);</span><br></pre></td></tr></table></figure>
+<p>关于类型转换的更多内容可以参考我的另一篇文章<a target="_blank" rel="noopener" href="https://satorimarch.github.io/posts/19004/">c#中的数据类型转换</a></p>
+<h3 id="标准输入输出">标准输入输出</h3>
+<p>C# 中的函数名一般比较直观易懂，<s>不像某语言中乍一看不知所云的 <code>atoi</code></s>。例如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Console.Write(<span class="string">&quot;hello &quot;</span>);  <span class="comment">// 输出到控制台(无换行)</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;world&quot;</span>);  <span class="comment">// 输出到控制台(有换行)</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码输出如下:</p>
+<div class="note default flat"><p>hello world</p>
+</div>
+<p>与 <code>WriteLine()</code> 相对应, 从标准输入流读入下一行字符并存储为字符串的函数叫 <code>ReadLine()</code></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> a;</span><br><span class="line">a = Console.ReadLine();</span><br><span class="line">Console.WriteLine(a);</span><br></pre></td></tr></table></figure>
+<p>函数的嵌套：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = Convert.ToInt32(Console.ReadLine());</span><br></pre></td></tr></table></figure>
+<p>类比数学中的复合函数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(g(x))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">))</span></span></span></span>, 嵌套函数的应从内往外开始运行, 也就是先执行 <code>Console.ReadLine()</code>, 再把该函数的返回值代入到 <code>Convert.ToInt32()</code> 中</p>
+<h4 id="WriteLine-的格式化-format">WriteLine()的格式化 (format)</h4>
+<p>如果想要依次输出 abc 的值, 并在前面输出变量名和等号, 例如 <code>a=1</code>, 以我们之前学的内容应该这么写:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>, b = <span class="number">15</span>, c = <span class="number">10</span>;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;a=&quot;</span> + a + <span class="string">&quot; b=&quot;</span> + b + <span class="string">&quot; c=&quot;</span> + c); </span><br></pre></td></tr></table></figure>
+<p>上面的代码中 abc 分别被隐式转换成字符串然后进行字符串串联. 这样很是麻烦还不方便阅读, 有没有更简单的方法呢?<s>既然我这么说了</s>, 当然是有的:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">1</span>, b = <span class="number">2</span>, c = <span class="number">3</span>;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;a=&#123;0&#125; b=&#123;1&#125; c=&#123;2&#125;&quot;</span>, a, b, c);</span><br></pre></td></tr></table></figure>
+<p>其中 <code>&#123;n&#125;</code> 表示字符串后面的第 <code>n</code> 个对象(从 <code>0</code> 开始计数)<br>
+我们管 <code>&#123;n&#125;</code> 叫做占位符, 你可以理解为它把对应的值的位置给占了, 而在运行的时候会把后面的值放到占位符的位置上</p>
+<p>从 <code>C#6.0</code> 开始还有一种更方便阅读的语法, 在字符串前面加上 <code>$</code> 就可以直接在大括号里写变量名:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">$&quot;a=<span class="subst">&#123;a&#125;</span> b=<span class="subst">&#123;b&#125;</span> c=<span class="subst">&#123;c&#125;</span>&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>不过 SharpDevelop 只支持到 <code>C#5.0</code>(</p>
+<h3 id="运算符">运算符</h3>
+<p>C# 中的赋值/算术/比较运算符与 python 基本相同, 但也仍有很多差别。</p>
+<h4 id="赋值运算符">赋值运算符</h4>
+<p>大家看到 <code>a = 5</code> 的时候可能并不会想太多, <code>a</code> 等于 <code>5</code> 感觉很合理. 但实际上, <code>=</code> 并不是等于的意思, 例如 <code>a = a + 1</code> 语句看起来在数学上恒不成立, 但在代码中是合法的. 这是因为 <code>=</code> 的学名叫做赋值运算符, 他表达的意思实际上是&quot;计算出右侧的值, 然后把右侧的值赋给左边的变量&quot;. 假如 <code>int</code> 变量 <code>a</code> 原本为 <code>5</code>, 在 <code>a = a + 1</code> 中, 会先计算出右边的数值 <code>a + 1</code> 即为 <code>6</code>, 然后将 <code>6</code> 赋给左边的变量 <code>a</code>, 故该语句运行之后 <code>a</code> 的值为 <code>6</code></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>;</span><br><span class="line">a = a + <span class="number">10</span>;</span><br><span class="line">Console.WriteLine(a);  <span class="comment">// 输出15</span></span><br></pre></td></tr></table></figure>
+<p>由于 <code>a = a + ?</code> 的使用率很高, 所以又有了一种运算符为 <code>+=</code>, <code>a += 5</code> 相当于 <code>a = a + 5</code>, 同理还有 <code>-=</code> 等运算符</p>
+<p>另外, C# 中还有 <code>++</code> 运算符, <code>a++</code> 基本相当于 <code>a += 1</code> 也就是 <code>a = a + 1</code>, <code>--</code>运算符同理. 你也可以把 <code>++</code> 写到前面如 <code>++a</code>. 但是<code>a++</code> 与 <code>++a</code> 作为复合表达式的时候有些区别, 因此在没弄清楚前不要写诸如 <code>b = a++;</code> 这种式子</p>
+<h4 id="算术运算符">算术运算符</h4>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>, b = <span class="number">10</span>;</span><br><span class="line">Console.WriteLine(a + b);  <span class="comment">// 输出 15</span></span><br><span class="line">Console.WriteLine(a - b);  <span class="comment">// 输出 -5</span></span><br><span class="line">Console.WriteLine(a * b);  <span class="comment">// 输出 50</span></span><br><span class="line">Console.WriteLine(a / b);  <span class="comment">// 输出 0</span></span><br></pre></td></tr></table></figure>
+<p>大家请注意最后 <code>a/b</code> 的结果: <code>5/10</code> 返回的结果竟然是 <code>0</code></p>
+<p>那让我们再试一下这段代码：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">double</span> b = <span class="number">10.0</span>;  <span class="comment">// 注意这里 b 的类型</span></span><br><span class="line"></span><br><span class="line">Console.WriteLine(a / b);  <span class="comment">// 输出 0.5</span></span><br></pre></td></tr></table></figure>
+<p>这样写输出的结果就变成了 <code>0.5</code></p>
+<div class="note danger flat"><p>C# 中的 <code>/</code> 在两个操作数中至少有一个是浮点数时才会为实数除法, 否则会向 <code>0</code> 取整, 例如: <code>-5/2</code> 的结果是 <code>-2</code>, <code>-5/2.0</code> 的结果是 <code>-2.5</code></p>
+</div>
+<h4 id="例-1-1-a-b-×c-洛谷B2008">例 1-1 (a+b)×c (洛谷B2008)</h4>
+<p>读入 3 个整数 a,b,c, 输出表达式 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo><mo>×</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">(a+b) \times c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span>  的值。</p>
+<p>示例代码:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"><span class="built_in">int</span> b = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"><span class="built_in">int</span> c = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"><span class="built_in">int</span> answer = (a + b) * c;</span><br><span class="line">Console.WriteLine(answer);</span><br></pre></td></tr></table></figure>
+<p>前三行的读入看起来有些繁琐, 第四节会学到简单点的写法. 另外, 多数 IDE 会有复制当前行的快捷键, 可以去设置里找一下. 你也可以省略中间变量 <code>answer</code>, 将最后两行合并写成:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine((a + b) * c);</span><br></pre></td></tr></table></figure>
+<p><code>string</code> 类型也可以进行 <code>+</code> 操作, 例如 <code>&quot;abc&quot; + &quot;def&quot;</code> 会得到 <code>&quot;abcdef&quot;</code></p>
+<h4 id="比较运算符">比较运算符</h4>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>, b = <span class="number">10</span>;</span><br><span class="line">Console.WriteLine(a == b);  <span class="comment">//输出 False</span></span><br><span class="line">Console.WriteLine(a != b);  <span class="comment">//输出 True</span></span><br><span class="line">Console.WriteLine(a &gt;= b);  <span class="comment">//输出 False</span></span><br><span class="line">Console.WriteLine(a &lt;= b);  <span class="comment">//输出 True</span></span><br><span class="line">Console.WriteLine(a &gt; b);   <span class="comment">//输出 False</span></span><br><span class="line">Console.WriteLine(a &lt; b);   <span class="comment">//输出 True</span></span><br></pre></td></tr></table></figure>
+<p>那让我们试试下面的代码:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="number">7</span> &lt; <span class="number">5</span> &lt; <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>与我们的预期不同, 这段代码报错了:</p>
+<div class="note danger flat"><p>CS0019 运算符“&lt;”无法应用于“bool”和“int”类型的操作数</p>
+</div>
+<p>这是因为编译器会把表达式 <code>7 &lt; 5 &lt; 10</code> 理解为 <code>(7 &lt; 5) &lt; 5</code>, 而<code>7 &lt; 5</code> 会返回 <code>bool</code> 类型的 <code>False</code>, 而在 C# 中 <code>bool</code> 类型不能直接与 <code>int</code> 类型进行比较, 也不能隐式转换成 <code>int</code> 类型, 因此这个表达式会报错</p>
+<div class="note danger flat"><p>不能把表达式写成形如 <code>a &lt;= x &lt;= b</code> 的形式, 应该写为 <code>a &lt;= x &amp;&amp; x &lt;= b</code> （ <code>&amp;&amp;</code> 表示 “并且”, 将在后面的逻辑运算符进行讲解）</p>
+</div>
+<p>另外, C# 中没有 python 中的 <code>**</code> 等运算符, 如果想求出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>b</mi></msup></mrow><annotation encoding="application/x-tex">a^b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span></span></span></span></span></span></span></span>, 请使用 <code>Math.Pow(a, b);</code> 函数</p>
+<h4 id="逻辑运算符">逻辑运算符</h4>
+<p>C# 中的逻辑运算符如下(已知 <code>A = true, B = false</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">实例</th>
+<th>python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&amp;&amp;</td>
+<td style="text-align:left">称为逻辑与运算符。如果两个操作数都非零，则条件为真。</td>
+<td style="text-align:left">(A &amp;&amp; B) 为假。</td>
+<td>and</td>
+</tr>
+<tr>
+<td style="text-align:left">||</td>
+<td style="text-align:left">称为逻辑或运算符。如果两个操作数中有任意一个非零，则条件为真。</td>
+<td style="text-align:left">(A || B) 为真。</td>
+<td>or</td>
+</tr>
+<tr>
+<td style="text-align:left">!</td>
+<td style="text-align:left">称为逻辑非运算符。用来逆转操作数的逻辑状态。如果条件为真则变为假。</td>
+<td style="text-align:left">!(A &amp;&amp; B) 为真。</td>
+<td>not</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> a = <span class="literal">true</span>, b = <span class="literal">true</span>, c = <span class="literal">false</span>;</span><br><span class="line">Console.WriteLine(a &amp;&amp; b);  <span class="comment">//输出 True</span></span><br><span class="line">Console.WriteLine(a &amp;&amp; c);  <span class="comment">//输出 False</span></span><br><span class="line">Console.WriteLine(a || b);  <span class="comment">//输出 True</span></span><br><span class="line">Console.WriteLine(a || c);  <span class="comment">//输出 True</span></span><br><span class="line">Console.WriteLine(!a);     <span class="comment">//输出 False</span></span><br><span class="line">Console.WriteLine(!c);     <span class="comment">//输出 True</span></span><br></pre></td></tr></table></figure>
+<h3 id="if-语句"><code>if ()</code>语句</h3>
+<p><code>if ()</code> 语句的条件要在小括号里, 如果条件表达式为 <code>true</code> 的时候执行的语句在大括号里(或者说大括号包裹的部分为一个代码块, 执行整个代码块), 例如:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> score = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (score == <span class="number">0</span>) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;我爆零了&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>else</code> 中的语句只有在对应的 <code>if</code> 的条件不满足的时候才会执行, 例如:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> score = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (score == <span class="number">0</span>) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;我爆零了&quot;</span>);</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> &#123;  <span class="comment">// 有些人会习惯把 else 和上一行的 &#125; 写到一行</span></span><br><span class="line">    Console.WriteLine(<span class="string">&quot;我没爆零&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意体会下面两段代码的区别:</p>
+<ol>
+<li>代码1, 这段代码相当于三选一:</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a) &#123;</span><br><span class="line">    <span class="comment">// a 为 true 时运行</span></span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (b) &#123;  <span class="comment">// 注意这行多一个else</span></span><br><span class="line">    <span class="comment">// a 为 false 且 b 为 true 时运行</span></span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// a,b 都为 false 时运行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>代码2, 注意这时后两个分支与 <code>a</code> 无关</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a) &#123;</span><br><span class="line">    <span class="comment">// a 为 true 时运行</span></span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">// 实际运用时这行可以加个空行防止误解</span></span><br><span class="line"><span class="keyword">if</span> (b) &#123;</span><br><span class="line">    <span class="comment">// b 为 true 时运行, 与 a 无关</span></span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// b 为 false 时运行, 与 a 无关</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="例题-1-2-判断数正负-洛谷B2035">例题 1-2 判断数正负(洛谷B2035)</h4>
+<p>给定一个整数 <code>N</code>，判断其正负。如果 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">N&gt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>, 输出 <code>positive</code> ; 如果 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">N=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>, 输出 <code>zero</code> ; 如果 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">N&lt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>, 输出 <code>negative</code>。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> n = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"><span class="keyword">if</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;positive&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;zero&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (n &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;negative&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为 <code>n</code> 的三种取值是互斥的所以这里也可以这么写(不推荐):</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> n = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"><span class="keyword">if</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;positive&quot;</span>);</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;zero&quot;</span>);</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;negative&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="练习">练习</h2>
+<p>如果你觉得读入麻烦那么改成声明变量时初始化(如<code>int a = 5;</code>)也可以, 但请确保你会读入一行字符串并转换为整数</p>
+<h3 id="1-1-圆柱体的表面积">1-1 圆柱体的表面积</h3>
+<p>给出圆柱体的底面半径 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span> 和 高 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>, 分两行依次输出该圆柱体的侧面积和底面面积</p>
+<h3 id="1-2-直角三角形">1-2 直角三角形</h3>
+<p>已知三条边的长度(分三行给出), 判断是否能围成直角三角形, 若是则输出 <code>yes</code>, 否则输出 <code>no</code></p>
+<h4 id="1-2-2">1-2-2</h4>
+<p>判断条件改为: 若为直角三角形输出 <code>yes</code>, 否则若能够构成三角形输出 <code>no</code>, 不能构成三角形输出 <code>not a triangle</code></p>
+<h3 id="1-3-三排序">1-3 三排序</h3>
+<p>输入三个整数, 按从小到大排序后输出</p>
+<h4 id="挑战">挑战</h4>
+<p>本题只使用3个 <code>if</code> 语句便可完成任务</p>
+<h3 id="1-4-一元二次方程">1-4 一元二次方程</h3>
+<p>依次给出一元二次方程的a,b,c(均为整数, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo mathvariant="normal">≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a\neq 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>), 利用求根公式求一元二次方程实数根, 保留两位小数。有两实根时先输出更小的，一实根时输出那一个根，无实根时输出 <code>&quot;No Answer&quot;</code></p>
+<p>提示:</p>
+<ul>
+<li>使用 <code>Console.WriteLine(&quot;&#123;0:F2&#125;&quot;, 0.125);</code> 来对 <code>0.125</code> 保留 <code>2</code> 位小数, 其中 <code>F2</code> 的 <code>2</code> 表示两位</li>
+<li>使用 <code>Math.Sqrt(a)</code> 来 求出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mi>a</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.2397em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8003em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="padding-left:0.833em;">a</span></span><span style="top:-2.7603em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2397em;"><span></span></span></span></span></span></span></span></span></li>
+</ul>
+<hr>
+<h2 id="练习参考代码">练习参考代码</h2>
+<h3 id="1-1-圆柱体的表面积-2">1-1 圆柱体的表面积</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> r = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"><span class="built_in">int</span> h = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"></span><br><span class="line">Console.WriteLine(Math.PI * r * r);</span><br><span class="line">Console.WriteLine(<span class="number">2</span> * Math.PI * r * h);</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-直角三角形-2">1-2 直角三角形</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"><span class="built_in">int</span> b = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"><span class="built_in">int</span> c = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a*a == b*b + c*c || b*b == a*a + c*c || c*c == a*a + b*b) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;yes&quot;</span>);</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note info flat"><p>如果你不知道哪个运算符的优先级比较高(或者说先计算哪个), 那就多加括号</p>
+</div>
+<h4 id="1-2-2-2">1-2-2</h4>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 省略输入</span></span><br><span class="line"><span class="keyword">if</span> (a + b &lt;= c || a + c &lt;= b || b + c &lt;= a) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;not a triangle&quot;</span>);</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (a*a == b*b + c*c || b*b == a*a + c*c || c*c == a*a + b*b) &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;yes&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h3 id="1-3-三排序-2">1-3 三排序</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 省略输入</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">    <span class="built_in">int</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (a &gt; c) &#123;</span><br><span class="line">    <span class="built_in">int</span> temp = a;</span><br><span class="line">    a = c;</span><br><span class="line">    c = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (b &gt; c) &#123;</span><br><span class="line">    <span class="built_in">int</span> temp = b;</span><br><span class="line">    b = c;</span><br><span class="line">    c = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Console.WriteLine(<span class="string">&quot;&#123;0&#125;\n&#123;1&#125;\n&#123;2&#125;&quot;</span>, a, b, c);</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-一元二次方程-2">1-4 一元二次方程</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 省略输入</span></span><br><span class="line"><span class="built_in">double</span> delta = b * b - <span class="number">4</span> * a * c;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (delta &lt; <span class="number">0</span>) &#123;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;No Answer&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;&#123;0:F2&#125;&quot;</span>, (- b - Math.Sqrt(delta))/<span class="number">2</span>/a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (delta &gt; <span class="number">0</span>) &#123;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;&#123;0:F2&#125;&quot;</span>, (- b + Math.Sqrt(delta))/<span class="number">2</span>/a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>[^1]: 实际上这么写在开了隐式 using 的 C#10 或者前面加上 <code>using System;</code> 后在 C#9.0 中是合法的, 但不推荐初学者这么做</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top">jiangdu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[1]%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[1]%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.satori-march.top" target="_blank">jiangdu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/csharp/">c#</a></div><div class="post-share"><div class="social-share" data-image="/img/default_cover/koishi-satori1.jpg" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/OI/travelogue/noip2021/" title="[游记] NOIP 2021 游记"><img class="cover" src="/img/default_cover/merry1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">[游记] NOIP 2021 游记</div></div><div class="info-2"><div class="info-item-1">  ...</div></div></div></a><a class="pagination-related" href="/posts/blog/test/" title="test"><img class="cover" src="/img/default_cover/windows-TM.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">test</div></div><div class="info-2"><div class="info-item-1">博客的测试页面</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">jiangdu</div><div class="author-info-description">jiangdu的静态个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/satorimarch"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E5%9D%80"><span class="toc-number">1.1.</span> <span class="toc-text">可能有用的网址</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%99%E7%A8%8B-%E6%96%87%E6%A1%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text">教程&#x2F;文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IDE"><span class="toc-number">1.1.2.</span> <span class="toc-text">IDE</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hello-world"><span class="toc-number">3.</span> <span class="toc-text">hello, world</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-number">3.1.</span> <span class="toc-text">程序结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E%E5%92%8C%E5%AE%9A%E4%B9%89"><span class="toc-number">4.2.</span> <span class="toc-text">变量的声明和定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="toc-number">4.3.</span> <span class="toc-text">标准输入输出</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#WriteLine-%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96-format"><span class="toc-number">4.3.1.</span> <span class="toc-text">WriteLine()的格式化 (format)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.4.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.4.1.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.4.2.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B-1-1-a-b-%C3%97c-%E6%B4%9B%E8%B0%B7B2008"><span class="toc-number">4.4.3.</span> <span class="toc-text">例 1-1 (a+b)×c (洛谷B2008)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.4.4.</span> <span class="toc-text">比较运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.4.5.</span> <span class="toc-text">逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if-%E8%AF%AD%E5%8F%A5"><span class="toc-number">4.5.</span> <span class="toc-text">if ()语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-1-2-%E5%88%A4%E6%96%AD%E6%95%B0%E6%AD%A3%E8%B4%9F-%E6%B4%9B%E8%B0%B7B2035"><span class="toc-number">4.5.1.</span> <span class="toc-text">例题 1-2 判断数正负(洛谷B2035)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">5.</span> <span class="toc-text">练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9C%86%E6%9F%B1%E4%BD%93%E7%9A%84%E8%A1%A8%E9%9D%A2%E7%A7%AF"><span class="toc-number">5.1.</span> <span class="toc-text">1-1 圆柱体的表面积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-number">5.2.</span> <span class="toc-text">1-2 直角三角形</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2"><span class="toc-number">5.2.1.</span> <span class="toc-text">1-2-2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E4%B8%89%E6%8E%92%E5%BA%8F"><span class="toc-number">5.3.</span> <span class="toc-text">1-3 三排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%91%E6%88%98"><span class="toc-number">5.3.1.</span> <span class="toc-text">挑战</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B"><span class="toc-number">5.4.</span> <span class="toc-text">1-4 一元二次方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81"><span class="toc-number">6.</span> <span class="toc-text">练习参考代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9C%86%E6%9F%B1%E4%BD%93%E7%9A%84%E8%A1%A8%E9%9D%A2%E7%A7%AF-2"><span class="toc-number">6.1.</span> <span class="toc-text">1-1 圆柱体的表面积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2-2"><span class="toc-number">6.2.</span> <span class="toc-text">1-2 直角三角形</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-2"><span class="toc-number">6.2.1.</span> <span class="toc-text">1-2-2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E4%B8%89%E6%8E%92%E5%BA%8F-2"><span class="toc-number">6.3.</span> <span class="toc-text">1-3 三排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B-2"><span class="toc-number">6.4.</span> <span class="toc-text">1-4 一元二次方程</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-color: #4f73a0;"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By jiangdu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">若无力驾驭，自由便是负担</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"reaction":false,"search":false,"locale":{"placeholder":"发条友善的评论吧 (不填信息默认匿名, 填写邮箱可以收到回复通知)","sofa":"这个评论区空空如也...不如发条评论?"},"emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"]}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://blog-api-umber.vercel.app',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

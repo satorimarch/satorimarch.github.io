@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>[游记] csp-s2021 蒟蒻爆零退役记 | jiangdu's blog</title><meta name="author" content="jiangdu"><meta name="copyright" content="jiangdu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[游记] csp-s2021 蒟蒻爆零退役记">
+<meta property="og:url" content="https://blog.satori-march.top/posts/OI/travelogue/csp-s2021/index.html">
+<meta property="og:site_name" content="jiangdu&#39;s blog">
+<meta property="og:description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.satori-march.top/img/default_cover/windows-TM.png">
+<meta property="article:published_time" content="2021-10-23T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-12T18:15:49.000Z">
+<meta property="article:author" content="jiangdu">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="encrypted">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.satori-march.top/img/default_cover/windows-TM.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[游记] csp-s2021 蒟蒻爆零退役记",
+  "url": "https://blog.satori-march.top/posts/OI/travelogue/csp-s2021/",
+  "image": "https://blog.satori-march.top/img/default_cover/windows-TM.png",
+  "datePublished": "2021-10-23T00:00:00.000Z",
+  "dateModified": "2025-02-12T18:15:49.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "jiangdu",
+      "url": "https://blog.satori-march.top/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/code-solid.png"><link rel="canonical" href="https://blog.satori-march.top/posts/OI/travelogue/csp-s2021/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><meta name="google-site-verification" content="IWyWefGb0HPoNf-nZlR55zAl9X55Yss4iVCfmzMGILs"/><meta name="baidu-site-verification" content="code-QPN4HZQeX8"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?463e5f9332f0e3ca87c77181fe9514c6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-92KXEXH29N"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-92KXEXH29N')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-92KXEXH29N', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '[游记] csp-s2021 蒟蒻爆零退役记',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="jiangdu's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/default_cover/windows-TM.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">jiangdu's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">[游记] csp-s2021 蒟蒻爆零退役记</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">[游记] csp-s2021 蒟蒻爆零退役记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-23T00:00:00.000Z" title="发表于 2021-10-23 00:00:00">2021-10-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-12T18:15:49.000Z" title="更新于 2025-02-12 18:15:49">2025-02-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/travelogue/">游记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">13</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/posts/OI/travelogue/csp-s2021/"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="1d983111aaeacded277f546954a6046a13e7aa936f4d200df2318362b22cd80e">1e841e7579db121a9c9d872c6d9be322059ef8ff3ee349828873ef5d5ed69377e2353c2271e881469f98bda36ec5cf1be1974ae6a7e965db77002c9b14416f13610ba2f39898b8502dea227f6611b2db2ed35d658cf7241d1ed2f2ca093a24f6f081fdccfd7b79aa2c1a60b0c485509312382703303ae5aff728ed84f38ce646b69cc4560e8cd1e4043aeb9acf463a5ebea885d74e100b1b2647d95c287a114728bc9e7c7f62de1923655244b108e187c3fde0d5f00180a52723e03874a7406f9a886c3bdd28bcb4adc6f01039839bc5474c17d07b33d4e40ca53a609471265992b48d87d8d46172e6bd9e06a6b3637e3825cd7b3c0f9f10b623fb8ac6ba392af42b88de52868926a6a3d54e2a30bfaec0657011005a751206d518ade56eefc96a0af380d359ae4353b08bc962dd4dd5c56f3f73144f598a981887b42f1be597dab61f882dd6b369124ffa9789af6d8cc04e33fb87246f119845ffd4f48ec6ddfcdb35a10c228f6b895c7779414525598808ac08d67a44a87b6fff80b5fd272bd7d9fd422842b2616277b59997153577ae16823ae1e67207069fd6c52ba5c8977366793e0d10908ff21de6daf666743883d4dd63e0e1edd088e3bb14d0e6dc36a754d0ee0c773edac1b68ef42df5d4756ad96c61884377fe80fe79cb949e79de5c9231bc6f04b516df36a0b3f071d10da798a09dde01d2c67402bb28628c0b59031841807135e8526afbd7ed98845813d83b19a6adfd93919e23298e2f6d82a91fcd0c3d89cda99f37d39ede1c7cbe64817d83f80a2a51e5007b30121cbc71c57d86b813176eec8f88189a5be4b27d1201031e6242b1d06bde9d3a66b8c97cdcbc415991cebd552b50eedf6f4dfcedb70e24b484729e2518cb26a7f2aa2c375879928fd2ae3d204b1e991454e435e29e8677af790ed1ffe55c83e1b68a6faae522670ac9782ac5c96182455baeb4a33f48b80df8d844d069119a406104228888368bfc415ee8aa81ab08730a9e2d48cf0efc5f6fb762c1550a0b564a022fef06ff6590be707c1b13095acc2c8fdb3355b61042e83a667314a094794703f937f29adc781115ea0d82f559a68a1e0847743033a939891860c510297c52b12873a08917d172ab7f6e0aaee6dfb4bd43623e71a17ad2a45918a7dbfeccb4da1b95ef29f1a9a1a41dd1b79ff72f7ade419a87555095db60265abbabdf8c46ee4bb5e5494c8166d53efd8fd59e3ca35bbe66323b181287b70005e63c1c12fb4740ccbea3884667c16fc6d528482d428f6d7fe49ab4a580c6aebbe3286fc760cd18f9284919cc50a08ac47003081b94713b8973e212faba994dace168e6dbf18a735ad498837356269d32f7e4fae690290a0d4d377657cc3ad4cca9930e8c48f46f6f94bbef906c2ce6bc1b927e798db9a2c32a73ce73c74b1fb26871b3f1b844ba0345ba6991b924c826322695c7d840887bf1cfd145c256fa380004f450cfe15e4dd6d20f1c54fe8d407b15f3feb88e7364eeab2727a606cd7a763fe5782237539090330b9110b1067045337619647ba93367e9748672127b426616c5a841f7b0ac17ccaf1aaf963c69a1d814697b058c067abdd3b37b5fdab8a3d5a64b1dbeb1a80ffdb14bb108f203c9dbd40684f18461f1627bea0d4ee4e9ec933711ab2bafb06ccdc5a33633853ca9b3cc3aed92c2f0d63f7f16bc31b4751f1a23cf21c1f7bc5f52006edfab4608f8c02ae91032aa21b6258a952b4483e5836fdfc09643cc9bbb206db34af09ce97621f61a969f28431ce3a78673240c37eaca0f0e4992101a225688092cef389fea39b080a0be4fb808b180e792d5b4a6b0de506992bb69875b898a47e2fd235322aceb9fc42a67fdf0025ec0e90ef3f843ec2d41520ac9d3d20e1f01db49c2c89411297cb2630dd432451df94995d686686db0b0c4d8ffd48edfb5ef6760cf94522127fac7f7da27dd54e490b018adceb28aed867fe42afca723f1d21646773e7064a1132fa5538a0139aa864a126eaf4602336de89617b9fedfa8af4ba7cd2f6e876c7ac93f0119f07c62f33ac1f88e006126e08b3a2975ea3d77527320bb271b604d430e6cd1b37514cf78bcba8ef8e454152abc88c1b8c8d7519202347333f4bcbf94704ac0375425831c3f95b0500453db79fcdc793dd5c0e2cdc3bc938fbca9e7f1176bcd1b48f1412499cff66827a64a3c1af87060d338f6553b628e21a5e58d12556818621c28a2ff60e1bb025d7b853e79ceb9c4a7fa34e32cf8e07a6a3a524db4a1ed173ac9fce14ceacb17fef99b6ac8ebbcf66ab45ac06f4d9445f054d0ca3a2008b695f5e0e0139a196ec088a978a225d1e9cdd2a93d37e617ef8feb1ce268456cd26a39bd314c690b8b97828b911941c1cad36506d336e17155e09f2b120530c6f2fe6955a2185c5aee0500f33854338cfe6b58c2cd62f50de831a473f36f2d54b4c49d75adcfb824cc1e7a4ff0dde08d08d03f6a442f3ad35170e962d1e054b0a3953b5d059220fcd40df71717c3c07acc82f5691e8eb96691013a515d409542fab441cb34a7dac08ded7888573f909a69a7a4403b6ff74c59867fa9440c13a56f0ee058ca94c832dec934937f2fe4f123d68b907cbd92659f647c3a0112943178cf0f3cf7ea0d736b6981c2557ce93ce7c1934b8c068ba4fd52ddca6108c80db46e5d232ffac4393a90f8323d3d29a988f9b3117eaf9d78bccb731a7327556b20e5d61854b1f95d1ea7e4fe1e390839daa9ddfc704ce52aaeb6270c2721ebebad6eb50b8209329c7a501e96e50a8e70ee4427c8a9fb9673d6e9b18d3e53f03f8f759de1e1b60fe875563fe34685289e502911c7746248f5392d7ff4580e10c5e8c35228c6464e1ca9664f74064c76388e7c4315fd01076afdd089eb33f94553b23f7d777dc28ebd3214bec7da34f70d17dfde5270acb9ec45171795729acb21ca97b112b2f373bebd9fa22519aad700ac95c296443ce842292eab8d7e363708ea334685cfcab97902996f459ac4e40178d532cd1adc20e0317fee0a224a55b49385e6680acb0af01dbe3f828a3458118b247b654e6997fe1eb6d83e37bce9b8bc05bf99d0aa2ff0e9df488c5e20c75daf64c6458f3af02226e01e8b4451e4ee339967154093cedb47408f3784d61e52c4e169b3dc5b8fa55620cdc18d2e183434c430f72f19b90514ff29eafb2c3748d12710ab8d4ec19783b34720ae9422c943f3fc68606cf45d2d5893b6343e58e17892bd95972c9a33c8fee7d1d4b36c62fc0d4cdc8d52b66c3e4da9e9f80eda119796acf51ec51811dfaf6d8c68ce756f5c4f129594dd45ea6bf7d8d9899d0d8d166b23e68e9c86e74c3705b3c9190133ee6b9835d39bf5777b4e5092cbed465844c5d063df9021863a11e8bea6330ca79a81bb30170b67b515a7138594c7fa97fd3d51f4dd362ea1c3ae8d5fedba03daf8b9f222b9f71aa65edb890a4c928089036d9d3deaa2c46ac50e7ca378d27eebd843837f644bc45d2aa5022d791af8441641b22ce1750b259a3d7449a6a16d389cdacf0cc3a2c295849ed5152d46d2c1cf995a64ea8b14b82d0b85209bc785fbf9b38e06c24c00a025cd9ff16e9839f75213f6ce749562faf87c2e14e1d2b83d6a925bfe99d698eb3ccc671f74708b714e3deea8c65cf385aba174c00ff5c3b5f89519daed867392c008bf5ddaaf539ca866c17de03df18b0984a77c4ec1f33cfc58c3bf8e657223d8c4d7644713e2124dabdec0f800adbaf8e516b05677470a398abf4cb07e241b47104016c4a9a07bce34f50b3f97888d9436f79f571e89d5278f2ba0679ba83bb93c233d85751b589b1ce8cdf5cef477c99b5200fa4ef0910e515a2381008ecd999f0b11dbf37ea36e42d40139f2cb5b87b4515cbfc8147615808c8cdb885cb9fffc9159c1173bda82188e45cbc8c9e5ae05ae9a5149c7c55b25a5a67cc56ff6e8a57300d5f84b96228b78433fc7c604178ed44f5671f7fb190fd4979bf1b313f8e3ec48b3801ff7bee0078887c8a1ef0fa22124364686da664cc47a21be234a9f99fa6594221f223ee884b13b090d203247cbe98fa475c363faedf53e07b693f476f528c95097fdfe7da490ca85df23c8a569aa90141a9407038e8c43a34bad17297099671f8de2d4f64a0d165302d7a5228ae8a06ed58a4b7b0d67d20973e931a65eda7c0a14de91a9d1e86555807dea2f29a93844a9753dee2f899774af12e916280009935baf9b2dadba8a00f29a9131dd6d9d25b9af865a73e118afeca17e9c119b1e73d3720352cbde95c08d894113595991f49ce38e1e13ec2b04f632c20d1656f840797728817a9a710ba6229b8f1c79bed8f4d2036297dab2204d5e176c4e3f7b72fbddcb5a690367efebe53a1e67e01f47d409d69d79b3aaa830ec2645461ca966a147f4e514773eff375ae5fc975c339c3fb36b900d100c79a56a2500a0ba23a796ea08ccdffad6d28f6a29343fb39a884ed24eacb755533132ba96fefed140e868c24329c7354432e29d72727c2031e1c98b761d63ccf31b96f8586df218e8b02c5a686963fec515336066744d6fd34d76b176ed2171efb5a7c2452275a2ee4faa3db8e78a20ba5cbc2c4641f172f9de171f9fc36b357c08064ec19ae61a00c322a39f51922bb5a0efb701047beef75da73e729d5de4ba1cb34d979d6f03e5b8816caa9d7d7035e1fcca6e1e395b59d6a1e302daf1cdef7d481aa44c38b7bbe5e312c8d6a58877fcbbb2c92f4c994d23a5bd72bf258bf53315de10db2bb29b873ab120c95f7418b3aa31986770d87088fca62b33b110371e121bdefeed03876807d82719be70e5597ec2bf77d358af8a2fb18ddd4e95c6c69ef48757304dbcc027a1e4d973eaa467425ff10248fcefb10ddbc3fa47ef12809cba30990eecbaf631838a4f3cf23d691015c4dc01bc306a65e8745ee215f341fa2a76cae2d560f3a727f0eda1130ffada394bbe2d3b6dee04c2a4c4b8a0d8cfe9c3d6c30aa29b8f4ee5ca0b795cd4a320a21645022de03eb40d0cd2503fbaa1b653f34b5f12c52fea22c8dabd73f0fc9913f1949d166411f05af808108c5a2f0c05c54866583a1022a08f3a59aedc9e6de2c3f833e59e283cfb12c0ec17f1d9ff2117998475059e48e278ed7115e43fd02ea902cde242f5684a53d596753502ceb210a80122eb7ec88129e5368e744ac029c39113f303e23e85881448e31b3141fe68e84fcfbdb5ca44c64592d40d9cd233cad1453620b556eefc67210283b7f15e2b27d89f1a55d4c158071afbd930c28d670a4fb5a5f339af243b9186524581d1b6b39b87c44b37e7540a6031f24f245e17bd87171e18069942788260585bdc9fe462e4bbed5be73eddfb1cb4ddc3ac0d41c808fa39df5552f45bb0675d67c21386419cefa8267528bfb2dfd9de0722af7e29b0c9470aa2096f7380061eefb635802a9d0c127c5faa8105d1839c863a1a27cff787a5cba43839d98c98f1174decd36ca0d3a3ef9b65f88c364a24e4d71baea7c4404c2a0b897b956a525b3b25f8d6ac8c789d18813cb1d45642f5e2823ec605f0758247256fd4bb497c8b0409494e53adea734ba91674e56d8ea2cdc752ca1129791582aeb9357a4dee6eb252cb4433a7773d7d9f9165813d89468a141f58846c6abb1fb8dc9e050408c8d4952176733d48e2ef33074867f50dc83911c0b8d53317a762d2b4cb5dac37e220c96b8db2bf94bca8c7c375af471c53ab00c52e900dc7126a19f62bfeb6497bebca627fe95d75c386231fc7650feffffe0e0860e096250e072a69550d7fb150ea7431eef19bfa294a64481b7d49da727ec106d7a4bccf3c5ed025a971e988d45204fcadcb0dee609186bd2a7a04d21b72edf8c53602a1c119cd77e7828008a30e8eb021e8b6136925eaf5dd2fa22d39bcff6b47d7a4b4bc5126b6fa766bc9481685c8297458d6f5761e15cc3eb43b8521b69fa566fa57982e729d8ca46438650aa4fdac55afed443922194deeb233f5944f72b77214a66c69f68bdfa085005cafae212eb1e7a7a847eea6b43e49211a0e8368a919d88f636bbc6e12466b65497a4d112daf0752c496cf60beaf04e2e38db70ba1d7704fb98df6db86f34d5cc812bc7f239f1b8c706eb32cecf22088ab63b4e71564a5d4339bb7f3fb6ae147b736b046cb980515c12d9ff94068371477d49b0993b96f7d842a4e0b60e0d58710a17281d36b48668db55f0e359527e96b224df6b01e6b02c61f0a35f1ef9ccec92f7c19dc509b756894d0593291df783db114f48e354e9a0904018188c1735d890c67ae135dad0f51149194edb8ec5e7bfe28742edb74c35d4530479bed7fc129fdbf36db543d20d222950e844810ca73e8e54e66db83d425bb2caec909e71e2630a1b4b4b470b5a97ca6d9a7553489e81c907d86c506b529db5595cc2c44ae8e850e8059c6f9f973e887ddfbcc8f9d0f7c8be484cc3c675705291206c42c22d10d422abd89c6359fb33543f5f8c280cf9ad3be1730e2713c9658aef4c9a807da587aeaf7bb72027cccf3bebf723f629cbd896a3e120d6e9b4e0ddde0e0f885e2a61b71af68f6ad7df520cace72fc54b4ed71fdd7767fbca991428b71e547322aa15686c2bd9fc579c7db6babd81954bce7d352266735d328c5904dd92e47d8896a9b06e41f2cb5d2dd3de3cc8637417d6c4207f4c1ebd4f51a4abd972c5fe3259aa6d048d5640342a34fee4a8bbebc9b111234946529d050c1d506352aa93527a0c9ffe22c65a4c875acaf8d8432f2b1615b5789f4898cccf540346aba90ff4c45df7a83378ed1a3291da0e6f588deb5194f3f3f338e6d79a19c37f29bcc320aa08e8a2b96a0639fd7074a77188863658dba6db12a1a89e3700a216402b420e68240ad81645c99f9c5e8161d71b58a89d62975b50a6e93b3b0c4718550f824c66901f0dcbbf801c1ca9ea83c60f16f79fc7bd0a07cdb55461a7178601c2aa5759dc3918213e999d7670d26076869ef134b258eeb4d33bd97269bfc49d04adaaa79a99dae3ad488238abd55c0a759f190c493cf61aa12b345d051377f6b</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码才能访问.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top">jiangdu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top/posts/OI/travelogue/csp-s2021/">https://blog.satori-march.top/posts/OI/travelogue/csp-s2021/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.satori-march.top" target="_blank">jiangdu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OI/">OI</a><a class="post-meta__tags" href="/tags/encrypted/">encrypted</a></div><div class="post-share"><div class="social-share" data-image="/img/default_cover/windows-TM.png" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/dotnet/c-sharp%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="C#中的数据类型转换"><img class="cover" src="/img/default_cover/marisa2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">C#中的数据类型转换</div></div><div class="info-2"><div class="info-item-1">C# 是一门强类型语言，对类型的要求很严格，类型转换的方式有两种：隐式类型转换和显式类型转换。 隐式类型转换 1234int a = 5;double b = 1.5;double c = a + b;System.Console.WriteLine(c); 像这样，并没有在源代码里进行任何特殊处理，而是由编译器自动进行了从int类型到double类型的隐式转换。 但是很多类型之间不可以进行隐式类型转换，可以看下面的例子。 12int a = 1.5;Console.WriteLine(a); 在作者的电脑上编译时会有这样的报错：  error CS0266: 无法将类型“double”隐式转换为“int”。存在一个显式转换(是否缺少强制转换?)  因此，我们需要用显式类型转换改正它。 显式类型转换 上面的例子的第一行应改为这样： 1int a =...</div></div></div></a><a class="pagination-related" href="/posts/misc/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE%E7%BA%B3%E6%96%B0/" title="电子电路社纳新"><img class="cover" src="/img/default_cover/marisa1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">电子电路社纳新</div></div><div class="info-2"><div class="info-item-1">  ...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">jiangdu</div><div class="author-info-description">jiangdu的静态个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/satorimarch"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class is-expand" style="display:none"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2021-10-23"><span class="toc-number">1.</span> <span class="toc-text">2021-10-23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AFO%E9%A2%84%E5%AE%9A"><span class="toc-number">2.</span> <span class="toc-text">AFO预定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021-10-24%E6%9B%B4%E6%96%B0"><span class="toc-number">3.</span> <span class="toc-text">2021-10-24更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021-10-30-%E6%9B%B4%E6%96%B0"><span class="toc-number">4.</span> <span class="toc-text">2021-10-30 更新</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-color: #4f73a0;"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By jiangdu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">若无力驾驭，自由便是负担</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"reaction":false,"search":false,"locale":{"placeholder":"发条友善的评论吧 (不填信息默认匿名, 填写邮箱可以收到回复通知)","sofa":"这个评论区空空如也...不如发条评论?"},"emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"]}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://blog-api-umber.vercel.app',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

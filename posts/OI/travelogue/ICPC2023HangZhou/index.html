@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>[游记] ICPC 2023 杭州游记 | jiangdu's blog</title><meta name="author" content="jiangdu"><meta name="copyright" content="jiangdu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[游记] ICPC 2023 杭州游记">
+<meta property="og:url" content="https://blog.satori-march.top/posts/OI/travelogue/ICPC2023HangZhou/index.html">
+<meta property="og:site_name" content="jiangdu&#39;s blog">
+<meta property="og:description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.satori-march.top/img/default_cover/windows-TM.png">
+<meta property="article:published_time" content="2023-12-20T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-12T18:52:43.000Z">
+<meta property="article:author" content="jiangdu">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="encrypted">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.satori-march.top/img/default_cover/windows-TM.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[游记] ICPC 2023 杭州游记",
+  "url": "https://blog.satori-march.top/posts/OI/travelogue/ICPC2023HangZhou/",
+  "image": "https://blog.satori-march.top/img/default_cover/windows-TM.png",
+  "datePublished": "2023-12-20T00:00:00.000Z",
+  "dateModified": "2025-02-12T18:52:43.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "jiangdu",
+      "url": "https://blog.satori-march.top/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/code-solid.png"><link rel="canonical" href="https://blog.satori-march.top/posts/OI/travelogue/ICPC2023HangZhou/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><meta name="google-site-verification" content="IWyWefGb0HPoNf-nZlR55zAl9X55Yss4iVCfmzMGILs"/><meta name="baidu-site-verification" content="code-QPN4HZQeX8"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?463e5f9332f0e3ca87c77181fe9514c6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-92KXEXH29N"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-92KXEXH29N')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-92KXEXH29N', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '[游记] ICPC 2023 杭州游记',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="jiangdu's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/default_cover/windows-TM.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">jiangdu's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">[游记] ICPC 2023 杭州游记</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">[游记] ICPC 2023 杭州游记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-20T00:00:00.000Z" title="发表于 2023-12-20 00:00:00">2023-12-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-12T18:52:43.000Z" title="更新于 2025-02-12 18:52:43">2025-02-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/travelogue/">游记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">13</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/posts/OI/travelogue/ICPC2023HangZhou/"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="d1834a82eff52c827e1df0a09c89aa9388486da6608e4498989ca1e69f5f4b23">1e841e7579db121a9c9d872c6d9be32262a4d7783f3cba2468375e323fb7433dc25c007870505fc88bfb9431ce0c7504866d117a3b27ca8e6515b93af5d686cccafb37ab38c114314c22559571a002ab03ff52bfd9ba267216aaf9c99426dc06875f0f3e862df066cb6e95dbdb2b4b561a0ec628b327aef5fadc33e5c4b31e1c7c88e3a6f61d3f73dc39d2f5e443229a1aaedbbfb1d5c0b0a115a11b0d226af81bc4bfa726b22dcb708b04d015532b42a38bc712e8ecc6c2da25d696b642a205d7fa95b4e0f308f10fb833fc3eb20ac604193c15e7298eeaec2f7c28862ca8a51c9c9c736ed5cb27ef29401bf92f8a6205815d2b184903917a6312da215c1e13334ade9164779d14849c8c226c404e81b1229f72731d482d83ede5cf7dbd6dda666c05c2dea2410ce926aee654fbce0634b65328c39edb454eec1071faff7a38831784e72f2a31b686e44d27668527a0a87ee21363c126dd4ae2384f53883bec384a9c123464ae74acc16cbed7f8109553d6b75db0466f7ae99fdbdd97c4c2b6ebddc4c136b931d2fc9d5c6bcf83fe8dfb2e5ea67f229bd3bfb6e441b6ca0922fb7d76080c09d797b329f8b2c926d8c5f255d6439167cf7ad814eb2d6f509e9aef47c2aeddf094087780efb2050fa4b97932db51c9dfbbe6d16688367deec8db2932e3735b4196de792d1636ecffd830f99198f14713019d281c9c3511a1638b5803a5de7b2c24ea8bb942720158dd88a90748eb83991559dc1b8082bb02e6b770b16f1372d6b183753500734821c2d62c52946cdeb59204229c7432deb4c24e83c4588931ff32638395310a38ae18f29c79b2fc0cb12d20d429400a80874512ca94581ad0cfd170da1fc08e210da40569a9cb67d1a16558f963a2dabc75a00b5323486a5ce07abd080d2e13d45c6135230cda3be1fc79811f70378e0a595a8674e6c0ff3ce7405c6983e121907ae733a186c1d6f7cd75b29f3c75a5d2cb7d5706dd9bf6332fe83508bb3ed3d52268ac592f9844dc5d29dc4d28063e9e0dc136fba17053a588d4109119a3b43b36e2faa65f545fb5ecc87f43dd2308762d85f1fe2fbd547ecbb301fe73c8b24fadce4f9723518e2741dd8acf1d7b50d16c92321d9f58ce621d714a7558be8b9fb5af3c5916cbd8097c9e3971202a65b5635c2c1b6eeb7cdfff3d51c47c95d65152dcc82a95bd2ad34bbd37a74611262130dc71ca2c84cc97e0d0cc80942d8a70cbca3ac5cb31754d2fa5e61500cdbfc6a6c8ca228def0b8bf6ee6800526dfd043b3fcc40430e5cc1e3e0f806cd975d6c7bc96c2d261a4921a1aaa5b55d75cce1f664ec0c6bdc607fa777a20a963a17f982834b7f02c6566839d0bac544efff572e144baf533d6597f1cf8548a8add2c48d2dc1bdbd5f54f89d06e30080fed45f2b33b392e8cefd816e7287ade0fe7e25a658281faf79966eaa3ecb0bd0cc1f1061380ee7d7b527c04a41a3a9a07317bf3d0ccb36e291e625e989a523a457ba793539c796295f87fd8bee9ce8c652a5ff7e6f04ed594a4ae3aa7d900cdd1268207a950ee0659c855800c616b9b39917bc9f320edc2c63d867a6a256e015423de62763c3d9bc386fac1d522d318f76fc1f47740e6b5d23ccfbe407475254b3ef3db25a511bf644dd53fa9c6a3a9cb635158cfb6bc358c75df26f1d95cd62182fe21347dfa34d18237abf186729d89dab49404cec00d35397f9a3c446d7b78a56c7fe942cd02401fee43e8cfa0a307ce95a46092e84e5876f7bafc062c7d980a65330893198211e937576311c630e522efd1301dcc59d8c7224e8f1424fe96cc73ce70386813a17fa717a8a9e537207aac15ead6ef76f027abcbf4f745910888a29779d81ca32e2d663c991e74755a4cf98469c7a0530bc9eedf6c2ed645ed84c20904c837c80e8818395410ad1b1beb70e3b40c0bc0df14095f9657dcb9d4ad3968cc79558f793cd31e193755c92077cf38332e821ff39571d806e3fdda3720107ba1cfaa74f969690a54d8b431fc90dacf4ccefb269250859ba337e287af39f3b1b8e273632170cb249e041cd19480c3e9da476f830b783d997ccfac5dd642ed8d344022908048d11c53f9c992bb218df8167f8566843d690fd42883e51d0b034140d92e38f01f0012e48b1de3ed6f1fe115f9d35e2e883ac17e1afbb1a11badfdc4b9a759c63150fbe10809d67b9b65d40d0a0630d404a8ff862545ecc544660770d9b48c692f059fa54a3434a05f2156566f8d5db52dbc62c1deb856db02bd22285f58624ae87a10db2d477e1b165c2b3e55be0e36f8dd170b9f503a2244693fd438c216b01e72e695f8f55b26323882976ff00b6d4a861a8f5ab915f90ca94cf014662f7b64835ca9bf468b0a53ac717b7ec250d89fcafad1fb1178741e49fe089675df3a1d2c4064befde441bfcd0cd9dcf0c6748128ea220759e3a4cba14a454e0654a5e0445bbc5df945fa7c26a1d7eda7c7b44a8a9b1bb3adb7aec855765ffc77676267507d6ddd8c98763d85bf4e54a0f4b4b1898f6f95f96fc703ecd29bc7131b829788209b531773a2de766078755b9d3e9d39cb4ccd5d55171dca1a6d2d17f13404a2c81d44dd756c9ddc484b4c3fa53d417adbdcbc83cbd4d5e31b90de83895c8c87a264ce311aabf7fc6e18702921d0b3c90d0a14d2ff4c6914a8b57ac77cfc407f7582cec0d6590370a6e1609687475d295f8aa3b979b2d47d7a0ed39df8d71f9f890907ef4a4964f64ed9ef912bed996f6f96647c54b92fbc648168fd443f24a9de936a5a1fae3c77ab3115dcb6d5d88d2d96be5461f0eecf6334ead18f20329f5d714a9515722592b4c3489fcc91a145a53635a76871eaa42b29dfe99f6cab1d9a1a31b4edff370e8c8f275b38919b60ea001e3ca5620944d7b3caf80e5f32a3b11dfeeec9fbddf2f91c538dcf2dff65fec32a2ce3e0349936621e036f6c75594bcf3fd66dd7b18b8205cc41c11cd4af0bef48da794cb65cdc1c651b71da2cc4b0da59fd58a8274aeca6a25c2ff6b0f28c6cf85146eeb900affea916cebf8a995f8813308a41f57bd0653300b28b68492bad2beae0014582cf8e348b69f380c9936a4f77c9599dac16abee712e9ceeed24ff7a2a736e0e6376ebdb999ca0085652d7d6cdd9eb07dd679faf92c8b9b8194cf8c82c310e2b6a254be9677ae87ab46fbb9b01675d01d3717b092932d1cfa943e761a39dcc5b19e6811502166fb044c7fe02c219109464f536f4178e0a896c724152e0dc923bdd180968cbffaf26f620fd1374cf79422bac766c1619a7f90f4c18c8f700040c2979006c3644db24bfc12e99dc8f28547657e133f59b2142d15a46936eed13e2bb1e499cf1b1f3a84c73dc2498ea291b2e8121ea1b5da6610db7950002e59c56fed20f851dbd071923e3254fa112b7311af0897061c8748ec278f32c3acbd2b5517d4330e8eb3054c2f4a539cc48b8eeb15721c49ec09d449a651e5fbf46a5d58f9af68a5988a7fe58d951cdc4f85081bb7722fe59f3945377370e9fb1df871ff408237f6f5ee5eb4941bfad8ce032f9e2403e19ce165bb6f800cfb6a15bee9a890a126b5df9dbee3b9bafc40fe8a312d536eaf5a82a8c42380f243d841b8b7f880e438dd394510569c0df03bf0c9cca8e12628521fb1be0abd73b548a3d93e485182cc781b220de4fd08770107b93f27dc57b161454fb2881844fecfe5af2dc8258428104f72910e3de7883605a52adceb31ef5f737ea0b67a6cf8c3cece344d3b73f301b9005180b5e99078326e114a1dda44b153e6d0c69abe17274b1eec60fb6f16a31cf3c75325fb83bf83c46dde12567d5b56cbadf5f8d663ea49a1b41e48921eaf5f35a97067efce811fffbdcaf31ad912c8a8835c91a679c206ab3ce7f2a6d7817092598e19a7dd56111ff101ca107366ccb0c7b3d44297dbdb8bc2fb33987a8a8eaa2571d5ead554737873c8b3587bd1d15f9fb0b1dfaa390be2a84fed2779525a0026786b669c86968db436cfdd9739c5cb98ff1920d7fa33777c099e9e5aa110ab1379bb73c1b32716ac505cd93b4f18db1b20628e025d10d041ab318c4ae477b8baa7a95d82d6ece6cebcc41d314a276fee58be6e90d23e6609b9e3e51857db82c99aae4f728ea88132e0d9c35d215ce968295d4ce90d8019b9caa61a690a9df1ed9dfb79ca2dbe5b927db6e1e37f7c47347d7197e6e7f437dd4a882d168ea6ff8c485f4a6f2d1e35aa2f3f1f5c9bf845a4df94a4b99617d15de26adbfe2aaf702c91b3b6122b4c81d5de9400783c9eab7d697811e7e5425d5cabe53dc258d19bdd7ce7bdcf2e06b55fad45d65feb0cec84ee4bc9223e4de8ce1ffb814a367b9306cd2490e48a2979a467cbab445a7a26b0aebab9483ad8451d3ea28c1c201a601a820d4caa9a080e85156ff40587be15d0f183e9765af0e12905668af562de3a3c47ffeaced70997625065a795002c670617d431eb4216879f1f5cda8b85795c22305d58b92b5cf5ab047101422a2bd3b7882e5aea24780e7546549b1e2539dedf8ee6a22b74cb59154bd8196305aec1c1d11b2e2ecabdcce9ba26669d814bc95b592395ff20d6f2fc13331d4d6b82e13fbd1a8b7032cdabc26c6f8619efd8f30e318fcf635105f4b92e0280f141a967ddc984b7672ed1fc2a22e2aedcee4460e00d95bc52f213732cf727d92662309d2b707d969a1f998ca78e3fe18702d067141efdc14a2978f01ed83146b167dac70a7808caadd6714fc477f7f9332a11ddf55a2e7f478f326c9d7006680b982061e11f04a8bf22e42f08eec81ccb5affa1828e104dd9b8e73a67bdc443350db73407498285eaf1a954a9bdc96e64ad4aee42e98d0167c7815bbe9bf7a685a68a94dc37de14c6c47d93e2499b43ff24cb9a9a5547f65c8c8d3b6da28d7c62cc49dfcae5ef23e0f003c3800fafe210009426efc54057c27c68529c4edc69e57f40fa8ee3862680c04f92b7b4d688c343e62bdd50f7cd3fb5adba6378c97e60daa20e935ae8815f525edd7ce1bcd4f468c3d98c26d33223d25965ef5c14b46076816f682a18c36ec4f848d188b3a3ec00156c56bcd03d17fb839bf1f923102137e98f29dbe185840c842560e81d2b46ffaf34c1727631cb24f463ecbbd1a24c574beaf56194a538c0011cdddd8708f3d6013307026ea60325340bc5c7b94ac5eefddc0913ad2d21ed9c20c4968552f7e14a94c163773817e1c3216fd41268562f7d2cff3cd33d032f211fe2c7343cf56b029d94af1a27f7e895d4d037b5d31c1d67c0ac4ddecfbe62b78da1968cad5d74ddee7be21fab6d27d17e2f03a77cf1475f0c8510c4697ff1045a88fe7c746c734e20af5046d75ec6fd100b6c932178a1f504f8e673c742b97d71ee75591eb38c60393ba7ec459130afbfe79a34c170f5dabd59cb6f487b5d5ab85efeb8db1f1060aae3663e78298712004f0deb1695f40c0124838839dd1509f720a8ae58694e6c8a4c2f046dbabeb981e2d452f9eaa14faa6bc7787abd649e5aa9d761f9eff56040d19f2acf8089e4758f5be0f872e43b2840f411c095ab23e95994480b8b46b65c320ee916f7fd5108673bdeee3231436e7617eaba4bcc173c95c6bc406a2a088229dcffbab0dc8a53e39bd765148dcf930cc5facfa511db2fe13b9b535e8456ea3284d089936915c4fe633b5a6431c4a1d8fe3774057cfefa13270d602249aebf86082daced85df7f32b15b2d622f3e982f4120a07091970451af4c785d90a7fac0e40a79448ed895ce4b4cc44515ea316edd7dde0c94b5d804eca1dc8cdf0bf0e8ec5694bc48f46090099073760a41ec577e250aa8ca2b5a4e5c305cbbc1b3d5ba1177b263dbde8306e6a6a1e9d4e17ce993e49697a40dbb81ca20a26457332317ac3765cccc9095ed5c0a5f7676e04bdbc4944c4ff353ed684b3e513d4ab8e48bd34ad4b27840f8e0d99569e8bbf81906ec65e2762290f404006bdf1a46221787ab9666ea64748f07055a2ae575ad15d972e6cee0b2bbb7634b118c5c42664d8e7e74a312aa19be8319a8432e82944061167888c5e1a320719b679b144f264cb4621ddfea7bc863aa0011d0bad47f9473ced86eab4737fa42b0ec2db397b53a1525a766b899ef00bf7569b602ee9d9d8bf9cd13bde5039193b3f7a3b547ed249861d8757b5f88d8eef285a47ae6cfa216ab9b3a4869c7b1d78615b0ba62339e46a665826db6ef8d186e79071f68f106f7777be0bcc294141fd62784419e9c1013b0b44faa88da08439aa00bf37c63dcbcac969f5b78f5ebe70b136eed2a3bcf503f7f362160b57e64c4d877ed03488b02fbf0bced95cb6096955c2bb58c0add4881449ecf470ddb548ebd31420f7c287d57a30f1c95b2cd99254347cc3fbf10f2e55a9fa6098eaad0f7091791847597227f5570de500d01f5e0c633857248a13961a61366151f4b32ea6e405fc72674539636ba1c4ef1e53c2c5ebdd47e7151aef8c1be17f386ac56a70201b4b7128833bf2634782ddd61ffde90dcdfc1cbe642b0a956c3ddcddba8aea608fbffc3fe435276d2bc4f2da2adce588cc84f8625335aa69b79a895d8faf91ba88625877e56e481df9a2ab6bcc7bd372cc6c414466c12993ee635e94f6f85e6ab43df43c05addf58ff3b4a94ad3070361de38f7e8717af1e4a52a361c3d5c76e4ffdc85ba92f353472d131714b791407bee9e8f7f58166f82c9bc4c0e99f5d1d136c0114f4242110cbf177df6ddcad783b1d8400fa2a935c9ba12a2b03606cbceb6e28d27a93dc8913c42535e2653bf9fd470225086649d76dd9596aa70cf288c425da8efe51df5f8b873c4498f4d652b331ab878a44c3da019b873f491727ad7de68a9db2dc3e7a73bbb7f044511670f5fc3aec531515800bb19e22f4f6a66b86ce14eb0b98f57dea1065a676dc04bff20afeb0642eb3ae7b5317666c6742319d99b6dcc5df3415f9e2b310601595645994668859a508d2f593b47c6de937688f95a3b0adf3d7c39c0cc34c3f9208e36883c7513bf67742c946c74ce0b5c4cc2c1a5a0ae0fc793ce801e5a0fef800ea7673a3e0e41055cbbe47cf4ffd249bf181ba9a256e3f382698b4a101e114b631defb84c4213d8030272193112dbb4a6003d9a8e078a28e751af15352a972027ad81945f594cec99017e7dfb8a92ec7f2d6a4c504fa1d6f7aaa34a18807bd057112451f43f50862418c7e97b551f24913486e1d9342153492b46fdfa4889f89822825c0a44ffd29983e56a88ed8e2fc879497b955ab560fe9446d2b75b64eaedcd448eaaa6559c2276954ce159f2bab9a24396fea02262f8146f29e6ef0155e7734639f2ba6f1e5f0dbf8b84e3acc9512b6d7d0f9430144f6d0e1115e402c229e8f12d3f61d7d7fcb0a6b2392307b60fb0c7cc46e40df11df226e4bc2dd192eaa850a4c52df7d30b18b04830fb0a57713cfbfba0990a96f7967b337fd3b2622c63ea1307bdd8fa177a2c614f5e69b8b861001ef7797fadfd07015e027288f340f0b900d5ea36f3864cc407e216c4ce575f84d35cdce6eed5ddff28b47735265e6f7c67e6e15cd5aa8090a9448967ab442e302a7d935b20bdc7937ff899b174b339ab1dc21bb5fa3cf9c9b414ac631e1b148c622eb1cfad9744600f5dcb600bae439f6ea6364f96f78cedf9a2f389d4b4468a4385964ddacd464fa0534ad92dd4c6f1e0700146966b3bcd20f3035e4d20bdb1eb1763af85f18fcef68c47d34450bc5ce2911605806887296ef3a9ce349824b816956b11f8855cb0491112e95eaac4a0e961ecc1fdaf958d56e830e5ec62519f0a9b3b84b8a03febe40b67f8fa460099a3d686ecc254a41274248c095cce65ca5074853c836593853d9828c0eec3e318c0eaf611b15e27eb5d09d214bc372a28de059e51f7fc0048e1a11f99a2ab5c3a3d9b70d45c453cb8b5a9279aed7bfd8f166f49232ea031c265e76251c9d0cca585af0b0854ee5c5c21805cfb6d13501ce9f43429bd771b3d4346740516c2afe004019d7b3e94a903dd9fb37850a8b35165f9a9fdc012d231663783eaaef28d1d9061127f1bce3223813e74eb20435afa6d380436599533ceca219d7fa2237d5fcfd87b695ca3888ca1b1ff41189d1b05d28a6751a23e80a526100aa9fb15d5aca99842d4304e75a385fad31b65a67822e31cd94ca9c92831c309f6b0d76709458bbc38dcb934942b3a4f263c90d5aef6b35a63e96a421c791daf7ea156011b9ef241735ce27558096c610b09cbf3e1c4fd8b0959bf722bcffa73816a104d58f42f08222b9020a262ea6f7ea7ff7ff9ad4cc97acb1a18b72b7ff188f31da318a67e7e1c7af45565eb745f9fc318dd1993d23797d5e441a9e859be1014795d941dbf9e3fe013a010d35bf09c86c29f5c2027607cd396654f79e292be500a42e09b68ba9000230bafa52974813af2b9ce1ae36c285f00df2e8ceac505bdf99e437fc2d993294fa4372ee0e8c35358c84dacea0d9d4a86c76b9f8e4ad45a426b9d56303b4031b2508ac895a4c77ded3fd8664d3731326ae67c00f727dae87ab347b0cdf99125ac8e7c7fae5d01180a52c3208043ca3ab10b5e4d0c1e8a4af00fe3603e229cdb8ae40a8c11ad7951b5f3f5f7af16da23336a8bafd061d89a6ba53b1cbe0711438658258df5a14a377c45adf2b48a3157168a8b05a57f02b1c7901151d07cfe201e0879e5e323e409bc1b3781e8a35af0863e5b3721a9832c646bcb0715469f4bf42c17f8e7b244f875394d56d0487d0f066e332299c7c1b8abb3120603be814c8a2f111afe1776b1d3d920258016473b44656f937127504ca7cb068223c64b096753c0cdcdeb8dd382247417d8d38a7f8ab78de67f9b964464045d14dc2fa352aa73b1a4b161518510f0ddbde50d9249cead291f1e45aaf42f689079f8a494b0c7dc327a1e8291ed51e4571b2f374989ecbdcac42c54ea85c8aee11b8be9cd5e97fb9129a454f7d3fd8f2b7bcd84b2b6683287b4218c910e50f674c1a5512720f316dc69ee5ffb6b9588429cebd3daf928aac6d2c93d0496dde5a87293bfd37d0358a2a70f9211a0cf4e655515c40c9f051e0dd33fa50f55cdf7bd107abd1afb3d4495137c45ca123ff8828cc70057131f190ae3c22cf45a696ede4edf0de3a195449e7c8f0988dce24481f6cf76d63468014e0f6b6d52a03e549fb0e7de30e3593e0aa2767409cab054560c76</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码才能访问.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top">jiangdu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top/posts/OI/travelogue/ICPC2023HangZhou/">https://blog.satori-march.top/posts/OI/travelogue/ICPC2023HangZhou/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.satori-march.top" target="_blank">jiangdu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OI/">OI</a><a class="post-meta__tags" href="/tags/encrypted/">encrypted</a></div><div class="post-share"><div class="social-share" data-image="/img/default_cover/windows-TM.png" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/blog/hexo-action-deploy/" title="git仓库嵌套导致github actions部署hexo博客失败"><img class="cover" src="/img/default_cover/merry1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">git仓库嵌套导致github actions部署hexo博客失败</div></div><div class="info-2"><div class="info-item-1">git submodule 按网上的教程配置 github actions, 在 hexo generate 的时候无法解析文章里的 tag plugins(标签插件) 而是会报错. 我一开始还以为是插件没装上, 后来才意识到, 我的主题是直接在 themes 文件夹里 git clone 过来的, actions 中 clone 我的仓库是不包含这个主题的, 所以才报错. git 仓库嵌套使用后, 被嵌套的 git 仓库不能被外层 git 仓库检测到. 百度~~(其实是bing但我说习惯了)~~后发现 git 还有 submodule 这种东西, 刚好可以达到我们的目的. 首先要用 git rm --cached 删除原来的内层仓库, 不要直接删除, 否则外层可能会感知不到, 然后输入命令: 1git submodule add -b [branch] [repository_url] [path] 例如: 1git submodule add -b master https://github.com/jerryc127/hexo-theme-butterfly.git...</div></div></div></a><a class="pagination-related" href="/posts/OI/solution/2025-nowcoder-winter-6/" title="2025 牛客寒假 6 部分题解（E, D, H, I）"><img class="cover" src="/img/default_cover/koishi-satori1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">2025 牛客寒假 6 部分题解（E, D, H, I）</div></div><div class="info-2"><div class="info-item-1">I 小鸡的排列构造的 checker 看题第一反应是主席树。 定义 lst[x]lst[x]lst[x] 表示值 xxx 出现的下标（因为是排列只会出现一次），则每次询问中要求的区间排名即为 lstlstlst 上 p[c]p[c]p[c] 左侧在 [l,r][l,r][l,r] 之间的数的个数，加上 lll 就是答案。使用扫描线——离线树状数组解决即可。（如果你没有学过二位数点，类比树状数组求逆序对即可）。 赛时代码： 12345678910111213141516171819202122232425262728293031323334353637383940int n, m;cin &gt;&gt; n &gt;&gt; m;vector&lt;int&gt; p(n + 1);for (int &amp;num : p | views::drop(1)) &#123;    cin &gt;&gt; num;&#125;struct Query &#123;    int l, r, c,...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">jiangdu</div><div class="author-info-description">jiangdu的静态个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/satorimarch"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class is-expand" style="display:none"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2023-12-08-Day-1"><span class="toc-number">1.</span> <span class="toc-text">2023-12-08 Day -1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2023-12-09-Day-0"><span class="toc-number">2.</span> <span class="toc-text">2023-12-09 Day 0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2023-12-09-Day-1"><span class="toc-number">3.</span> <span class="toc-text">2023-12-09 Day 1</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-color: #4f73a0;"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By jiangdu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">若无力驾驭，自由便是负担</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"reaction":false,"search":false,"locale":{"placeholder":"发条友善的评论吧 (不填信息默认匿名, 填写邮箱可以收到回复通知)","sofa":"这个评论区空空如也...不如发条评论?"},"emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"]}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://blog-api-umber.vercel.app',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

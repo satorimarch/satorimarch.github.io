@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C#基础教程[2] 循环程序设计 | jiangdu's blog</title><meta name="author" content="jiangdu"><meta name="copyright" content="jiangdu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="之前学的程序里的语句都只能执行最多一次, 无法发挥出计算机的优势. 而为了让代码中的一行语句可以被执行若干遍, 于是便有了循环. 循环语句 while 循环 假设我们要写一个程序永远不停的输出 hello world (直到你关掉这个程序), 代码如下: 123while (true) &#123; Console.WriteLine(&quot;hello world&quot;);    &amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#基础教程[2] 循环程序设计">
+<meta property="og:url" content="https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[2]%E5%BE%AA%E7%8E%AF%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="jiangdu&#39;s blog">
+<meta property="og:description" content="之前学的程序里的语句都只能执行最多一次, 无法发挥出计算机的优势. 而为了让代码中的一行语句可以被执行若干遍, 于是便有了循环. 循环语句 while 循环 假设我们要写一个程序永远不停的输出 hello world (直到你关掉这个程序), 代码如下: 123while (true) &#123; Console.WriteLine(&quot;hello world&quot;);    &amp;#">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.satori-march.top/img/default_cover/luogu-daily.png">
+<meta property="article:published_time" content="2021-11-29T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-12T18:15:49.000Z">
+<meta property="article:author" content="jiangdu">
+<meta property="article:tag" content="c#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.satori-march.top/img/default_cover/luogu-daily.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "C#基础教程[2] 循环程序设计",
+  "url": "https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[2]%E5%BE%AA%E7%8E%AF%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/",
+  "image": "https://blog.satori-march.top/img/default_cover/luogu-daily.png",
+  "datePublished": "2021-11-29T00:00:00.000Z",
+  "dateModified": "2025-02-12T18:15:49.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "jiangdu",
+      "url": "https://blog.satori-march.top/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/code-solid.png"><link rel="canonical" href="https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[2]%E5%BE%AA%E7%8E%AF%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><meta name="google-site-verification" content="IWyWefGb0HPoNf-nZlR55zAl9X55Yss4iVCfmzMGILs"/><meta name="baidu-site-verification" content="code-QPN4HZQeX8"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?463e5f9332f0e3ca87c77181fe9514c6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-92KXEXH29N"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-92KXEXH29N')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-92KXEXH29N', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C#基础教程[2] 循环程序设计',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="jiangdu's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/default_cover/luogu-daily.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">jiangdu's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">C#基础教程[2] 循环程序设计</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">C#基础教程[2] 循环程序设计</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-29T00:00:00.000Z" title="发表于 2021-11-29 00:00:00">2021-11-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-12T18:15:49.000Z" title="更新于 2025-02-12 18:15:49">2025-02-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/csharp/">c#</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE/">电子电路社</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/csharp/charp-tutorial/">c#教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3k</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B%5B2%5D%E5%BE%AA%E7%8E%AF%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>之前学的程序里的语句都只能执行最多一次, 无法发挥出计算机的优势. 而为了让代码中的一行语句可以被执行若干遍, 于是便有了循环.</p>
+<h2 id="循环语句">循环语句</h2>
+<h3 id="while-循环"><code>while</code> 循环</h3>
+<p>假设我们要写一个程序永远不停的输出 <code>hello world</code> (直到你关掉这个程序), 代码如下:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line"> Console.WriteLine(<span class="string">&quot;hello world&quot;</span>);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中小括号里的为条件, 大括号里的(即这个代码块)为参与循环的部分<br>
+在进入循环之前会先判断括号里的条件，如果为 <code>true</code> 才执行，每次执行完大括号里的内容会再次判断括号里的条件，如果为 <code>true</code> 则再次执行大括号里的内容，循环往复直到括号里的条件为 <code>false</code></p>
+<p>因为上面的例子中括号里恒为 <code>true</code> 所以这个循环会永远进行下去</p>
+<div class="note warning flat"><p>不能写成 <code>while(1)</code>, 当你了解了 <code>C#</code> 中的数据类型转换机制的时候你会对此有更深的感悟</p>
+</div>
+<p>再举一个不是死循环的例子：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">while</span> (a &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;a 的值: &#123;0&#125;&quot;</span>, a);</span><br><span class="line">    a++;  <span class="comment">// 自增运算符, 相当于 a = a + 1;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大家可以预测一下输出的结果。</p>
+<details class="toggle" ><summary class="toggle-button" style="">点我查看输出结果</summary><div class="toggle-content"><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a 的值: 5</span><br><span class="line">a 的值: 6</span><br><span class="line">a 的值: 7</span><br><span class="line">a 的值: 8</span><br><span class="line">a 的值: 9</span><br></pre></td></tr></table></figure>
+</div></details>
+<h4 id="猜数游戏">猜数游戏</h4>
+<p>在这里先介绍一下如何生成随机数：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Random rd = <span class="keyword">new</span> Random();  <span class="comment">// 如果要生成多组随机数 这行也只需要在最开始写一遍</span></span><br><span class="line"><span class="built_in">int</span> a = rd.Next();  <span class="comment">// Next()函数返回下一个随机数</span></span><br></pre></td></tr></table></figure>
+<p>这么写具体的原理会在下一节进行解释</p>
+<p>如果要生成指定范围内的随机数应该写为：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rd.Next(<span class="number">5</span>, <span class="number">11</span>);  <span class="comment">// 左闭右开，所以此处为 [5,11) 范围内的随机数，并不包括 11</span></span><br></pre></td></tr></table></figure>
+<p>这样我们就可以写一个猜数游戏了：生成 [1,100] 内的一个随机数，让玩家来猜这个数的大小，提示玩家猜测的数是偏大还是偏小，直到玩家猜中</p>
+<p>代码：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Random rd = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="built_in">int</span> a = rd.Next(<span class="number">1</span>, <span class="number">101</span>);</span><br><span class="line"></span><br><span class="line">Console.WriteLine(<span class="string">&quot;输入你猜测的数字:&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> num = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(num != a) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num &lt; a) &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;不对不对, 太小了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;不对不对, 太大了&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;再猜一次吧:&quot;</span>);</span><br><span class="line">    num = Convert.ToInt32(Console.ReadLine());</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;恭喜你猜对了!&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="例题-2-1-竞选社长">例题 2-1 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/45a30e3ef51040ed8a7674984d6d1553?tpId=107&amp;&amp;tqId=33321&amp;rp=1&amp;ru=/ta/beginner-programmers&amp;qru=/ta/beginner-programmers/question-ranking">竞选社长</a></h4>
+<p>假设电子电路社要竞选下一届社长，有两名候选人分别是A和B，社团每名同学必须并且只能投一票，最终得票多的人为社长.</p>
+<p>输入包含若干行的字符，每行仅包含A或B，输入以字符0结束。（原题为一行字符序列）</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str = Console.ReadLine();</span><br><span class="line"><span class="built_in">int</span> a=<span class="number">0</span>, b=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(str != <span class="string">&quot;0&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="string">&quot;A&quot;</span>) &#123;</span><br><span class="line">        a++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        b++;</span><br><span class="line">    &#125;</span><br><span class="line">    str = Console.ReadLine();  <span class="comment">// 不要忘记重新读取下一行</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;E&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="for-循环"><code>for</code> 循环</h3>
+<p>以下代码列是一个简单的 <code>for</code> 语句，它循环遍历其代码块（即被大括号括起来的内容）十次，并打印 <code>i</code> 的当前值。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  Console.WriteLine(<span class="string">&quot;i的值为: &#123;0&#125;&quot;</span>, i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大括号包起来的代码块部分很好理解，让我们来看看小括号里的内容：</p>
+<p>小括号里被分号 <code>;</code> 分为三个部分，分别表示：</p>
+<ol>
+<li>在进入循环语句和判断条件之前执行的语句，无论循环是否执行这个语句都只会被执行一次</li>
+<li>循环判断的条件，与 <code>while</code> 语句同理</li>
+<li>每次执行完大括号里的内容之后执行的语句，注意是在执行完该语句之后才会再次判断条件</li>
+</ol>
+<p>刚刚的学习 <code>while</code> 循环时展示的代码可以用 <code>for</code> 循环更简单的写出来：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> a=<span class="number">5</span>; a &lt; <span class="number">10</span>; a++) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;a 的值: &#123;0&#125;&quot;</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再对比刚刚的代码看：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">5</span>;  <span class="comment">// 被小括号里的第一部分代替</span></span><br><span class="line"><span class="keyword">while</span> (a &lt; <span class="number">10</span>) &#123;  <span class="comment">// 被小括号里的第二部分代替</span></span><br><span class="line">    Console.WriteLine(<span class="string">&quot;a 的值: &#123;0&#125;&quot;</span>, a);</span><br><span class="line">    a++;  <span class="comment">// 被小括号里的第三部分代替</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意小括号里第一部分写为 <code>int a</code> 和在循环外写 <code>int a</code> 的区别：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> a=<span class="number">5</span>; a &lt; <span class="number">10</span>; a++) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;a 的值: &#123;0&#125;&quot;</span>, a);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(a);  <span class="comment">// 会报错告诉你 a 没有定义</span></span><br></pre></td></tr></table></figure>
+<p>换句话说在括号里定义的 <code>a</code> 就只会在循环的范围内生效</p>
+<p>如果想使用 a 的值请像下面这么写：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a;</span><br><span class="line"><span class="keyword">for</span> (a=<span class="number">5</span>; a &lt; <span class="number">10</span>; a++) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;a 的值: &#123;0&#125;&quot;</span>, a);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(a);  <span class="comment">// 正常执行，输出10</span></span><br></pre></td></tr></table></figure>
+<p>也请注意最后 <code>a</code> 的值为 10 而不是 9。考虑反证法，如果 a 为 9 则还满足循环的条件，则会继续执行循环的内容，所以 a 一定不是 9</p>
+<h4 id="例题-2-2-FizzBuzz-问题">例题 2-2 FizzBuzz 问题</h4>
+<p>每行输出一个数字 从 1 到 100，满足以下规则：</p>
+<ul>
+<li>如果当前值可被 3 整除，则在该数字旁打印 Fizz。</li>
+<li>如果当前值可被 5 整除，则在该数字旁打印 Buzz。</li>
+<li>如果当前值可 同时 被 3 和 5 整除，则在该数字旁打印 FizzBuzz。</li>
+</ul>
+<p>例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2       </span><br><span class="line">3 - Fizz</span><br><span class="line">4       </span><br><span class="line">5 - Buzz</span><br><span class="line">6 - Fizz</span><br><span class="line">7       </span><br><span class="line">8</span><br><span class="line">9 - Fizz</span><br><span class="line">10 - Buzz</span><br><span class="line">11</span><br><span class="line">12 - Fizz</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15 - FizzBuzz</span><br></pre></td></tr></table></figure>
+<p>示例程序：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意这里用的是 &lt;= , 如果想模仿上面的例子使用 &lt;, 请把100 改为 101</span></span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">1</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; i % <span class="number">5</span> == <span class="number">0</span>) &#123;  <span class="comment">// 如果同时能被 3 和 5 整除执行</span></span><br><span class="line">        Console.WriteLine(<span class="string">&quot;&#123;0&#125; - FizzBuzz&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 注意 else, 不能被同时整除的时候却能被 3 整除才执行</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span>) &#123; </span><br><span class="line">        Console.WriteLine(<span class="string">&quot;&#123;0&#125; - Fizz&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 同样注意 else, 不能被同时整除 也不能被 3 整除 却能被 5 整除执行</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (i % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;&#123;0&#125; - Buzz&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;  <span class="comment">// 上述情况都不满足说明不能被任何一个整除</span></span><br><span class="line">        Console.WriteLine(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>无代码注释版：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">1</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; i % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;&#123;0&#125; - FizzBuzz&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span>) &#123; </span><br><span class="line">        Console.WriteLine(<span class="string">&quot;&#123;0&#125; - Fizz&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (i % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;&#123;0&#125; - Buzz&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        Console.WriteLine(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请注意括号里三个部分不同就会导致循环不同的结果：(注释为循环时 <code>i</code> 的范围)</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;  &#125;  <span class="comment">// [1,10]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">1</span>; i &lt; <span class="number">10</span>; i++) &#123;  &#125;  <span class="comment">// [1,9]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">0</span>; i &lt;= <span class="number">10</span>; i++) &#123;  &#125;  <span class="comment">// [0, 10]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">10</span>; i &gt;= <span class="number">1</span>; i--) &#123;  &#125;  <span class="comment">// [1,10] 逆序</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">10</span>; i &gt; <span class="number">1</span>; i--) &#123;  &#125;  <span class="comment">// [2,10] 逆序</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">1</span>; i &lt;= <span class="number">10</span>; i += <span class="number">2</span>) &#123;  &#125;  <span class="comment">// &#123;1, 3, 5, 7, 9&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="嵌套循环">嵌套循环</h3>
+<p>循环是可以嵌套的，当出现嵌套循环的时候，先执行内层循环，内层循环执行完一遍之后再回到外层的循环，再从外层循环进入内层循环，类似数学中的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mo>∑</mo></mrow><annotation encoding="application/x-tex">\sum\sum</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑∑</span></span></span></span>，又类似平常说的“先从上到下 再从左到右”也可以理解为嵌套循环。让我们看一个例子：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">5</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;i 的值: &#123;0&#125;&quot;</span>, i);</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> j=<span class="number">5</span>; j &lt; <span class="number">8</span>; j++) &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;    j 的值: &#123;0&#125;&quot;</span>, j);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note danger flat"><p>请注意在嵌套循环的时候两个变量 <code>i</code> 和 <code>j</code> 不要错写成一样的，会引起混淆，就像一个班里有两个人都叫小明的时候你直接喊“小明”会不知道你指的是谁。</p>
+</div>
+<details class="toggle" ><summary class="toggle-button" style="">输出</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">i 的值: 5</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br><span class="line">    j 的值: 7</span><br><span class="line">i 的值: 6</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br><span class="line">    j 的值: 7</span><br><span class="line">i 的值: 7</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br><span class="line">    j 的值: 7</span><br><span class="line">i 的值: 8</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br><span class="line">    j 的值: 7</span><br><span class="line">i 的值: 9</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br><span class="line">    j 的值: 7</span><br></pre></td></tr></table></figure>
+</div></details>
+<h4 id="例题-2-3-等腰直角三角形">例题 2-3 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/2cdea429fa414fbba26e6c821724ca06?tpId=107&amp;&amp;tqId=33340&amp;rp=1&amp;ru=/ta/beginner-programmers&amp;qru=/ta/beginner-programmers/question-ranking">等腰直角三角形</a></h4>
+<p>KiKi学习了循环，BoBo老师给他出了一系列打印图案的练习，该任务是打印用“*”组成的翻转直角三角形图案。(原题为多组数据，这里简化为一组)</p>
+<p>输入一个数字即等腰直角三角形的侧边长，当输入为 5 时输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* * * * *</span><br><span class="line">* * * * </span><br><span class="line">* * *</span><br><span class="line">* *</span><br><span class="line">*</span><br></pre></td></tr></table></figure>
+<p>示例代码：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> n = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> j=i; j &lt;= n; j++) &#123;  <span class="comment">// 注意这里 j 的初始值设为 i, 这样才能每次输出星号个数递减</span></span><br><span class="line">        Console.Write(<span class="string">&quot;* &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine();  <span class="comment">// 输出换行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="循环控制语句">循环控制语句</h3>
+<div class="note info flat"><p>以下内容对 <code>for</code> 和 <code>while</code> 均适用</p>
+</div>
+<h4 id="break-语句"><code>break</code> 语句</h4>
+<p><code>break</code> 表示终止循环，当在循环里遇到 <code>break</code> 语句时，循环会立即终止，且程序流将继续执行紧接着循环语句之后的语句。例如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">5</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">8</span>) <span class="keyword">break</span>;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;i 的值: &#123;0&#125;&quot;</span>, i);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;end loop&quot;</span>);</span><br></pre></td></tr></table></figure>
+<details class="toggle" ><summary class="toggle-button" style="">输出</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i 的值: 5</span><br><span class="line">i 的值: 6</span><br><span class="line">i 的值: 7</span><br><span class="line">end loop</span><br></pre></td></tr></table></figure>
+</div></details>
+<p>当 <code>break</code> 语句用在嵌套循环中，只会跳出最内层的循环，例如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">5</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;i 的值: &#123;0&#125;&quot;</span>, i);</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j=<span class="number">5</span>; j &lt; <span class="number">9</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (j == <span class="number">7</span>) <span class="keyword">break</span>;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;    j 的值： &#123;0&#125;&quot;</span>, j);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<details class="toggle" ><summary class="toggle-button" style="">输出</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">i 的值: 5</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br><span class="line">i 的值: 6</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br><span class="line">i 的值: 7</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br><span class="line">i 的值: 8</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br><span class="line">i 的值: 9</span><br><span class="line">    j 的值: 5</span><br><span class="line">    j 的值: 6</span><br></pre></td></tr></table></figure>
+</div></details>
+<h4 id="continue-语句"><code>continue</code> 语句</h4>
+<p><code>continue</code> 语句与 <code>break</code> 语句类似，但 <code>continue</code> 语句的意思是 停止当前循环体里语句的执行，跳到循环的开始，（对于 <code>for</code> 循环）执行括号里第三部分的语句，然后重新判断循环条件决定是否继续循环。</p>
+<p>例如把上面的例子中的 <code>break</code> 改成 <code>continue</code>：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">5</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">8</span>) <span class="keyword">continue</span>;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;i 的值: &#123;0&#125;&quot;</span>, i);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;end loop&quot;</span>);</span><br></pre></td></tr></table></figure>
+<details class="toggle" ><summary class="toggle-button" style="">输出</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i 的值: 5</span><br><span class="line">i 的值: 6</span><br><span class="line">i 的值: 7</span><br><span class="line">i 的值: 9</span><br><span class="line">end loop</span><br></pre></td></tr></table></figure>
+</div></details>
+<p>注意这里跳过了 <code>i = 8</code> 时的情况直接输出了 <code>i = 9</code> 的情况</p>
+<h2 id="练习">练习</h2>
+<h3 id="2-1-阶乘-P5739">2-1 阶乘  (P5739)</h3>
+<p>输入 <code>n</code>, 输出 <code>n</code> 的阶乘(n &lt;= 12)</p>
+<h3 id="2-2-aabb">2-2 aabb</h3>
+<p>输出所有形如 aabb 的完全平方数</p>
+<h3 id="2-3-最高分与最低分之差">2-3 最高分与最低分之差</h3>
+<p>第一行输入一个数 n, 然后n行每行一个整数代表一个人的成绩, 求出最高分和最低分的差值</p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">输入</button><button type="button" class="tab">输出</button></div><div class="tab-contents"><div class="tab-item-content active"><p>5<br>
+98<br>
+100<br>
+99<br>
+97<br>
+95</p></div><div class="tab-item-content"><p>5</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h3 id="2-4-RPG游戏">2-4 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/learn/modules/csharp-do-while/3-challenge">RPG游戏</a></h3>
+<p>在大部分角色扮演游戏中，玩家角色会与NPC战斗。在此练习中，我们归纳出战斗过程的本质。 英雄和怪物在开始时的生命值相同。 在英雄攻击时，它们将生成一个随机值，该值将从怪物的生命值中减去。 如果怪物的生命值大于零，则会轮到它们攻击英雄。 只要英雄和怪物的生命值都大于零，战斗就会继续进行。</p>
+<p>为游戏实现以下规则：</p>
+<h4 id="游戏规则">游戏规则</h4>
+<ul>
+<li>英雄和怪物在开始时的生命值为 10。</li>
+<li>所有攻击都是介于 1 到 10 之间的随机值。</li>
+<li>英雄首先攻击。</li>
+<li>输出怪物损失的生命值，以及剩余的生命值。</li>
+<li>如果怪物的生命值大于 0，则它会攻击英雄。</li>
+<li>输出英雄损失的生命值，以及剩余的生命值。</li>
+<li>继续此攻击顺序，直到怪物或英雄任意一方的生命值为零或更低。</li>
+<li>输出胜利者。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top">jiangdu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[2]%E5%BE%AA%E7%8E%AF%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[2]%E5%BE%AA%E7%8E%AF%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.satori-march.top" target="_blank">jiangdu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/csharp/">c#</a></div><div class="post-share"><div class="social-share" data-image="/img/default_cover/luogu-daily.png" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/blog/test/" title="test"><img class="cover" src="/img/default_cover/windows-TM.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">test</div></div><div class="info-2"><div class="info-item-1">博客的测试页面</div></div></div></a><a class="pagination-related" href="/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B%5B3%5D%E5%86%8D%E8%B0%88%E7%B1%BB%E5%9E%8B/" title="C#基础教程[3] 再谈类型"><img class="cover" src="/img/default_cover/marisa2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">C#基础教程[3] 再谈类型</div></div><div class="info-2"><div class="info-item-1"> 本文主要由zbx1425大佬所写  再谈数据类型 数据类型是一个初学者不太容易搞懂的概念，所以我们还要再强调一下。 首先，C#中的每一个“值”都是有类型的。包括由我们直接写出的称为“字面量”的东西（如 123， “Hello World”），变量的内容，以及函数返回的结果。（注：“返回 xxx” 意思就是函数运行的结果是xxx）   1 - int: 不带小数点的数字是 int 类型的 “字面量”   1.0 - double: 带上小数点之后，它就成了一个 double 类型的 “字面量” 请仔细注意这里的区别。例如 3 / 2 结果是 1，因为被除数和除数都是 int 所以执行了整数除法；但 3.0 / 2 由于被除数是 double 会执行浮点数除法，结果就是 1.5 了，这就是类型不同引发的差异，即使是对于直接给出的“字面量”也是同样。   被除数和除数中只要有一个是浮点数就会执行浮点数除法    &quot;1.0&quot; - string: 双引号括起来的是 string 类型的 “字面量”，注意它和不带双引号的值 1.0...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">jiangdu</div><div class="author-info-description">jiangdu的静态个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/satorimarch"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.</span> <span class="toc-text">循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#while-%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.1.</span> <span class="toc-text">while 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8C%9C%E6%95%B0%E6%B8%B8%E6%88%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">猜数游戏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-2-1-%E7%AB%9E%E9%80%89%E7%A4%BE%E9%95%BF"><span class="toc-number">1.1.2.</span> <span class="toc-text">例题 2-1 竞选社长</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.2.</span> <span class="toc-text">for 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-2-2-FizzBuzz-%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.1.</span> <span class="toc-text">例题 2-2 FizzBuzz 问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.3.</span> <span class="toc-text">嵌套循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-2-3-%E7%AD%89%E8%85%B0%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text">例题 2-3 等腰直角三角形</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.</span> <span class="toc-text">循环控制语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#break-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.1.</span> <span class="toc-text">break 语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#continue-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.2.</span> <span class="toc-text">continue 语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text">练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E9%98%B6%E4%B9%98-P5739"><span class="toc-number">2.1.</span> <span class="toc-text">2-1 阶乘  (P5739)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-aabb"><span class="toc-number">2.2.</span> <span class="toc-text">2-2 aabb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%9C%80%E9%AB%98%E5%88%86%E4%B8%8E%E6%9C%80%E4%BD%8E%E5%88%86%E4%B9%8B%E5%B7%AE"><span class="toc-number">2.3.</span> <span class="toc-text">2-3 最高分与最低分之差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-RPG%E6%B8%B8%E6%88%8F"><span class="toc-number">2.4.</span> <span class="toc-text">2-4 RPG游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99"><span class="toc-number">2.4.1.</span> <span class="toc-text">游戏规则</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-color: #4f73a0;"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By jiangdu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">若无力驾驭，自由便是负担</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"reaction":false,"search":false,"locale":{"placeholder":"发条友善的评论吧 (不填信息默认匿名, 填写邮箱可以收到回复通知)","sofa":"这个评论区空空如也...不如发条评论?"},"emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"]}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://blog-api-umber.vercel.app',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

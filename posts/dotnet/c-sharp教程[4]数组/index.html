@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C#基础教程[4] 数组 | jiangdu's blog</title><meta name="author" content="jiangdu"><meta name="copyright" content="jiangdu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="声明数组 数组是一个存储相同类型数据的固定大小的顺序集合。用简单的话来说就是，数组可以用单个变量名来访问很多同一类型的数据，而不需要声明很多的变量。 假设我们正在做一个把所有一共 n 个学生的分数进行排名的程序，那么我们就要储存所有学生的分数，由于 n 可能很大而且不是一个固定的值，所以我们无法为每个学生都声明一个变量来存储，就算那么做也无法进行排名。这时候我们需要使用数组。 声明数组的语法如下：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#基础教程[4] 数组">
+<meta property="og:url" content="https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[4]%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:site_name" content="jiangdu&#39;s blog">
+<meta property="og:description" content="声明数组 数组是一个存储相同类型数据的固定大小的顺序集合。用简单的话来说就是，数组可以用单个变量名来访问很多同一类型的数据，而不需要声明很多的变量。 假设我们正在做一个把所有一共 n 个学生的分数进行排名的程序，那么我们就要储存所有学生的分数，由于 n 可能很大而且不是一个固定的值，所以我们无法为每个学生都声明一个变量来存储，就算那么做也无法进行排名。这时候我们需要使用数组。 声明数组的语法如下：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.satori-march.top/img/default_cover/merry1.jpg">
+<meta property="article:published_time" content="2022-01-16T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-12T18:15:49.000Z">
+<meta property="article:author" content="jiangdu">
+<meta property="article:tag" content="c#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.satori-march.top/img/default_cover/merry1.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "C#基础教程[4] 数组",
+  "url": "https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[4]%E6%95%B0%E7%BB%84/",
+  "image": "https://blog.satori-march.top/img/default_cover/merry1.jpg",
+  "datePublished": "2022-01-16T00:00:00.000Z",
+  "dateModified": "2025-02-12T18:15:49.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "jiangdu",
+      "url": "https://blog.satori-march.top/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/code-solid.png"><link rel="canonical" href="https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[4]%E6%95%B0%E7%BB%84/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><meta name="google-site-verification" content="IWyWefGb0HPoNf-nZlR55zAl9X55Yss4iVCfmzMGILs"/><meta name="baidu-site-verification" content="code-QPN4HZQeX8"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?463e5f9332f0e3ca87c77181fe9514c6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-92KXEXH29N"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-92KXEXH29N')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-92KXEXH29N', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C#基础教程[4] 数组',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="jiangdu's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/default_cover/merry1.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">jiangdu's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">C#基础教程[4] 数组</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">C#基础教程[4] 数组</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-16T00:00:00.000Z" title="发表于 2022-01-16 00:00:00">2022-01-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-12T18:15:49.000Z" title="更新于 2025-02-12 18:15:49">2025-02-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/csharp/">c#</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E7%A4%BE/">电子电路社</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/csharp/charp-tutorial/">c#教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">5.1k</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B%5B4%5D%E6%95%B0%E7%BB%84/"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="声明数组">声明数组</h2>
+<p>数组是一个存储相同类型数据的固定大小的顺序集合。用简单的话来说就是，数组可以用单个变量名来访问很多同一类型的数据，而不需要声明很多的变量。</p>
+<p>假设我们正在做一个把所有一共 <code>n</code> 个学生的分数进行排名的程序，那么我们就要储存所有学生的分数，由于 <code>n</code> 可能很大而且不是一个固定的值，所以我们无法为每个学生都声明一个变量来存储，就算那么做也无法进行排名。这时候我们需要使用数组。</p>
+<p>声明数组的语法如下：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type[] arrayName;  <span class="comment">// array 就是数组的英文</span></span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores;</span><br></pre></td></tr></table></figure>
+<p>但如果这样使用数组的话会报错：</p>
+<div class="note danger flat"><p>error CS0165: 使用了未赋值的局部变量“score”</p>
+</div>
+<p>这是因为数组声明之后并不会初始化，所以还需要在声明的时候使用 <code>new</code> 关键字来创建数组的实例（关于什么是 <code>new</code> 操作符请见上一篇教程 不过暂时不懂问题也不大），例如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+<p>其中方括号里的数组表示的是数组的大小，也就是数组中元素的个数。数组的长度是固定的，所以必须说明它的大小。</p>
+<div class="note info flat"><p>你可以声明任意类型的数组, 比如 <code>double</code>, <code>string</code> 等, 还有更复杂的还没学到的, 现在只用 <code>int</code> 举例</p>
+</div>
+<p>在定义数组之后，我们可以用 <code>arrayName[index]</code> 来访问叫做 <code>arrayName</code> 的数组中的第 <code>index+1</code> 个元素，其中方括号中的内容叫做数组的下标或者索引(index就是索引的英文)。</p>
+<div class="note danger flat"><p>请注意，数组是从 0 开始计数的，所以数组中的第一个元素应为 <code>arrayName[0]</code> 而非 <code>arrayName[1]</code></p>
+</div>
+<p>你可以在声明的时候对数组中的元素赋初始值，例如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>] &#123; <span class="number">98</span>, <span class="number">97</span>, <span class="number">94</span>, <span class="number">92</span>, <span class="number">95</span> &#125;;</span><br></pre></td></tr></table></figure>
+<p>此时 <code>scores</code> 数组中第一个元素是 98, 索引是 0, 最后一个元素是95, 索引是 4</p>
+<p>使用 <code>scores[index]</code> 访问数组中的元素:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>] &#123; <span class="number">98</span>, <span class="number">97</span>, <span class="number">94</span>, <span class="number">92</span>, <span class="number">95</span> &#125;;</span><br><span class="line">Console.WriteLine(scores[<span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+<p>输出为 97 (注意不是 98, 因为数组从 0 开始计数)</p>
+<p>可以这样来更改数组中的元素:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>] &#123; <span class="number">98</span>, <span class="number">97</span>, <span class="number">94</span>, <span class="number">92</span>, <span class="number">95</span> &#125;;</span><br><span class="line">scores[<span class="number">1</span>] = <span class="number">99</span>;</span><br><span class="line">Console.WriteLine(scores[<span class="number">1</span>]);  <span class="comment">// 输出 99</span></span><br></pre></td></tr></table></figure>
+<div class="note danger flat"><p>请时刻留意数组的范围, 因为数组从 0 开始</p>
+</div>
+<p>如果你试图访问不存在的下标, 例如:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>];</span><br><span class="line">scores[<span class="number">5</span>] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>会收到这样的报错信息:</p>
+<div class="note danger flat"><p>Index was outside the bounds of the array.</p>
+</div>
+<p>翻译过来就是: 下标超过了数组的边界, 也就是&quot;数组越界&quot;, 因为数组的 下标从 0 开始, 而这个数组只有 5 个元素, 所以下标范围是[0, 4], 故发生了数组越界.</p>
+<h2 id="遍历数组">遍历数组</h2>
+<p>为了一次性访问数组中的诸多元素, 可以使用第二节学过的循环:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>] &#123; <span class="number">98</span>, <span class="number">97</span>, <span class="number">94</span>, <span class="number">92</span>, <span class="number">95</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;  <span class="comment">// 注意这里的条件</span></span><br><span class="line">    Console.WriteLine(scores[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出估计大家都能猜到：</p>
+<details class="toggle" ><summary class="toggle-button" style="">查看输出</summary><div class="toggle-content"><p>98<br>
+97<br>
+94<br>
+92<br>
+95</p>
+</div></details>
+<p>也可以试试用循环进行初始化</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;  <span class="comment">// 注意这里的条件</span></span><br><span class="line">    scores[i] = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当你不知道数组有多大的时候，可以使用 <code>arrayName.Length</code> 访问数组的长度，上面的代码可以写为：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>] &#123; <span class="number">98</span>, <span class="number">97</span>, <span class="number">94</span>, <span class="number">92</span>, <span class="number">95</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; scores.Length; i++) &#123;  <span class="comment">// 注意这里的条件</span></span><br><span class="line">scores[i] = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意 <code>Length</code> 后面不要写括号，因为这不是个函数，而是一个属性</p>
+<p>为了方便起见, 你也可以不用索引为 0 的元素, 比如要存 5 个元素的时候写为这样:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">6</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    scores[i] = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note danger flat"><p>如果这么用的话请一定要注意给数组多分配一个长度, 因为第 0 个被空出来了<br>
+以及注意 <code>for</code> 循环时一定要循环到 <code>&lt;= arrayName.Length - 1</code> 这样才能遍历全部元素</p>
+</div>
+<h3 id="foreach-语句"><code>foreach</code> 语句</h3>
+<p>其实我们有更简单的循环的语句，之前在讲循环的时候因为没学数组所以没讲，就是使用 <code>foreach</code> 语句</p>
+<p>类似 <code>python</code> 中的 <code>for item in array:</code>，你可以直接用 <code>foreach</code> 来访问数组中的每一个值，例如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>] &#123; <span class="number">98</span>, <span class="number">97</span>, <span class="number">94</span>, <span class="number">92</span>, <span class="number">95</span> &#125;;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">int</span> i <span class="keyword">in</span> scores) &#123;</span><br><span class="line">    Console.WriteLine(i);              </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>i</code> 本身代表数组中的一个元素，而不是索引，所以应该直接输出 <code>i</code></p>
+<p>请注意 <code>foreach</code> 语句中的 <code>i</code> 是不能被赋值的, 也就是说只能用 <code>foreach</code> 来查询数组中的值而不能用来赋值</p>
+<h3 id="例题-4-1-最高分">例题 4-1 最高分</h3>
+<p>求所有学生中的最高分数</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>] &#123; <span class="number">98</span>, <span class="number">97</span>, <span class="number">94</span>, <span class="number">92</span>, <span class="number">95</span> &#125;;</span><br><span class="line"><span class="built_in">int</span> maxScore = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">int</span> item <span class="keyword">in</span> scores) &#123;</span><br><span class="line">    maxScore = Math.Max(item, maxScore);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(maxScore);</span><br></pre></td></tr></table></figure>
+<p>其中 <code>Math.Max()</code> 是一个我们之前没有用过的函数, 不过顾名思义, 就是返回两个数中的最大值（<code>double</code> 等数据类型也是可以的）</p>
+<p>如果你不愿意使用这个函数, 可以改为：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>] &#123; <span class="number">98</span>, <span class="number">97</span>, <span class="number">94</span>, <span class="number">92</span>, <span class="number">95</span> &#125;;</span><br><span class="line"><span class="built_in">int</span> maxScore = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">int</span> item <span class="keyword">in</span> scores) &#123;</span><br><span class="line">    <span class="keyword">if</span> (maxScore &lt; item) maxScore = item;</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(maxScore);</span><br></pre></td></tr></table></figure>
+<p>也就是说只在 <code>maxScore</code> 比 <code>item</code> 小的时候才用 <code>item</code> 更新 <code>maxScore</code>, 这样 <code>maxScore</code> 就是 <code>scores</code> 数组中的最大值了</p>
+<p>那么回到本文最开始的问题, 怎么给 <code>n</code> 个学生的分数进行排名呢, 不用想怎么实现排序, 因为 <code>c#</code> 有给数组排序的函数: <code>Array.Sort(arrayName)</code><br>
+这里的 <code>Array</code> 是一个类, 包含很多与数组有关的函数</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>] &#123; <span class="number">98</span>, <span class="number">97</span>, <span class="number">94</span>, <span class="number">92</span>, <span class="number">95</span> &#125;;</span><br><span class="line">Array.Sort(scores);</span><br></pre></td></tr></table></figure>
+<p>这样就给 <code>scores</code> 数组排好序了, <code>sort</code> 排序默认是从小到大, 所以我们可以反着遍历数组来输出从大到小的值</p>
+<p>完成了最初的目标, 再改为需要读入数据的版本：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> n = Convert.ToInt32(Console.ReadLine());  <span class="comment">// 学生总数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[n];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    scores[i] = Convert.ToInt32(Console.ReadLine());  <span class="comment">// 每个学生的分数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Array.Sort(scores);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    Console.WriteLine(scores[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你嫌倒着遍历麻烦可以使用 <code>Array.Reverse()</code> 来翻转数组, 这样就能正着遍历了:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 前面的代码相同, 略去</span></span><br><span class="line">Array.Sort(scores);</span><br><span class="line">Array.Reverse(scores);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    Console.WriteLine(scores[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note warning flat"><p>注意, 如果你要把第一个空过去的话不能直接 <code>Array.Sort(arrayName)</code>, 因为这样会把第 0 个元素 <code>0</code> 也算进去排序</p>
+</div>
+<p><code>Sort</code> 有很多重载, 其中一个是 <code>Sort(arrayName, index, length)</code> , <code>index</code> 是排序范围的起始索引, <code>length</code> 是排序的元素个数<br>
+<code>Reverse</code> 也有类似的用法</p>
+<p>所以要空过去第 0 个的话, 应该改为:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> n = Convert.ToInt32(Console.ReadLine());  <span class="comment">// 学生总数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[n+<span class="number">1</span>];  <span class="comment">// 因为后面空过去了第 0 个元素所以这里要声明为 n+1, 否则会数组越界</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    scores[i] = Convert.ToInt32(Console.ReadLine());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Array.Sort(scores, <span class="number">1</span>, n);</span><br><span class="line">Array.Reverse(scores, <span class="number">1</span>, n);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    Console.WriteLine(scores[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再加点细节:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Console.Write(<span class="string">&quot;请输入学生总数: &quot;</span>);</span><br><span class="line"><span class="built_in">int</span> n = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span>[] scores = <span class="keyword">new</span> <span class="built_in">int</span>[n+<span class="number">1</span>]; </span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    Console.Write(<span class="string">&quot;请输入第&#123; 0 &#125;个学生的分数: &quot;</span>, i);</span><br><span class="line">    scores[i] = Convert.ToInt32(Console.ReadLine());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Array.Sort(scores, <span class="number">1</span>, n);</span><br><span class="line">Array.Reverse(scores, <span class="number">1</span>, n);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;第&#123; 0 &#125;名的分数: &#123; 1 &#125;&quot;</span>, i, scores[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="扩展阅读">扩展阅读</h3>
+<div class="note info flat"><p>本段可以跳过</p>
+</div>
+<p>你会发现，这样我们只对分数进行了排序，而没法将分数与人名对应, 做法有很多种, 这里只介绍其中一种</p>
+<p>可以想到, 我们需要的是一个 能够同时保存 <code>int</code> 类型的数和 <code>string</code> 类型的字符串的类型, 再定义这个类型的数组(之前说过可以声明更复杂类型的数组), 再用 <code>Sort</code> 对它进行排序, 而我们还没学过自定义类型, 怎么办呢</p>
+<p>好在 <code>c#4.0</code> 提供了 <code>Tuple</code> 类型(中文为元组), 可以由多个元素组成(最多8个), 用 <code>tupleName.Item1</code> 访问第一个元素(以此类推)</p>
+<p>用 <code>Tuple&lt;int, string&gt;</code> 来表示第一个元素为 <code>int</code> 类型, 第二个元素为 <code>string</code> 类型的 <code>Tuple</code></p>
+<p>所以我们创建一个 <code>Tuple&lt;int, string&gt;</code> 类型的数组<br>
+<code>Tuple</code> 类型已经写好了 <code>&lt;</code> 操作符, 先比较第一个元素的大小, 如果相等再比较第二个(以此类推), 所以可以直接使用 <code>Sort</code></p>
+<p>据此可以将上面的代码改为:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Console.Write(<span class="string">&quot;请输入学生总数: &quot;</span>);</span><br><span class="line"><span class="built_in">int</span> n = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"></span><br><span class="line">Tuple&lt;<span class="built_in">int</span>, <span class="built_in">string</span>&gt;[] scores = <span class="keyword">new</span> Tuple&lt;<span class="built_in">int</span>, <span class="built_in">string</span>&gt;[n + <span class="number">1</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    Console.Write(<span class="string">&quot;请输入第&#123; 0 &#125;个学生的姓名: &quot;</span>, i);</span><br><span class="line">    <span class="built_in">string</span> b = Console.ReadLine();</span><br><span class="line">    Console.Write(<span class="string">&quot;请输入第&#123; 0 &#125;个学生的分数: &quot;</span>, i);</span><br><span class="line">    <span class="built_in">int</span> a = Convert.ToInt32(Console.ReadLine());</span><br><span class="line"></span><br><span class="line">    scores[i] = Tuple.Create(a, b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Array.Sort(scores, <span class="number">1</span>, n);</span><br><span class="line">Array.Reverse(scores, <span class="number">1</span>, n);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;第&#123; 0, -2 &#125;名:  &#123; 1, -5 &#125;&#123; 2, -5 &#125;&quot;</span>, i, scores[i].Item1, scores[i].Item2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后输出时的占位符 <code>&#123; 0, -2 &#125;</code> 中, 第一个参数 <code>0</code> 的意思与之前的 <code>&#123; 0 &#125;</code> 一样, 表示后面下标为 <code>0</code> 的对象, <code>-2</code> (的绝对值)表示输出的长度, 不足的补成空格, 负号表示左对齐(没有负号表示右对齐), 这样是为了输出的时候同一列数据可以左对齐, 好看一点, 你也可以不用</p>
+<h2 id="数组相关函数">数组相关函数</h2>
+<p>这里介绍一些相对常用的函数</p>
+<h3 id="Array-Clear"><code>Array.Clear()</code></h3>
+<p>用来清空数组</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Array.Clear(arrayName);</span><br><span class="line">Array.Clear(arrayName, index, length);</span><br></pre></td></tr></table></figure>
+<h3 id="strName-Split"><code>strName.Split()</code></h3>
+<p>注意这个不是对数组进行操作<br>
+这个函数的用处是, 将一个字符串按照你输入的分隔符分成由若干个字符串组成的 <code>string</code> 数组, 然后返回这个 <code>string</code> 数组</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stringName.Split(Seperator);</span><br></pre></td></tr></table></figure>
+<p>使用例:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> a = <span class="string">&quot;a ab abc abcd&quot;</span>;</span><br><span class="line"><span class="built_in">string</span>[] strArray = a.Split(<span class="string">&quot; &quot;</span>);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="built_in">string</span> i <span class="keyword">in</span> strArray) &#123;</span><br><span class="line">    Console.WriteLine(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里会按空格来把 <code>a</code> 字符串分成四个字符串, 存到 <code>strArray</code> 这个字符串数组中</p>
+<p>用这种方法我们就可以在一行内读入多个数据了</p>
+<h3 id="例题-4-2-逆序输出">例题 4-2 逆序输出</h3>
+<p>一行输入若干个整数, 在一行内倒序输出它们</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> temp = Console.ReadLine();</span><br><span class="line"><span class="built_in">string</span>[] a = temp.Split(<span class="string">&quot; &quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i=a.Length<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    Console.Write(<span class="string">&quot;&#123; 0 &#125; &quot;</span>, a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二维数组">二维数组</h2>
+<p>之前说过可以声明更复杂类型的数组, 那么大家想没想过, 数组中的元素也可以是另一个数组呢!</p>
+<p>数组中的子数组长度是可以不相同的, 那种叫做交错数组, 不太常用, 不在本文讨论范围之内<br>
+<code>c#</code> 中的二维数组仅指每个子数组的长度都相同的那种</p>
+<p>一个包含 x 个子数组, 其中每个子数组有 y 个元素的二维数组可以被看做一个 x 行 y 列的表格</p>
+<p>声明二维数组的语法如下:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type[,] array = <span class="keyword">new</span> type[x, y];</span><br></pre></td></tr></table></figure>
+<p>例如声明一个 3 行 4 列的数组并初始化:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[,] a = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">3</span>, <span class="number">4</span>] &#123; </span><br><span class="line">    &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, </span><br><span class="line">    &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> &#125;, </span><br><span class="line">    &#123; <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span> &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>换行是为了方便阅读, 当然是可以删掉的, 写成:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[,] a = <span class="keyword">new</span> <span class="built_in">int</span> [<span class="number">3</span>, <span class="number">4</span>] &#123; &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> &#125;, &#123; <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span> &#125; &#125;;</span><br></pre></td></tr></table></figure>
+<p>我们可以用 <code>a[i, j]</code> 来访问这个二维数组中第 <code>i</code> 行 第 <code>j</code> 列的元素, 例如:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[,] a = <span class="keyword">new</span> <span class="built_in">int</span> [<span class="number">3</span>,<span class="number">4</span>] &#123; &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> &#125;, &#123; <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span> &#125; &#125;;</span><br><span class="line">Console.WriteLine(a[<span class="number">1</span>, <span class="number">2</span>]);</span><br></pre></td></tr></table></figure>
+<p>从本质上讲, <code>a[1]</code> 访问的是 <code>a</code> 中的第 1 个元素(从 0 开始), 也就是一个数组 <code>&#123; 4, 5, 6, 7 &#125;</code><br>
+而例如 <code>a[1, 2]</code> 也就是访问 <code>a[2]</code> 中的第 2 个元素, 也就是 数组 <code>&#123; 4, 5, 6, 7 &#125;</code> 中的第 2 个元素, 所以 <code>a[i, j]</code> 为 6</p>
+<p>不过在平时使用时不需过多关注它本质的意思, 当成表格就好</p>
+<p>循环访问二维数组的元素如下:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[,] a = <span class="keyword">new</span> <span class="built_in">int</span> [<span class="number">3</span>,<span class="number">4</span>] &#123; &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> &#125;, &#123; <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;(&#123; 0 &#125;, &#123; 1 &#125;): &#123; 2 &#125;&quot;</span>, i, j, a[i, j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实 <code>foreach</code> 也可以遍历二维数组中的所有元素, 但是一般情况下我们可能会需要数据的坐标(指位于的行和列), 那种情况下就不能用了</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[,] a = <span class="keyword">new</span> <span class="built_in">int</span> [<span class="number">3</span>,<span class="number">4</span>] &#123; &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> &#125;, &#123; <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">foreach</span>(<span class="built_in">int</span> item <span class="keyword">in</span> a) &#123;</span><br><span class="line">    Console.WriteLine(item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="综合运用-扫雷的棋盘生成">综合运用: 扫雷的棋盘生成</h2>
+<p>大家都玩过扫雷吧, 我们这里做一个 <code>mapRow</code> × <code>mapColumn</code> 大小的棋盘(二维数组), 上面有 <code>mineNum</code> 个雷<br>
+我们用 <code>map[i]</code> 表示这个格子周围雷的数量, 如果为 <code>-1</code> 则表示这个格子就是雷</p>
+<p>先声明一下:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> mapRow = <span class="number">10</span>, mapColumn = <span class="number">10</span>, mineNum = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">int</span>[,] map = <span class="keyword">new</span> <span class="built_in">int</span>[mapRow+<span class="number">1</span>, mapColumn+<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+<p>然后声明一下随机数要用的 <code>Random</code> 对象:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Random rd = <span class="keyword">new</span> Random();</span><br></pre></td></tr></table></figure>
+<p>然后循环访问随机位置, 把它设成雷:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> cnt=<span class="number">1</span>; cnt &lt;= mineNum; ) &#123;  <span class="comment">// cnt 表示正在放第 cnt 个雷, 注意这后面没写 cnt++</span></span><br><span class="line">    <span class="built_in">int</span> x = rd.Next(<span class="number">1</span>, row+<span class="number">1</span>);  <span class="comment">// 注意范围为左闭右开, 所以 row 需要加 1</span></span><br><span class="line">    <span class="built_in">int</span> y = rd.Next(<span class="number">1</span>, col+<span class="number">1</span>); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (map[x, y] != <span class="number">-1</span>) &#123;  <span class="comment">// 不要重复放置雷, 那样雷的总数会少</span></span><br><span class="line">        map[x, y] = <span class="number">-1</span>;</span><br><span class="line">        cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来要访问整个棋盘, 数每个不是雷的格子周围的雷的数量, 代码:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> row = <span class="number">1</span>; row &lt;= mapRow; row++) &#123;  <span class="comment">// 循环每行</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> col = <span class="number">1</span>; col &lt;= mapColumn; col++) &#123;  <span class="comment">// 循环每列</span></span><br><span class="line">        <span class="keyword">if</span> (map[row, col] != <span class="number">-1</span>) &#123;  <span class="comment">// 如果不是雷再计数</span></span><br><span class="line">            <span class="comment">// do something (见后文)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但我们要怎么遍历每个格子周围的 8 个格子?</p>
+<p>其中一个方法是:</p>
+<p>由于每个格子相邻的格子的横纵坐标都是当前坐标加减 1, 所以我们可以用这样两个一维数组:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] moveRow    = &#123;  <span class="number">1</span>,  <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>,  <span class="number">0</span> &#125;;  <span class="comment">// 加了一堆空格是为了便于理解</span></span><br><span class="line"><span class="built_in">int</span>[] moveColumn = &#123; <span class="number">-1</span>,  <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>,  <span class="number">1</span>,  <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span> &#125;;</span><br></pre></td></tr></table></figure>
+<p>这样我们只要循环 <code>i</code>, 将当前的格子横纵坐标分别加上 <code>moveRow[i]</code> 和 <code>moveColumn[i]</code>, 就能遍历一个格子周围所有的位置了, 代码:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> cnt = <span class="number">0</span>;  <span class="comment">// 用来记录周围雷的数量</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">int</span> currRow = row + moveRow[i];  <span class="comment">// 新的行数</span></span><br><span class="line">    <span class="built_in">int</span> currCol = col + moveColumn[i];  <span class="comment">// 新的列数</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果找到的位置不在地图中就跳过</span></span><br><span class="line">    <span class="keyword">if</span> (currRow &lt; <span class="number">1</span> || currRow &gt; mapRow || currCol &lt; <span class="number">1</span> || currCol &gt; mapColumn) &#123;<span class="keyword">continue</span>;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (map[currRow, currCol] == <span class="number">-1</span>) &#123;  <span class="comment">// 如果是雷就 +1</span></span><br><span class="line">        cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">map[row, col] = cnt;</span><br></pre></td></tr></table></figure>
+<p>另一个方法不需要辅助数组, 再写一个二重循环, 判断一下不是本格就好:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> cnt = <span class="number">0</span>;  <span class="comment">// 用来记录周围雷的数量</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">-1</span>; i &lt;= <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">-1</span>; j &lt;= <span class="number">1</span>; j++) &#123;</span><br><span class="line">        <span class="built_in">int</span> currRow = row + i;  <span class="comment">// 新的行数</span></span><br><span class="line">        <span class="built_in">int</span> currCol = col + j;  <span class="comment">// 新的列数</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果找到的位置不在地图中就跳过</span></span><br><span class="line">    <span class="keyword">if</span> (currRow &lt; <span class="number">1</span> || currRow &gt; mapRow || currCol &lt; <span class="number">1</span> || currCol &gt; mapColumn) &#123;<span class="keyword">continue</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果就是本格也跳过</span></span><br><span class="line">    <span class="keyword">if</span> (currRow == row &amp;&amp; currCol == col) &#123;<span class="keyword">continue</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (map[currRow, currCol] == <span class="number">-1</span>) &#123;  <span class="comment">// 如果是雷就 +1</span></span><br><span class="line">        cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">map[row, col] = cnt;</span><br></pre></td></tr></table></figure>
+<p>最后把上面的代码组合起来, 加个输出, 完整代码如下:</p>
+<details class="toggle" ><summary class="toggle-button" style="">完整代码</summary><div class="toggle-content"><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> mapRow = <span class="number">10</span>, mapColumn = <span class="number">10</span>, mineNum = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">int</span>[,] map = <span class="keyword">new</span> <span class="built_in">int</span>[mapRow+<span class="number">1</span>, mapColumn+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span>[] moveRow    = &#123; <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">int</span>[] moveColumn = &#123; <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span> &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Random rd = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> cnt=<span class="number">1</span>; cnt &lt;= mineNum; ) &#123;  <span class="comment">// cnt 表示正在放第 cnt 个雷, 注意这后面没写 cnt++</span></span><br><span class="line">    <span class="built_in">int</span> x = rd.Next(<span class="number">1</span>, mapRow+<span class="number">1</span>);  <span class="comment">// 注意范围为左闭右开, 所以 row 需要加 1</span></span><br><span class="line">    <span class="built_in">int</span> y = rd.Next(<span class="number">1</span>, mapColumn+<span class="number">1</span>); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (map[x, y] != <span class="number">-1</span>) &#123;  <span class="comment">// 不要重复放置雷, 那样雷的总数会少</span></span><br><span class="line">        map[x, y] = <span class="number">-1</span>;</span><br><span class="line">        cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> row = <span class="number">1</span>; row &lt;= mapRow; row++) &#123;  <span class="comment">// 循环每行</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> col = <span class="number">1</span>; col &lt;= mapColumn; col++) &#123;  <span class="comment">// 循环每列</span></span><br><span class="line">        <span class="keyword">if</span> (map[row, col] != <span class="number">-1</span>) &#123;  <span class="comment">// 如果不是雷再计数</span></span><br><span class="line">            <span class="built_in">int</span> cnt = <span class="number">0</span>;  <span class="comment">// 用来记录周围雷的数量</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">                <span class="built_in">int</span> currRow = row + moveRow[i];  <span class="comment">// 新的行数</span></span><br><span class="line">                <span class="built_in">int</span> currCol = col + moveColumn[i];  <span class="comment">// 新的列数</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">// 如果找到的位置不在地图中就跳过</span></span><br><span class="line">                <span class="keyword">if</span> (currRow &lt; <span class="number">1</span> || currRow &gt; mapRow || currCol &lt; <span class="number">1</span> || currCol &gt; mapColumn) &#123;<span class="keyword">continue</span>;&#125;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (map[currRow, currCol] == <span class="number">-1</span>) &#123;  <span class="comment">// 如果是雷就 +1</span></span><br><span class="line">                    cnt++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            map[row, col] = cnt;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= mapRow; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">1</span>; j &lt;= mapColumn; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (map[i, j] == <span class="number">-1</span>) &#123;</span><br><span class="line">            Console.Write(<span class="string">&quot;* &quot;</span>);  <span class="comment">// 为了便于观察, 如果是雷就输出星号</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            Console.Write(<span class="string">&quot;&#123; 0 &#125; &quot;</span>, map[i, j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;&quot;</span>);  <span class="comment">// 输出空行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div></details>
+<p>刚刚在我的电脑上产生的随机输出结果如下:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">0  0  0  0  0  2  *  2  0  0  </span><br><span class="line">0  0  0  1  1  3  *  2  1  1</span><br><span class="line">0  0  0  1  *  2  1  1  1  *</span><br><span class="line">0  0  0  1  1  1  0  0  2  2</span><br><span class="line">1  2  2  2  1  0  0  0  1  *</span><br><span class="line">*  2  *  *  1  0  1  1  2  1</span><br><span class="line">1  2  2  2  1  0  1  *  1  0</span><br><span class="line">0  0  0  0  0  0  1  1  1  0</span><br><span class="line">0  0  0  0  0  0  0  0  1  1</span><br><span class="line">0  0  0  0  0  0  0  0  1  *</span><br></pre></td></tr></table></figure>
+<h2 id="再谈字符串">再谈字符串</h2>
+<p>字符串也可以用下标进行访问, 但是不能用下标直接修改:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line">Console.WriteLine(str[<span class="number">0</span>]);  <span class="comment">//正常运行</span></span><br><span class="line">str[<span class="number">1</span>] = <span class="string">&#x27;c&#x27;</span>;  <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p>字符串也有 <code>Length</code> 属性, 所以可以用 <code>str.Length</code> 访问：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; str.Length; i++) &#123;</span><br><span class="line">    Console.WriteLine(str[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然也可以用 <code>foreach</code> 语句循环遍历字符串:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line"><span class="keyword">foreach</span>(<span class="built_in">char</span> c <span class="keyword">in</span> str) &#123;</span><br><span class="line">    Console.WriteLine(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但大家可能有些疑问，为什么是 <code>char</code> 而不是 <code>string c</code></p>
+<p>因为字符串的本意就是一堆 “字符” 串起来, 也就是说, 字符串中的每一个元素应该是一个字符<br>
+<code>char</code> 就是表示字符的数据类型(英文character的缩写), 字符<code>a</code> 记为 <code>'a'</code></p>
+<p>因为 <code>'a'</code> (字符<code>a</code>)容易与 <code>&quot;a&quot;</code> (字符串<code>a</code>)混淆所以之前一直没有提过, 他们的区别就类似于int类型的 <code>5</code> 与 只有一个int类型的元素的数组 <code>&#123; 5 &#125;</code>, 是不一样的东西</p>
+<h3 id="例题-4-3-洛谷B2124-判断字符串是否为回文">例题 4-3 [洛谷<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/B2124">B2124</a>] 判断字符串是否为回文</h3>
+<p>输入一个字符串，输出该字符串是否回文。回文是指顺读和倒读都一样的字符串。<br>
+如果字符串是回文，输出 <code>yes</code> 否则，输出 <code>no</code></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str = Console.ReadLine();</span><br><span class="line"><span class="built_in">int</span> length = str.Length;</span><br><span class="line"></span><br><span class="line"><span class="built_in">bool</span> suc = <span class="literal">true</span>; </span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; length / <span class="number">2</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (str[i] != str[length-i<span class="number">-1</span>]) &#123;</span><br><span class="line">        suc = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (suc) &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;yes&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="练习">练习</h2>
+<h3 id="4-1-最高分与最低分之差">4-1 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/e0e4f81dcd55408a8973f8033bbeb1d2?tpId=107&amp;&amp;tqId=33376&amp;rp=1&amp;ru=/ta/beginner-programmers&amp;qru=/ta/beginner-programmers/question-ranking">最高分与最低分之差</a></h3>
+<p>先读入 n , 下一行输入 n 个成绩，输出 n 个成绩中最高分数和最低分数的差。</p>
+<h3 id="4-2-洛谷B2122-单词翻转">4-2 [洛谷<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/B2122">B2122</a>] 单词翻转</h3>
+<p>小明同学写单词的时候喜欢反着写，比如 <code>hello</code> 他会写成 <code>olleh</code><br>
+给出小明同学写的一个句子，请你将所有的单词复原。</p>
+<h4 id="输入">输入</h4>
+<p>共一行，一个字符串表示句子，单词之间以空格分隔。</p>
+<h4 id="输出">输出</h4>
+<p>每个单词一行</p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">样例输入</button><button type="button" class="tab">样例输出</button></div><div class="tab-contents"><div class="tab-item-content active"><p>olleh dlrow</p></div><div class="tab-item-content"><p>hello world</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h3 id="4-3-完善学生分数排名系统">4-3 完善学生分数排名系统</h3>
+<p>接着完善一下学生分数排名的程序:</p>
+<ol>
+<li>本文给的代码只能处理整数, 改成能处理浮点数的</li>
+<li>对输入做一下判断, 例如: 如果输入的分数根本不能变为浮点数或者输入数字大于满分或者小于0, 就让它重新输入</li>
+<li>输出平均分数</li>
+</ol>
+<details class="toggle" ><summary class="toggle-button" style="">提示</summary><div class="toggle-content"><ol>
+<li>使用 Convert.ToDouble()</li>
+<li>可以用while循环 条件为输入正确</li>
+</ol>
+</div></details>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top">jiangdu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[4]%E6%95%B0%E7%BB%84/">https://blog.satori-march.top/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B[4]%E6%95%B0%E7%BB%84/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.satori-march.top" target="_blank">jiangdu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/csharp/">c#</a></div><div class="post-share"><div class="social-share" data-image="/img/default_cover/merry1.jpg" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/OI/solution/csp-s2021T2/" title="[题解] csp-s2021 T2 括号序列"><img class="cover" src="/img/default_cover/marisa1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">[题解] csp-s2021 T2 括号序列</div></div><div class="info-2"><div class="info-item-1"> 本文于 2023.03.26 大修（近半重写）  因为 csp-s 考的太惨了，所以一直想着回头把前三题都AC了，结果一拖拖到现在才做完（ 还有就是动态规划好难（wtcl） 题意 本题题意较复杂，建议直接去看原题（题目链接）。 总的来说，合法的括号序列一共分两类：   包含型：()()()，(A)(A)(A)，(S)(S)(S)，(AS)(AS)(AS)，(SA)(SA)(SA)   并列型： ABABAB ，ASBASBASB   显然合法的括号序列两端必然分别是左右括号，而且合法的括号序列最小长度为2。 初步分析 数据范围可知这题大概需要一个 O(n3)O(n^3)O(n3) 的方法 这道题一看就像是区间DP。设状态 f[i][j]f[i][j]f[i][j] 表示 [i,j][i,j][i,j] 这段区间内的数量，由于上文已经证明看出“合法的括号序列两端必然分别是左右括号”，所以需要先确保 iii 对应位置可以为 (,即 a[i] == '(' || a[i] == '?'，对 jjj 也同理，不满足的话 f[i][j]f[i][j]f[i][j] 一律为...</div></div></div></a><a class="pagination-related" href="/posts/dotnet/c-sharp%E6%95%99%E7%A8%8B%5B5%5D%E6%96%B9%E6%B3%95/" title="C#基础教程[5] 方法"><img class="cover" src="/img/default_cover/windows-TM.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">C#基础教程[5] 方法</div></div><div class="info-2"><div class="info-item-1">方法的定义 在本节之前为了便于理解故将方法称为函数, 本节之后为了与专有名词接轨所以使用方法一词  我们已经用过很多内置的方法了, 例如 WriteLine(), ToInt32(), Max() 等等, 其实我们也可以定义方法, 定义方法的语法如下: 1234[访问修饰符] 返回值类型 方法名([参数列表])&#123;    //方法体&#125; 让我们以下面这个方法为例, 分析一下定义方法的语法的含义 1234public int Square(int a)&#123;    return a * a;&#125; 这个方法接收一个 int 类型的参数并记为 a, 然后返回 a 的平方   public 是访问修饰符, 除此之外还有 private, protected 等. 如无特殊说明, 本文中所有的访问修饰符更改都不会影响结果, 先不用在意   其中第一个 int 表示的是方法的返回值的类型, 括号里的第一个(也是唯一一个) int 表示接收的第一个参数是 int 类型的, 将这个参数记为 a, 可以在方法体里用 a...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">jiangdu</div><div class="author-info-description">jiangdu的静态个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/satorimarch"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text">声明数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text">遍历数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#foreach-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.1.</span> <span class="toc-text">foreach 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-4-1-%E6%9C%80%E9%AB%98%E5%88%86"><span class="toc-number">2.2.</span> <span class="toc-text">例题 4-1 最高分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB"><span class="toc-number">2.3.</span> <span class="toc-text">扩展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">数组相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Array-Clear"><span class="toc-number">3.1.</span> <span class="toc-text">Array.Clear()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strName-Split"><span class="toc-number">3.2.</span> <span class="toc-text">strName.Split()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-4-2-%E9%80%86%E5%BA%8F%E8%BE%93%E5%87%BA"><span class="toc-number">3.3.</span> <span class="toc-text">例题 4-2 逆序输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">4.</span> <span class="toc-text">二维数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E8%BF%90%E7%94%A8-%E6%89%AB%E9%9B%B7%E7%9A%84%E6%A3%8B%E7%9B%98%E7%94%9F%E6%88%90"><span class="toc-number">5.</span> <span class="toc-text">综合运用: 扫雷的棋盘生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%8D%E8%B0%88%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">6.</span> <span class="toc-text">再谈字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-4-3-%E6%B4%9B%E8%B0%B7B2124-%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E4%B8%BA%E5%9B%9E%E6%96%87"><span class="toc-number">6.1.</span> <span class="toc-text">例题 4-3 [洛谷B2124] 判断字符串是否为回文</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">7.</span> <span class="toc-text">练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%9C%80%E9%AB%98%E5%88%86%E4%B8%8E%E6%9C%80%E4%BD%8E%E5%88%86%E4%B9%8B%E5%B7%AE"><span class="toc-number">7.1.</span> <span class="toc-text">4-1 最高分与最低分之差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%B4%9B%E8%B0%B7B2122-%E5%8D%95%E8%AF%8D%E7%BF%BB%E8%BD%AC"><span class="toc-number">7.2.</span> <span class="toc-text">4-2 [洛谷B2122] 单词翻转</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5"><span class="toc-number">7.2.1.</span> <span class="toc-text">输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-number">7.2.2.</span> <span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%AE%8C%E5%96%84%E5%AD%A6%E7%94%9F%E5%88%86%E6%95%B0%E6%8E%92%E5%90%8D%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.3.</span> <span class="toc-text">4-3 完善学生分数排名系统</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-color: #4f73a0;"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By jiangdu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">若无力驾驭，自由便是负担</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"reaction":false,"search":false,"locale":{"placeholder":"发条友善的评论吧 (不填信息默认匿名, 填写邮箱可以收到回复通知)","sofa":"这个评论区空空如也...不如发条评论?"},"emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"]}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://blog-api-umber.vercel.app',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
